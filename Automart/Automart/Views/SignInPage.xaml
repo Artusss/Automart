@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:Automart"
+             x:Class="Automart.Views.SignInPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Регистрация" Clicked="SignUp_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Label x:Name="LoginLabel" Text="Логин: " FontSize="Medium"/>
+                <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите логин">
+                    <Entry.Behaviors>
+                        <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
+                        <behavior:EntryLengthValidator MaxLength="15"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                    <Label x:Name="PasswordLabel" Text="Пароль: "  FontSize="Medium"/>
+                <Entry x:Name="PasswordEntry" Placeholder = "Введите пароль" IsPassword="true"/>
+
+                <CheckBox x:Name="ForPersonalDataCheckBox" />
+                <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных"  FontSize="Small"/>
+
+                <Button Text="Войти" FontSize="Large" Padding="75, 0" BorderWidth="1"
+                        Clicked="SignIn_OnButtonClicked" BackgroundColor="#2196F3"
+                        TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

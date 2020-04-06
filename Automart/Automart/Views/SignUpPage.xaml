@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:Automart"
+             x:Class="Automart.Views.SignUpPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Label x:Name="NumberLabel" Text="Номер: " FontSize="Medium" />
+                <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите логин">
+                    <Entry.Behaviors>
+                        <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
+                        <behavior:EntryLengthValidator MaxLength="15"/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Label x:Name="FirstNameLabel" Text="Имя: " FontSize="Medium" />
+                <Entry x:Name="FirstNameEntry" Placeholder = "Введите имя"/>
+
+                <Label x:Name="LastNameLabel" Text="Фамилия: " FontSize="Medium" />
+                <Entry x:Name="LastNameEntry" Placeholder = "Введите фамилию"/>
+
+                <Label x:Name="CityLabel" Text="Город: " FontSize="Medium" />
+                <Picker x:Name="CityPicker">
+                    <Picker.Items>
+                        <x:String>Москва</x:String>
+                        <x:String>Санкт-Петербург</x:String>
+                        <x:String>Нижний Новгород</x:String>
+                        <x:String>Набережные Челны</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Text="Регистрация" FontSize="Large" Padding="75, 0" BorderWidth="1"
+                        Clicked="SignUp_OnButtonClicked" BackgroundColor="#2196F3" 
+                        TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
