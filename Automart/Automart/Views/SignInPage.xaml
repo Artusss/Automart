@@ -21,13 +21,16 @@
                         <behavior:EntryLengthValidator MaxLength="15"/>
                     </Entry.Behaviors>
                 </Entry>
-
-                    <Label x:Name="PasswordLabel" Text="Пароль: "  FontSize="Medium"/>
+                <Label x:Name="LoginErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+                
+                <Label x:Name="PasswordLabel" Text="Пароль: "  FontSize="Medium"/>
                 <Entry x:Name="PasswordEntry" Placeholder = "Введите пароль" IsPassword="true"/>
+                <Label x:Name="PasswordErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
                 <CheckBox x:Name="ForPersonalDataCheckBox" />
                 <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных"  FontSize="Small"/>
-
+                <Label x:Name="ForPersonalDataErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+                
                 <Button Text="Войти" FontSize="Large" Padding="75, 0" BorderWidth="1"
                         Clicked="SignIn_OnButtonClicked" BackgroundColor="#2196F3"
                         TextColor="White" />

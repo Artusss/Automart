@@ -7,6 +7,7 @@ namespace Automart
 {
     public partial class App : Application
     {
+        public const string DATABASE_NAME = "Automart_dev.db";
 
         public App()
         {

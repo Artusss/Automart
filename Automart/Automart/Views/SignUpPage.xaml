@@ -17,12 +17,15 @@
                         <behavior:EntryLengthValidator MaxLength="15"/>
                     </Entry.Behaviors>
                 </Entry>
+                <Label x:Name="NumberErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
                 <Label x:Name="FirstNameLabel" Text="Имя: " FontSize="Medium" />
                 <Entry x:Name="FirstNameEntry" Placeholder = "Введите имя"/>
+                <Label x:Name="FirstNameErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
                 <Label x:Name="LastNameLabel" Text="Фамилия: " FontSize="Medium" />
                 <Entry x:Name="LastNameEntry" Placeholder = "Введите фамилию"/>
+                <Label x:Name="LastNameErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
                 <Label x:Name="CityLabel" Text="Город: " FontSize="Medium" />
                 <Picker x:Name="CityPicker">
@@ -33,7 +36,10 @@
                         <x:String>Набережные Челны</x:String>
                     </Picker.Items>
                 </Picker>
+                <Label x:Name="CityErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
+
+                <Label x:Name="CurUserLogin" Text="" FontSize="Medium" TextColor="Black" />
                 <Button Text="Регистрация" FontSize="Large" Padding="75, 0" BorderWidth="1"
                         Clicked="SignUp_OnButtonClicked" BackgroundColor="#2196F3" 
                         TextColor="White" />

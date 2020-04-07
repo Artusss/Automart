@@ -7,9 +7,9 @@ C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\A
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.AssemblyInfoInputs.cache
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.AssemblyInfo.cs
-C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.dll
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\ref\Automart.dll
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.pdb
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\SignUpPage.xaml.g.cs
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\SignInPage.xaml.g.cs
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\XamlC.stamp
