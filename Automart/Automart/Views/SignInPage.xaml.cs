@@ -8,6 +8,9 @@ using Automart.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft;
+using Newtonsoft.Json;
+using Plugin.Settings;
 
 namespace Automart.Views
 {
@@ -68,11 +71,21 @@ namespace Automart.Views
             var curUserVM = UserSQLiteH.GetToPassword(LoginEntry.Text, PasswordEntry.Text).FirstOrDefault();
             if (curUserVM == null)
             {
-                PasswordErrorLabel.Text = "Неверный пароль";
+                await DisplayAlert("Неверный пароль", 
+                                   "Если у вас возникли сложности с входом или восстановлением пароля, свяжитесь с нами по телефону +7(499)700-0880",
+                                   "OK");
                 return;
             }
 
+            SessionStart(curUserVM);
+
             await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+        }
+
+        private static void SessionStart(UserViewModel curUserVM)
+        {
+            string userData_json = JsonConvert.SerializeObject(curUserVM);
+            CrossSettings.Current.AddOrUpdateValue("current_user", userData_json);
         }
     }
 }

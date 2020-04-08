@@ -38,6 +38,7 @@
                 </Picker>
                 <Label x:Name="CityErrorLabel" Text="" FontSize="Small" TextColor="Red" />
 
+                <Label x:Name="SmsDataLabel" Text="Пароль придет в виде SMS на телефон"  FontSize="Small"/>
 
                 <Label x:Name="CurUserLogin" Text="" FontSize="Medium" TextColor="Black" />
                 <Button Text="Регистрация" FontSize="Large" Padding="75, 0" BorderWidth="1"

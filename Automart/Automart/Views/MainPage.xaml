@@ -7,15 +7,13 @@
             x:Class="Automart.Views.MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Войти" Clicked="SignIn_Clicked" />
+        <ToolbarItem x:Name="SignInToolBar" Text="Войти" Clicked="SignIn_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
-            <Label Text="Some content" FontSize="Large"/>
-            <ListView x:Name="UserListView" >
-                
-            </ListView>
+            <Label x:Name="UserNameLabel" FontSize="Large" />
+            <Label x:Name="UserCreatedAtLabel" FontSize="Medium" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

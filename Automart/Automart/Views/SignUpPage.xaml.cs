@@ -16,6 +16,7 @@ namespace Automart.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        public const int PASS_LENGTH = 10;
         public static UserSQLiteHelper userSQLiteH;
         public static UserSQLiteHelper UserSQLiteH
         {
@@ -62,24 +63,36 @@ namespace Automart.Views
 
             if (UserSQLiteH.IssetToLogin(LoginEntry.Text))
             {
-                CurUserLogin.Text = "Данный пользователь уже существует";
+                await DisplayAlert("Указанный номер уже зарегистрирован", "Восстановить пароль?", "Да", "Нет");
                 return;
             }
-
-            UserViewModel userVM = new UserViewModel() 
+            string password = CreatePassword();
+            UserViewModel userVM = new UserViewModel()
             {
-                Login      = LoginEntry.Text,
-                Password   = "12345",
-                FirstName  = FirstNameEntry.Text,
-                LastName   = LastNameEntry.Text,
-                City       = CityPicker.Items[CityPicker.SelectedIndex],
-                Created_at = new DateTime()
+                Login = LoginEntry.Text,
+                Password = password,
+                FirstName = FirstNameEntry.Text,
+                LastName = LastNameEntry.Text,
+                City = CityPicker.Items[CityPicker.SelectedIndex],
+                Created_at = DateTime.Now
             };
 
             UserSQLiteH.SaveItem(userVM);
-            /*var smsMessenger = CrossMessaging.Current.SmsMessenger;
-            if (smsMessenger.CanSendSms) smsMessenger.SendSms(LoginEntry.Text, "Hello");*/
+            var smsMessenger = CrossMessaging.Current.SmsMessenger;
+            if (smsMessenger.CanSendSms) smsMessenger.SendSms(LoginEntry.Text, password);
             await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+        }
+
+        public string CreatePassword(int length=PASS_LENGTH)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+            return res.ToString();
         }
     }
 }

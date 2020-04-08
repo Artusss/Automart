@@ -9,6 +9,9 @@ using Automart.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft;
+using Newtonsoft.Json;
+using Plugin.Settings;
 
 
 namespace Automart.Views
@@ -36,21 +39,27 @@ namespace Automart.Views
         {
             InitializeComponent();
 
-            List<UserViewModel> UsersVM = UserSQLiteH.GetItems().ToList();
-
-            List<string> usersList = new List<string>();
-
-            foreach(var userVM in UsersVM)
+            string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
+            if (String.IsNullOrEmpty(curUserVM_json)) SignInToolBar.Text = "Войти";
+            else
             {
-                usersList.Add($"{userVM.Id} : {userVM.Login}");
+                SignInToolBar.Text      = "Выйти";
+                UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
+                UserNameLabel.Text      = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}";
+                UserCreatedAtLabel.Text = $"{curUserVM.Created_at.ToString()}";
             }
-
-            UserListView.ItemsSource = usersList;
         }
         
         async void SignIn_Clicked(object sender, EventArgs e)
         {
+            SessionEnd();
             await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+        }
+
+        private static void SessionEnd()
+        {
+            string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
+            if (!String.IsNullOrEmpty(curUserVM_json)) CrossSettings.Current.Remove("current_user");
         }
     }
 }
