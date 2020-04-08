@@ -40,7 +40,8 @@ namespace Automart.Views
             InitializeComponent();
 
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
-            if (String.IsNullOrEmpty(curUserVM_json)) SignInToolBar.Text = "Войти";
+            if (String.IsNullOrEmpty(curUserVM_json)) 
+                SignInToolBar.Text = "Войти";
             else
             {
                 SignInToolBar.Text      = "Выйти";
@@ -59,7 +60,8 @@ namespace Automart.Views
         private static void SessionEnd()
         {
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
-            if (!String.IsNullOrEmpty(curUserVM_json)) CrossSettings.Current.Remove("current_user");
+            if (!String.IsNullOrEmpty(curUserVM_json)) 
+                CrossSettings.Current.Remove("current_user");
         }
     }
 }
