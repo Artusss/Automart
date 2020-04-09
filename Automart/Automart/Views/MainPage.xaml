@@ -10,10 +10,4 @@
         <ToolbarItem x:Name="SignInToolBar" Text="Войти" Clicked="SignIn_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            <Label x:Name="UserNameLabel" FontSize="Large" />
-            <Label x:Name="UserCreatedAtLabel" FontSize="Medium" />
-        </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

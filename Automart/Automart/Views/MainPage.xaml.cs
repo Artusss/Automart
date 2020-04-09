@@ -21,6 +21,10 @@ namespace Automart.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        const string CANCEL       = "Отмена";
+        const string PASS_AUTO    = "Легковой авто";
+        const string FREIGHT_AUTO = "Грузовой авто";
+
         public static UserSQLiteHelper userSQLiteH;
         public static UserSQLiteHelper UserSQLiteH
         {
@@ -40,17 +44,60 @@ namespace Automart.Views
             InitializeComponent();
 
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
-            if (String.IsNullOrEmpty(curUserVM_json)) 
+            if (String.IsNullOrEmpty(curUserVM_json))
+            {
+                StackLayout notSignedSL = new StackLayout();
                 SignInToolBar.Text = "Войти";
+                Label InfoLabel = new Label
+                {
+                    Text = "Авторизуйтесь чтобы добавить объявление",
+                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+                };
+
+                notSignedSL.Children.Add(InfoLabel);
+                this.Content = notSignedSL;
+            }
             else
             {
-                SignInToolBar.Text      = "Выйти";
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
-                UserNameLabel.Text      = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}";
-                UserCreatedAtLabel.Text = $"{curUserVM.Created_at.ToString()}";
+
+                StackLayout signedSL = new StackLayout();
+                SignInToolBar.Text       = "Выйти";
+                Label UserNameLabel      = new Label {
+                    Text     = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}",
+                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+                };
+                Label UserCreatedAtLabel = new Label {
+                    Text = $"{curUserVM.Created_at.ToString()}",
+                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
+                };
+                Button AddAdvertisement = new Button {
+                    Text              = "Добавить объявление",
+                    BackgroundColor   = Color.Green,
+                    TextColor         = Color.White,
+                    FontSize          = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
+                    BorderWidth       = 1,
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions   = LayoutOptions.EndAndExpand,
+                    Margin            = new Thickness(0, 20),
+                    Padding           = new Thickness(50, 0)
+                };
+                AddAdvertisement.Clicked += AddAd_Clicked;
+
+                signedSL.Children.Add(UserNameLabel);
+                signedSL.Children.Add(UserCreatedAtLabel);
+                signedSL.Children.Add(AddAdvertisement);
+                this.Content = signedSL;
             }
         }
-        
+
+        async void AddAd_Clicked(object sender, EventArgs e)
+        {
+            var categoryAction = await DisplayActionSheet("Выберите категорию", CANCEL, null, PASS_AUTO, FREIGHT_AUTO);
+            if (!categoryAction.Equals(CANCEL))
+                await Navigation.PushModalAsync(new NavigationPage(new AddAdPage()));
+        }
+
         async void SignIn_Clicked(object sender, EventArgs e)
         {
             SessionEnd();
