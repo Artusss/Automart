@@ -11,8 +11,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\adb.p
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\Automart.Android.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\_VerifyXamarinAndroidSupportVersions.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\resourcepaths.cache
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\resourcecache.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res.flag
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\flata\DD58D34543950FBB.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\flata\95B11EAADED0FB85.stamp
@@ -496,3 +494,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\andro
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Plugin.Settings.Abstractions.dll.mdb
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Plugin.Settings.dll
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Plugin.Settings.dll.mdb
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\bin\Debug\com.companyname.automart.aab
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\Automart.Android.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\AndroidManifest.xml

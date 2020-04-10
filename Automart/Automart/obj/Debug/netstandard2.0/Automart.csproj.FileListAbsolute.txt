@@ -14,3 +14,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\V
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\SignInPage.xaml.g.cs
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\AddAdPage.xaml.g.cs
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\AddAutoMarkPage.xaml.g.cs
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\AddGovNumPage.xaml.g.cs
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.csproj.CoreCompileInputs.cache

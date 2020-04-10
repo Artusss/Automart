@@ -46,7 +46,11 @@ namespace Automart.Views
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
             if (String.IsNullOrEmpty(curUserVM_json))
             {
-                StackLayout notSignedSL = new StackLayout();
+                StackLayout notSignedSL = new StackLayout
+                {
+                    Margin = new Thickness(10, 0),
+                    Padding = new Thickness(10)
+                };
                 SignInToolBar.Text = "Войти";
                 Label InfoLabel = new Label
                 {
@@ -61,14 +65,29 @@ namespace Automart.Views
             {
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
 
-                StackLayout signedSL = new StackLayout();
+                StackLayout signedSL = new StackLayout
+                {
+                    Margin = new Thickness(10, 0),
+                    Padding = new Thickness(10)
+                };
                 SignInToolBar.Text       = "Выйти";
                 Label UserNameLabel      = new Label {
                     Text     = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}",
                     FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
+                Label AdsLabel = new Label
+                {
+                    Text      = "Объявления",
+                    TextColor = Color.Black,
+                    FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+                };
+                Label AdsListLabel = new Label
+                {
+                    Text = "У вас пока нет объявлений",
+                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
+                };
                 Label UserCreatedAtLabel = new Label {
-                    Text = $"{curUserVM.Created_at.ToString()}",
+                    Text     = $"{curUserVM.Created_at.ToString()}",
                     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
                 };
                 Button AddAdvertisement = new Button {
@@ -86,6 +105,8 @@ namespace Automart.Views
 
                 signedSL.Children.Add(UserNameLabel);
                 signedSL.Children.Add(UserCreatedAtLabel);
+                signedSL.Children.Add(AdsLabel);
+                signedSL.Children.Add(AdsListLabel);
                 signedSL.Children.Add(AddAdvertisement);
                 this.Content = signedSL;
             }
@@ -95,7 +116,10 @@ namespace Automart.Views
         {
             var categoryAction = await DisplayActionSheet("Выберите категорию", CANCEL, null, PASS_AUTO, FREIGHT_AUTO);
             if (!categoryAction.Equals(CANCEL))
+            {
+                CrossSettings.Current.AddOrUpdateValue("Ad_AutoType", categoryAction);
                 await Navigation.PushModalAsync(new NavigationPage(new AddAdPage()));
+            }
         }
 
         async void SignIn_Clicked(object sender, EventArgs e)

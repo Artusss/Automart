@@ -7,14 +7,20 @@
              x:Class="Automart.Views.AddAdPage">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="QuitToolBar" Text="Закрыть" Clicked="Quit_Clicked" />
+        <ToolbarItem x:Name="QuitToolBar" Order="Default" Text="Закрыть" Clicked="Quit_Clicked" />
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10" Margin="10, 0">
+            <Label x:Name="VINLabel" Text="VIN" FontSize="Large" TextColor="Black" />
+            <Entry x:Name="VINEntry" />
+            <Label x:Name="VINErrorLabel" Text="Не показывается в объявлении" FontSize="Small" />
+            
+            <Label Text="Введите VIN и мы по возможности заполним объявление автоматически" FontSize="Small"
+                   TextColor="Black" HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="LightBlue" Padding="15" Margin="0, 15" />
+
+            <Button Text="Далее" VerticalOptions="EndAndExpand" Margin="0, 15" Clicked="Continue_OnClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
