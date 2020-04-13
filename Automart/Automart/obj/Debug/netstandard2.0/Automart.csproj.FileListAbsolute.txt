@@ -17,3 +17,5 @@ C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\V
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\AddAutoMarkPage.xaml.g.cs
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\AddGovNumPage.xaml.g.cs
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\OneAdPage.xaml.g.cs
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\TwoAdPage.xaml.g.cs

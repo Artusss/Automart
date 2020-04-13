@@ -118,7 +118,7 @@ namespace Automart.Views
             if (!categoryAction.Equals(CANCEL))
             {
                 CrossSettings.Current.AddOrUpdateValue("Ad_AutoType", categoryAction);
-                await Navigation.PushModalAsync(new NavigationPage(new AddAdPage()));
+                await Navigation.PushModalAsync(new NavigationPage(new OneAdPage()));
             }
         }
 

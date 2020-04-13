@@ -26,7 +26,7 @@ namespace Automart.Views
         {
             if (String.IsNullOrEmpty(VINEntry.Text))
             {
-                VINErrorLabel.Text      = "Введите VIN";
+                VINErrorLabel.Text = "Введите VIN";
                 VINErrorLabel.TextColor = Color.Red;
                 return;
             }
