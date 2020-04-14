@@ -46,16 +46,7 @@
                     <Label x:Name="ModelErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="YearPicker">
-                        <Picker.Items>
-                            <x:String>Желтый</x:String>
-                            <x:String>Красный</x:String>
-                            <x:String>Зеленый</x:String>
-                            <x:String>Синий</x:String>
-                            <x:String>Фиолетовый</x:String>
-                            <x:String>Белый</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="YearPicker" />
                     <Label x:Name="YearErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />

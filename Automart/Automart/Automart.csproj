@@ -20,13 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\AddAdPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddAutoMarkPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\AddGovNumPage.xaml">
+    <EmbeddedResource Update="Views\AdPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\OneAdPage.xaml">
@@ -45,11 +39,5 @@
 
   <ItemGroup>
     <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Views\AddGovNumPage.xaml.cs">
-      <DependentUpon>AddGovNumPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>

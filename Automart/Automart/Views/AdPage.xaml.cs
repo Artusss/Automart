@@ -10,22 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Automart.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TwoAdPage : ContentPage
+    public partial class AdPage : ContentPage
     {
-        public TwoAdPage()
+        public AdPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        async void Quit_Clicked(object sender, EventArgs e)
+        async void ToMain_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-        }
-
-        async void AddAd_OnClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
         }
     }
 }
