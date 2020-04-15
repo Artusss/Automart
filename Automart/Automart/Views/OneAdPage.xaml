@@ -59,7 +59,7 @@
                     <Label x:Name="YearErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="MileageEntry" />
+                    <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="0" />
                     <Label x:Name="MileageErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" />
@@ -86,6 +86,7 @@
                             <x:String>Цвет6</x:String>
                         </Picker.Items>
                     </Picker>
+                    <Label x:Name="ColorErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="SteeringWheelLabel" Text="Руль" FontSize="Medium" />
                     <Picker x:Name="SteeringWheelPicker">
@@ -94,6 +95,7 @@
                             <x:String>Правый</x:String>
                         </Picker.Items>
                     </Picker>
+                    <Label x:Name="SteeringWheelErrorLabel" Text="" FontSize="Small" />
                 </StackLayout>
             </ScrollView>
             <Button Text="Далее" VerticalOptions="EndAndExpand" Margin="0, 15" Clicked="Continue_OnClicked" />

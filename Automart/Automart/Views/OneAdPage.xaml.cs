@@ -21,29 +21,81 @@ namespace Automart.Views
 
         async void Quit_Clicked(object sender, EventArgs e)
         {
+            CrossSettings.Current.AddOrUpdateValue("AdData", "");
             await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
         }
 
         async void Continue_OnClicked(object sender, EventArgs e)
         {
-            /*if (String.IsNullOrEmpty(VINEntry.Text))
+            string AdDataJson            = CrossSettings.Current.GetValueOrDefault("AdData", null);
+            var AdDict                   = JsonConvert.DeserializeObject<Dictionary<string, string>>(AdDataJson);
+            VINErrorLabel.Text           = "";
+            MarkErrorLabel.Text          = "";
+            ModelErrorLabel.Text         = "";
+            YearErrorLabel.Text          = "";
+            MileageErrorLabel.Text       = "";
+            KuzovErrorLabel.Text         = "";
+            ColorErrorLabel.Text         = "";
+            SteeringWheelErrorLabel.Text = "";
+            if (String.IsNullOrEmpty(VINEntry.Text))
             {
                 VINErrorLabel.Text = "Введите VIN";
                 VINErrorLabel.TextColor = Color.Red;
                 return;
             }
-            CrossSettings.Current.AddOrUpdateValue("Ad_VIN", VINEntry.Text);*/
-            Dictionary<string, string> OneAdDict = new Dictionary<string, string>();
-            OneAdDict.Add("VIN", VINEntry.Text);
-            OneAdDict.Add("Mark", MarkPicker.Items[MarkPicker.SelectedIndex]);
-            OneAdDict.Add("Model", ModelPicker.Items[ModelPicker.SelectedIndex]);
-            OneAdDict.Add("Year", YearPicker.Items[YearPicker.SelectedIndex]);
-            OneAdDict.Add("Mileage", MileageEntry.Text);
-            OneAdDict.Add("Kuzov", KuzovPicker.Items[KuzovPicker.SelectedIndex]);
-            OneAdDict.Add("Color", ColorPicker.Items[ColorPicker.SelectedIndex]);
-            OneAdDict.Add("SteeringWheel", SteeringWheelPicker.Items[SteeringWheelPicker.SelectedIndex]);
-            string OneAdJson = JsonConvert.SerializeObject(OneAdDict);
-            CrossSettings.Current.AddOrUpdateValue("OnePageJsonData", OneAdJson);
+            else AdDict.Add("VIN", VINEntry.Text);
+            if (MarkPicker.SelectedIndex.Equals(-1))
+            {
+                MarkErrorLabel.Text = "Выберите марку";
+                MarkErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Mark", MarkPicker.Items[MarkPicker.SelectedIndex]);
+            if (ModelPicker.SelectedIndex.Equals(-1))
+            {
+                ModelErrorLabel.Text = "Выберите модель";
+                ModelErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Model", ModelPicker.Items[ModelPicker.SelectedIndex]);
+            if (YearPicker.SelectedIndex.Equals(-1))
+            {
+                YearErrorLabel.Text = "Выберите год выпуска";
+                YearErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Year", YearPicker.Items[YearPicker.SelectedIndex]);
+            if (String.IsNullOrEmpty(MileageEntry.Text))
+            {
+                MileageErrorLabel.Text = "Введите пробег";
+                MileageErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Mileage", MileageEntry.Text);
+            if (KuzovPicker.SelectedIndex.Equals(-1))
+            {
+                KuzovErrorLabel.Text = "Выберите кузов";
+                KuzovErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Kuzov", KuzovPicker.Items[KuzovPicker.SelectedIndex]);
+            if (ColorPicker.SelectedIndex.Equals(-1))
+            {
+                ColorErrorLabel.Text = "Выберите цвет";
+                ColorErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("Color", ColorPicker.Items[ColorPicker.SelectedIndex]);
+            if (SteeringWheelPicker.SelectedIndex.Equals(-1))
+            {
+                SteeringWheelErrorLabel.Text = "Выберите руль";
+                SteeringWheelErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else AdDict.Add("SteeringWheel", SteeringWheelPicker.Items[SteeringWheelPicker.SelectedIndex]);
+
+            string AdJson = JsonConvert.SerializeObject(AdDict);
+            CrossSettings.Current.AddOrUpdateValue("AdData", AdJson);
             await Navigation.PushAsync(new NavigationPage(new TwoAdPage()));
         }
     }

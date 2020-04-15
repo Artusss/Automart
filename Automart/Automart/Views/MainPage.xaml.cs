@@ -42,7 +42,7 @@ namespace Automart.Views
         public MainPage()
         {
             InitializeComponent();
-
+            CrossSettings.Current.AddOrUpdateValue("AdData", "");
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
             if (String.IsNullOrEmpty(curUserVM_json))
             {
@@ -117,11 +117,14 @@ namespace Automart.Views
             var categoryAction = await DisplayActionSheet("Выберите категорию", CANCEL, null, PASS_AUTO, FREIGHT_AUTO);
             if (!categoryAction.Equals(CANCEL))
             {
-                CrossSettings.Current.AddOrUpdateValue("Ad_AutoType", categoryAction);
+                Dictionary<string, string> AdDict = new Dictionary<string, string>();
+                AdDict.Add("AutoType", categoryAction);
+                string AdDataJson = JsonConvert.SerializeObject(AdDict);
+                CrossSettings.Current.AddOrUpdateValue("AdData", AdDataJson);
                 await Navigation.PushModalAsync(new NavigationPage(new OneAdPage()));
             }
         }
-
+        
         async void SignIn_Clicked(object sender, EventArgs e)
         {
             SessionEnd();
