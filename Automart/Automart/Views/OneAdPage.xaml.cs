@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Newtonsoft;
 using Newtonsoft.Json;
+using Automart.ViewModels;
 
 namespace Automart.Views
 {
@@ -28,7 +29,7 @@ namespace Automart.Views
         async void Continue_OnClicked(object sender, EventArgs e)
         {
             string AdDataJson            = CrossSettings.Current.GetValueOrDefault("AdData", null);
-            var AdDict                   = JsonConvert.DeserializeObject<Dictionary<string, string>>(AdDataJson);
+            var adVM                     = JsonConvert.DeserializeObject<AdViewModel>(AdDataJson);
             VINErrorLabel.Text           = "";
             MarkErrorLabel.Text          = "";
             ModelErrorLabel.Text         = "";
@@ -43,58 +44,58 @@ namespace Automart.Views
                 VINErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("VIN", VINEntry.Text);
+            else adVM.VIN = VINEntry.Text;
             if (MarkPicker.SelectedIndex.Equals(-1))
             {
                 MarkErrorLabel.Text = "Выберите марку";
                 MarkErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Mark", MarkPicker.Items[MarkPicker.SelectedIndex]);
+            else adVM.Mark = MarkPicker.Items[MarkPicker.SelectedIndex];
             if (ModelPicker.SelectedIndex.Equals(-1))
             {
                 ModelErrorLabel.Text = "Выберите модель";
                 ModelErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Model", ModelPicker.Items[ModelPicker.SelectedIndex]);
+            else adVM.Model = ModelPicker.Items[ModelPicker.SelectedIndex];
             if (YearPicker.SelectedIndex.Equals(-1))
             {
                 YearErrorLabel.Text = "Выберите год выпуска";
                 YearErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Year", YearPicker.Items[YearPicker.SelectedIndex]);
+            else adVM.Year = YearPicker.Items[YearPicker.SelectedIndex];
             if (String.IsNullOrEmpty(MileageEntry.Text))
             {
                 MileageErrorLabel.Text = "Введите пробег";
                 MileageErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Mileage", MileageEntry.Text);
+            else adVM.Mileage = Convert.ToDouble(MileageEntry.Text);
             if (KuzovPicker.SelectedIndex.Equals(-1))
             {
                 KuzovErrorLabel.Text = "Выберите кузов";
                 KuzovErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Kuzov", KuzovPicker.Items[KuzovPicker.SelectedIndex]);
+            else adVM.Kuzov = KuzovPicker.Items[KuzovPicker.SelectedIndex];
             if (ColorPicker.SelectedIndex.Equals(-1))
             {
                 ColorErrorLabel.Text = "Выберите цвет";
                 ColorErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("Color", ColorPicker.Items[ColorPicker.SelectedIndex]);
+            else adVM.Color = ColorPicker.Items[ColorPicker.SelectedIndex];
             if (SteeringWheelPicker.SelectedIndex.Equals(-1))
             {
                 SteeringWheelErrorLabel.Text = "Выберите руль";
                 SteeringWheelErrorLabel.TextColor = Color.Red;
                 return;
             }
-            else AdDict.Add("SteeringWheel", SteeringWheelPicker.Items[SteeringWheelPicker.SelectedIndex]);
+            else adVM.SteeringWheel = SteeringWheelPicker.Items[SteeringWheelPicker.SelectedIndex];
 
-            string AdJson = JsonConvert.SerializeObject(AdDict);
+            string AdJson = JsonConvert.SerializeObject(adVM);
             CrossSettings.Current.AddOrUpdateValue("AdData", AdJson);
             await Navigation.PushAsync(new NavigationPage(new TwoAdPage()));
         }

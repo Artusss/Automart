@@ -6,7 +6,7 @@ using SQLite;
 
 namespace Automart.ViewModels
 {
-    class AdSQLiteHelper
+    public class AdSQLiteHelper
     {
         SQLiteConnection database;
 

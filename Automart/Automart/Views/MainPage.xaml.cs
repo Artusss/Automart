@@ -117,9 +117,9 @@ namespace Automart.Views
             var categoryAction = await DisplayActionSheet("Выберите категорию", CANCEL, null, PASS_AUTO, FREIGHT_AUTO);
             if (!categoryAction.Equals(CANCEL))
             {
-                Dictionary<string, string> AdDict = new Dictionary<string, string>();
-                AdDict.Add("AutoType", categoryAction);
-                string AdDataJson = JsonConvert.SerializeObject(AdDict);
+                AdViewModel adVM = new AdViewModel();
+                adVM.Type = categoryAction;
+                string AdDataJson = JsonConvert.SerializeObject(adVM);
                 CrossSettings.Current.AddOrUpdateValue("AdData", AdDataJson);
                 await Navigation.PushModalAsync(new NavigationPage(new OneAdPage()));
             }

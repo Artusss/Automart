@@ -8,7 +8,7 @@ using SQLite;
 namespace Automart.ViewModels
 {
     [Table("Advertisements")]
-    class AdViewModel : INotifyPropertyChanged
+    public class AdViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Advertisement advertisement;
@@ -42,15 +42,18 @@ namespace Automart.ViewModels
                 }
             }
         }
-        public string AutoType
+
+        // Общая инфа об авто
+
+        public string Type
         {
-            get { return advertisement.AutoType; }
+            get { return advertisement.Type; }
             set
             {
-                if (advertisement.AutoType != value)
+                if (advertisement.Type != value)
                 {
-                    advertisement.AutoType = value;
-                    OnPropertyChanged("AutoType");
+                    advertisement.Type = value;
+                    OnPropertyChanged("Type");
                 }
             }
         }
@@ -66,27 +69,63 @@ namespace Automart.ViewModels
                 }
             }
         }
-        public string GovNumber
+        public string Mark
         {
-            get { return advertisement.GovNumber; }
+            get { return advertisement.Mark; }
             set
             {
-                if (advertisement.GovNumber != value)
+                if (advertisement.Mark != value)
                 {
-                    advertisement.GovNumber = value;
-                    OnPropertyChanged("GovNumber");
+                    advertisement.Mark = value;
+                    OnPropertyChanged("Mark");
                 }
             }
         }
-        public string AutoMark
+        public string Model
         {
-            get { return advertisement.AutoMark; }
+            get { return advertisement.Model; }
             set
             {
-                if (advertisement.AutoMark != value)
+                if (advertisement.Model != value)
                 {
-                    advertisement.AutoMark = value;
-                    OnPropertyChanged("AutoMark");
+                    advertisement.Model = value;
+                    OnPropertyChanged("Model");
+                }
+            }
+        }
+        public string Year
+        {
+            get { return advertisement.Year; }
+            set
+            {
+                if (advertisement.Year != value)
+                {
+                    advertisement.Year = value;
+                    OnPropertyChanged("Year");
+                }
+            }
+        }
+        public double Mileage
+        {
+            get { return advertisement.Mileage; }
+            set
+            {
+                if (advertisement.Mileage != value)
+                {
+                    advertisement.Mileage = value;
+                    OnPropertyChanged("Mileage");
+                }
+            }
+        }
+        public string Kuzov
+        {
+            get { return advertisement.Kuzov; }
+            set
+            {
+                if (advertisement.Kuzov != value)
+                {
+                    advertisement.Kuzov = value;
+                    OnPropertyChanged("Kuzov");
                 }
             }
         }
@@ -114,19 +153,69 @@ namespace Automart.ViewModels
                 }
             }
         }
-        public double EngineVolume
+
+        // Двигатель и трансмиссия
+
+        public string DvigType
         {
-            get { return advertisement.EngineVolume; }
+            get { return advertisement.DvigType; }
             set
             {
-                if (advertisement.EngineVolume != value)
+                if (advertisement.DvigType != value)
                 {
-                    advertisement.EngineVolume = value;
-                    OnPropertyChanged("EngineVolume");
+                    advertisement.DvigType = value;
+                    OnPropertyChanged("DvigType");
                 }
             }
         }
-
+        public string KPP
+        {
+            get { return advertisement.KPP; }
+            set
+            {
+                if (advertisement.KPP != value)
+                {
+                    advertisement.KPP = value;
+                    OnPropertyChanged("KPP");
+                }
+            }
+        }
+        public string DriveUnit
+        {
+            get { return advertisement.DriveUnit; }
+            set
+            {
+                if (advertisement.DriveUnit != value)
+                {
+                    advertisement.DriveUnit = value;
+                    OnPropertyChanged("DriveUnit");
+                }
+            }
+        }
+        public double Volume
+        {
+            get { return advertisement.Volume; }
+            set
+            {
+                if (advertisement.Volume != value)
+                {
+                    advertisement.Volume = value;
+                    OnPropertyChanged("Volume");
+                }
+            }
+        }
+        public double Power
+        {
+            get { return advertisement.Power; }
+            set
+            {
+                if (advertisement.Power != value)
+                {
+                    advertisement.Power = value;
+                    OnPropertyChanged("Power");
+                }
+            }
+        }
         // В будущем еще фотографии ракурсов
         public DateTime Created_at
         {
