@@ -9,12 +9,4 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="ToMainToolBar" Order="Default" Text="На главную" Clicked="ToMain_Clicked" />
     </ContentPage.ToolbarItems>
-
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Страница объявления"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

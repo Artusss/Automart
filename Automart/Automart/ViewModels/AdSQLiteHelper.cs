@@ -38,7 +38,25 @@ namespace Automart.ViewModels
                 database.Update(adVM);
                 return adVM.Id;
             }
-            return database.Insert(adVM);
+            database.Insert(adVM);
+            return adVM.Id;
+        }
+
+        public List<AdViewModel> GetByUser(int User_id)
+        {
+            var adsVM = from ad in database.Table<AdViewModel>()
+                        where ad.UserId.Equals(User_id) 
+                        orderby ad.Created_at descending
+                        select ad;
+            return adsVM.ToList();
+        }
+
+        public AdViewModel GetById(int id)
+        {
+            var adsVM = from ad in database.Table<AdViewModel>()
+                        where ad.Id.Equals(id)
+                        select ad;
+            return adsVM.ToList().FirstOrDefault();
         }
     }
 }

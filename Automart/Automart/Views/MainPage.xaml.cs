@@ -39,6 +39,19 @@ namespace Automart.Views
             }
         }
 
+        public static AdSQLiteHelper adSQLiteH;
+        public static AdSQLiteHelper AdSQLiteH
+        {
+            get
+            {
+                if (adSQLiteH == null)
+                {
+                    adSQLiteH = new AdSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return adSQLiteH;
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
@@ -75,21 +88,41 @@ namespace Automart.Views
                     Text     = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}",
                     FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
+                signedSL.Children.Add(UserNameLabel);
+
                 Label AdsLabel = new Label
                 {
                     Text      = "Объявления",
                     TextColor = Color.Black,
                     FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
-                Label AdsListLabel = new Label
+                signedSL.Children.Add(AdsLabel);
+
+                List<AdViewModel> AdVMs = AdSQLiteH.GetByUser(curUserVM.Id);
+                if (AdVMs.Count == 0)
                 {
-                    Text = "У вас пока нет объявлений",
-                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
-                };
-                Label UserCreatedAtLabel = new Label {
+                    Label AdsListLabel = new Label
+                    {
+                        Text = "У вас пока нет объявлений",
+                        FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
+                    };
+                    signedSL.Children.Add(AdsListLabel);
+                }
+                else
+                {
+                    ListView AdVMsLV = new ListView
+                    {
+                        ItemsSource = AdVMs
+                    };
+                    AdVMsLV.ItemSelected += ToAdPage_ItemSelected;
+                    signedSL.Children.Add(AdVMsLV);
+                }
+                /*Label UserCreatedAtLabel = new Label {
                     Text     = $"{curUserVM.Created_at.ToString()}",
                     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
                 };
+                signedSL.Children.Add(UserCreatedAtLabel);*/
+
                 Button AddAdvertisement = new Button {
                     Text              = "Добавить объявление",
                     BackgroundColor   = Color.Green,
@@ -102,12 +135,8 @@ namespace Automart.Views
                     Padding           = new Thickness(50, 0)
                 };
                 AddAdvertisement.Clicked += AddAd_Clicked;
-
-                signedSL.Children.Add(UserNameLabel);
-                signedSL.Children.Add(UserCreatedAtLabel);
-                signedSL.Children.Add(AdsLabel);
-                signedSL.Children.Add(AdsListLabel);
                 signedSL.Children.Add(AddAdvertisement);
+
                 this.Content = signedSL;
             }
         }
@@ -124,7 +153,17 @@ namespace Automart.Views
                 await Navigation.PushModalAsync(new NavigationPage(new OneAdPage()));
             }
         }
-        
+
+        async void ToAdPage_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            AdViewModel selectedAd = (AdViewModel)e.SelectedItem;
+            if(selectedAd != null)
+            {
+                CrossSettings.Current.AddOrUpdateValue("CurrentAdId", selectedAd.Id);
+                await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
+            }
+        }
+
         async void SignIn_Clicked(object sender, EventArgs e)
         {
             SessionEnd();

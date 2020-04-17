@@ -17,7 +17,7 @@ namespace Automart.Views
     public partial class TwoAdPage : ContentPage
     {
         public static AdSQLiteHelper adSQLiteH;
-        public static AdSQLiteHelper AdSQLiteHelper
+        public static AdSQLiteHelper AdSQLiteH
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Automart.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            //InfoLabel.Text = CrossSettings.Current.GetValueOrDefault("AdData", null); ;
+            //InfoLabel.Text = CrossSettings.Current.GetValueOrDefault("current_user", null); ;
         }
 
         async void Quit_Clicked(object sender, EventArgs e)
@@ -46,6 +46,11 @@ namespace Automart.Views
         async void AddAd_OnClicked(object sender, EventArgs e)
         {
             string AdDataJson        = CrossSettings.Current.GetValueOrDefault("AdData", null);
+            if (String.IsNullOrEmpty(AdDataJson))
+            {
+                await DisplayAlert("Предупреждение", "Не удалось создать объявление", "ОК");
+                return;
+            }
             var adVM                 = JsonConvert.DeserializeObject<AdViewModel>(AdDataJson);
             DvigTypeErrorLabel.Text  = "";
             KPPErrorLabel.Text       = "";
@@ -90,14 +95,12 @@ namespace Automart.Views
 
             CrossSettings.Current.AddOrUpdateValue("AdData", "");
             string curUserVM_json   = CrossSettings.Current.GetValueOrDefault("current_user", null);
-            UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
-            adVM.UserId             = curUserVM.Id;
+            int curUserVMId         = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json).Id;
+            adVM.UserId             = curUserVMId;
             adVM.Created_at         = DateTime.Now;
 
-            int CurrentAdId = adSQLiteH.SaveItem(adVM);
+            int CurrentAdId = AdSQLiteH.SaveItem(adVM);
             CrossSettings.Current.AddOrUpdateValue("CurrentAdId", CurrentAdId);
-
-
             await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
         }
     }
