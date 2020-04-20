@@ -10,12 +10,16 @@ using Automart.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Automart.Models;
+using System.Net;
 
 namespace Automart.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
+        public const string SMSAeroEMAIL = "avolkov@kit-consulting.ru";
+        public const string SMSAeroAPI_KEY = "0o6XHJWLAIfmXb1jmyuPs8UQXQzU";
+        public const string SMSAeroURI = "https://gate.smsaero.ru";
         public const int PASS_LENGTH = 10;
         public static UserSQLiteHelper userSQLiteH;
         public static UserSQLiteHelper UserSQLiteH
@@ -77,9 +81,20 @@ namespace Automart.Views
                 Created_at = DateTime.Now
             };
 
+            string phoneNumber = LoginEntry.Text
+                .Replace("+", "")
+                .Replace("(", "")
+                .Replace(")", "")
+                .Replace("-", "")
+                .Replace(" ", "");
+            string sendMessageParams = "number=" + phoneNumber + "&text=" + password + "&sign=SMS+Aero&channel=DIRECT";
+            var sendMessageUri       = new Uri(String.Concat(SMSAeroURI, "/v2/sms/send?", sendMessageParams));
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sendMessageUri);
+            request.Credentials = new NetworkCredential(SMSAeroEMAIL, SMSAeroAPI_KEY);
+            HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
+
             UserSQLiteH.SaveItem(userVM);
-            var smsMessenger = CrossMessaging.Current.SmsMessenger;
-            if (smsMessenger.CanSendSms) smsMessenger.SendSms(LoginEntry.Text, password);
             await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
 
