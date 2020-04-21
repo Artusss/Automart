@@ -9,15 +9,115 @@ using Xamarin.Forms.Xaml;
 using Newtonsoft;
 using Newtonsoft.Json;
 using Automart.ViewModels;
+using System.IO;
 
 namespace Automart.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OneAdPage : ContentPage
     {
+        public static MarkSQLiteHelper markSQLiteH;
+        public static MarkSQLiteHelper MarkSQLiteH
+        {
+            get
+            {
+                if (markSQLiteH == null)
+                {
+                    markSQLiteH = new MarkSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return markSQLiteH;
+            }
+        }
+
+        public static ModelSQLiteHelper modelSQLiteH;
+        public static ModelSQLiteHelper ModelSQLiteH
+        {
+            get
+            {
+                if (modelSQLiteH == null)
+                {
+                    modelSQLiteH = new ModelSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return modelSQLiteH;
+            }
+        }
+
+        public static KuzovSQLiteHelper kuzovSQLiteH;
+        public static KuzovSQLiteHelper KuzovSQLiteH
+        {
+            get
+            {
+                if (kuzovSQLiteH == null)
+                {
+                    kuzovSQLiteH = new KuzovSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return kuzovSQLiteH;
+            }
+        }
+
+        public static YearSQLiteHelper yearSQLiteH;
+        public static YearSQLiteHelper YearSQLiteH
+        {
+            get
+            {
+                if (yearSQLiteH == null)
+                {
+                    yearSQLiteH = new YearSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return yearSQLiteH;
+            }
+        }
+
+        public static ColorSQLiteHelper colorSQLiteH;
+        public static ColorSQLiteHelper ColorSQLiteH
+        {
+            get
+            {
+                if (colorSQLiteH == null)
+                {
+                    colorSQLiteH = new ColorSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return colorSQLiteH;
+            }
+        }
         public OneAdPage()
         {
             InitializeComponent();
+            /*List<string> MarkItemsList = new List<string>()
+            {};
+            List<MarkViewModel> MarkVMs = new List<MarkViewModel>();
+            foreach (string MarkItem in MarkItemsList)
+            {
+                MarkVMs.Add(new MarkViewModel(){ Value = MarkItem });
+            }
+            MarkSQLiteH.SaveItems(MarkVMs);*/
+
+            foreach (var Mark in MarkSQLiteH.GetItems())
+            {
+                MarkPicker.Items.Add(Mark.Value);
+            }
+            foreach (var Model in ModelSQLiteH.GetItems())
+            {
+                ModelPicker.Items.Add(Model.Value);
+            }
+            foreach (var Kuzov in KuzovSQLiteH.GetItems())
+            {
+                KuzovPicker.Items.Add(Kuzov.Value);
+            }
+            foreach (var Year in YearSQLiteH.GetItems())
+            {
+                YearPicker.Items.Add(Year.Value);
+            }
+            foreach (var Color in ColorSQLiteH.GetItems())
+            {
+                ColorPicker.Items.Add(Color.Value);
+            }
+
         }
 
         async void Quit_Clicked(object sender, EventArgs e)
@@ -41,6 +141,12 @@ namespace Automart.Views
             if (String.IsNullOrEmpty(VINEntry.Text))
             {
                 VINErrorLabel.Text = "Введите VIN";
+                VINErrorLabel.TextColor = Color.Red;
+                return;
+            }
+            else if (VINEntry.Text.Length < 10 || VINEntry.Text.Length > 17)
+            {
+                VINErrorLabel.Text = "VIN должен содержать от 10 до 17 символов";
                 VINErrorLabel.TextColor = Color.Red;
                 return;
             }

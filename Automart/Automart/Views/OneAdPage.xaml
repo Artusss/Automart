@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.OneAdPage">
 
     <ContentPage.ToolbarItems>
@@ -16,76 +17,44 @@
             <ScrollView>
                 <StackLayout>
                     <Label x:Name="VINLabel" Text="VIN" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="VINEntry" />
+                    <Entry x:Name="VINEntry" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="17" MinLength="10"/>
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label x:Name="VINErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="MarkPicker">
-                        <Picker.Items>
-                            <x:String>Марка1</x:String>
-                            <x:String>Марка2</x:String>
-                            <x:String>Марка3</x:String>
-                            <x:String>Марка4</x:String>
-                            <x:String>Марка5</x:String>
-                            <x:String>Марка6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="MarkPicker" />
+
                     <Label x:Name="MarkErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="ModelPicker">
-                        <Picker.Items>
-                            <x:String>Модель1</x:String>
-                            <x:String>Модель2</x:String>
-                            <x:String>Модель3</x:String>
-                            <x:String>Модель4</x:String>
-                            <x:String>Модель5</x:String>
-                            <x:String>Модель6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="ModelPicker" />
+
                     <Label x:Name="ModelErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="YearPicker">
-                        <Picker.Items>
-                            <x:String>Дата1</x:String>
-                            <x:String>Дата2</x:String>
-                            <x:String>Дата3</x:String>
-                            <x:String>Дата4</x:String>
-                            <x:String>Дата5</x:String>
-                            <x:String>Дата6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="YearPicker" />
+
                     <Label x:Name="YearErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="0" />
+                    <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="8"/>
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label x:Name="MileageErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="KuzovPicker">
-                        <Picker.Items>
-                            <x:String>Кузов1</x:String>
-                            <x:String>Кузов2</x:String>
-                            <x:String>Кузов3</x:String>
-                            <x:String>Кузов4</x:String>
-                            <x:String>Кузов5</x:String>
-                            <x:String>Кузов6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="KuzovPicker" />
+
                     <Label x:Name="KuzovErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" />
-                    <Picker x:Name="ColorPicker">
-                        <Picker.Items>
-                            <x:String>Цвет1</x:String>
-                            <x:String>Цвет2</x:String>
-                            <x:String>Цвет3</x:String>
-                            <x:String>Цвет4</x:String>
-                            <x:String>Цвет5</x:String>
-                            <x:String>Цвет6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="ColorPicker" />
+
                     <Label x:Name="ColorErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="SteeringWheelLabel" Text="Руль" FontSize="Medium" />

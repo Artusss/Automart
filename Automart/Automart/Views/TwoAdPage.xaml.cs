@@ -91,6 +91,12 @@ namespace Automart.Views
                 PowerErrorLabel.TextColor = Color.Red;
                 return;
             }
+            else if (PowerEntry.Text.Length < 2 || PowerEntry.Text.Length > 6)
+            {
+                PowerErrorLabel.Text = "Мощность должна содержать от 2 до 6 символов";
+                PowerErrorLabel.TextColor = Color.Red;
+                return;
+            }
             else adVM.Power = Convert.ToDouble(PowerEntry.Text);
 
             CrossSettings.Current.AddOrUpdateValue("AdData", "");

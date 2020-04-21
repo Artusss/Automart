@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.TwoAdPage">
     
     <ContentPage.ToolbarItems>
@@ -55,11 +56,19 @@
                     <Label x:Name="DriveUnitErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="VolumeLabel" Text="Объем, л" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="VolumeEntry" Keyboard="Numeric" Text="0"/>
+                    <Entry x:Name="VolumeEntry" Keyboard="Numeric" Text="" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="8" MinLength="1"/>
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label x:Name="VolumeErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="PowerLabel" Text="Мощность, л.с." FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="PowerEntry" Keyboard="Numeric" Text="0"/>
+                    <Entry x:Name="PowerEntry" Keyboard="Numeric" Text="" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="6" MinLength="2"/>
+                        </Entry.Behaviors>
+                    </Entry>
                     <Label x:Name="PowerErrorLabel" Text="" FontSize="Small" />
                 </StackLayout>
             </ScrollView>
