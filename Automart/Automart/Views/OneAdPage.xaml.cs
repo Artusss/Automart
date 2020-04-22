@@ -88,14 +88,6 @@ namespace Automart.Views
         public OneAdPage()
         {
             InitializeComponent();
-            /*List<string> MarkItemsList = new List<string>()
-            {};
-            List<MarkViewModel> MarkVMs = new List<MarkViewModel>();
-            foreach (string MarkItem in MarkItemsList)
-            {
-                MarkVMs.Add(new MarkViewModel(){ Value = MarkItem });
-            }
-            MarkSQLiteH.SaveItems(MarkVMs);*/
 
             foreach (var Mark in MarkSQLiteH.GetItems())
             {

@@ -29,12 +29,74 @@ namespace Automart.Views
                 return adSQLiteH;
             }
         }
+
+        public static DvigTypeSQLiteHelper dvigTypeSQLiteH;
+        public static DvigTypeSQLiteHelper DvigTypeSQLiteH
+        {
+            get
+            {
+                if (dvigTypeSQLiteH == null)
+                {
+                    dvigTypeSQLiteH = new DvigTypeSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return dvigTypeSQLiteH;
+            }
+        }
+
+        public static KPPSQLiteHelper kPPSQLiteH;
+        public static KPPSQLiteHelper KPPSQLiteH
+        {
+            get
+            {
+                if (kPPSQLiteH == null)
+                {
+                    kPPSQLiteH = new KPPSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return kPPSQLiteH;
+            }
+        }
+
+        public static DriveUnitSQLiteHelper driveUnitSQLiteH;
+        public static DriveUnitSQLiteHelper DriveUnitSQLiteH
+        {
+            get
+            {
+                if (driveUnitSQLiteH == null)
+                {
+                    driveUnitSQLiteH = new DriveUnitSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return driveUnitSQLiteH;
+            }
+        }
         public TwoAdPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            //InfoLabel.Text = CrossSettings.Current.GetValueOrDefault("current_user", null); ;
+            /*List<string> DvigTypeItemsList = new List<string>()
+            {*//* DATA HERE *//*};
+            List<DvigTypeViewModel> DvigTypeVMs = new List<DvigTypeViewModel>();
+            foreach (string DvigTypeItem in DvigTypeItemsList)
+            {
+                DvigTypeVMs.Add(new DvigTypeViewModel() { Value = DvigTypeItem });
+            }
+            DvigTypeSQLiteH.SaveItems(DvigTypeVMs);*/
+
+            foreach (var DvigType in DvigTypeSQLiteH.GetItems())
+            {
+                DvigTypePicker.Items.Add(DvigType.Value);
+            }
+            foreach (var KPP in KPPSQLiteH.GetItems())
+            {
+                KPPPicker.Items.Add(KPP.Value);
+            }
+            foreach (var DriveUnit in DriveUnitSQLiteH.GetItems())
+            {
+                DriveUnitPicker.Items.Add(DriveUnit.Value);
+            }
         }
 
         async void Quit_Clicked(object sender, EventArgs e)

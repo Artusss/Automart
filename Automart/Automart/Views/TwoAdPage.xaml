@@ -17,42 +17,16 @@
             <ScrollView>
                 <StackLayout>
                     <Label x:Name="DvigTypeLabel" Text="Тип двигателя" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="DvigTypePicker">
-                        <Picker.Items>
-                            <x:String>ТипДвигателя1</x:String>
-                            <x:String>ТипДвигателя2</x:String>
-                            <x:String>ТипДвигателя3</x:String>
-                            <x:String>ТипДвигателя4</x:String>
-                            <x:String>ТипДвигателя5</x:String>
-                            <x:String>ТипДвигателя6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="DvigTypePicker" />
+
                     <Label x:Name="DvigTypeErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="KPPLabel" Text="КПП" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="KPPPicker">
-                        <Picker.Items>
-                            <x:String>КПП1</x:String>
-                            <x:String>КПП2</x:String>
-                            <x:String>КПП3</x:String>
-                            <x:String>КПП4</x:String>
-                            <x:String>КПП5</x:String>
-                            <x:String>КПП6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="KPPPicker" />
                     <Label x:Name="KPPErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="DriveUnitLabel" Text="Привод" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="DriveUnitPicker">
-                        <Picker.Items>
-                            <x:String>Привод1</x:String>
-                            <x:String>Привод2</x:String>
-                            <x:String>Привод3</x:String>
-                            <x:String>Привод4</x:String>
-                            <x:String>Привод5</x:String>
-                            <x:String>Привод6</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Picker x:Name="DriveUnitPicker" />
                     <Label x:Name="DriveUnitErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="VolumeLabel" Text="Объем, л" FontSize="Medium" TextColor="Black" />
