@@ -76,14 +76,15 @@ namespace Automart.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            /*List<string> DvigTypeItemsList = new List<string>()
-            {*//* DATA HERE *//*};
-            List<DvigTypeViewModel> DvigTypeVMs = new List<DvigTypeViewModel>();
-            foreach (string DvigTypeItem in DvigTypeItemsList)
+            /*KPPSQLiteH.DeleteAll();
+            List<string> KPPItemsList = new List<string>()
+            {DATA HERE};
+            List<KPPViewModel> KPPVMs = new List<KPPViewModel>();
+            foreach (string KPPItem in KPPItemsList)
             {
-                DvigTypeVMs.Add(new DvigTypeViewModel() { Value = DvigTypeItem });
+                KPPVMs.Add(new KPPViewModel() { Value = KPPItem });
             }
-            DvigTypeSQLiteH.SaveItems(DvigTypeVMs);*/
+            KPPSQLiteH.SaveItems(KPPVMs);*/
 
             foreach (var DvigType in DvigTypeSQLiteH.GetItems())
             {

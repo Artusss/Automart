@@ -29,5 +29,10 @@ namespace Automart.ViewModels
                 database.Insert(MarkVM);
             }
         }
+
+        public void DeleteAll()
+        {
+            database.DeleteAll<KPPViewModel>();
+        }
     }
 }
