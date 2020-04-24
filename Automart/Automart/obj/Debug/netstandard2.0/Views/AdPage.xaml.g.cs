@@ -20,9 +20,13 @@ namespace Automart.Views {
         private global::Xamarin.Forms.ToolbarItem ToMainToolBar;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Plugin.InputKit.Shared.Controls.Dropdown MoreInfoDD;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AdPage));
             ToMainToolBar = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "ToMainToolBar");
+            MoreInfoDD = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.Dropdown>(this, "MoreInfoDD");
         }
     }
 }

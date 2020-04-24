@@ -34,8 +34,7 @@ namespace Automart.Views
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             var AdVM = AdSQLiteHelper.GetById(CurrentAdId);
-
-            StackLayout AdSL = new StackLayout
+            /*StackLayout AdSL = new StackLayout
             {
                 Margin = new Thickness(10, 0),
                 Padding = new Thickness(10)
@@ -167,7 +166,21 @@ namespace Automart.Views
                 Content = stackLayout
             };
             AdSL.Children.Add(scrollView);
-            this.Content = AdSL;
+            this.Content = AdSL;*/
+
+            MoreInfoDD.ItemsSource = new List<string>()
+            {
+                $"VIN:         {AdVM.VIN}",
+                $"Тип:         {AdVM.Type}",
+                $"Марка:       {AdVM.Mark}",
+                $"Модель:      {AdVM.Model}",
+                $"Год выпуска: {AdVM.Year}",
+                $"Пробег:      {AdVM.Mileage} км",
+                $"Кузов:       {AdVM.Kuzov}",
+                $"Цвет:        {AdVM.Color}",
+                $"Руль:        {AdVM.SteeringWheel}",
+            };
+            //MoreInfoDD.IsEditable = false;
         }
 
         async void ToMain_Clicked(object sender, EventArgs e)

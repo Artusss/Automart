@@ -14,7 +14,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10" Margin="10, 0">
             <Label x:Name="MainAutoAboutLabel" Text="Данные по автомобилю" FontSize="Large" TextColor="Black" />
-            <ScrollView>
+            <ScrollView HorizontalScrollBarVisibility="Default">
                 <StackLayout>
                     <Label x:Name="VINLabel" Text="VIN" FontSize="Medium" TextColor="Black" />
                     <Entry x:Name="VINEntry" >

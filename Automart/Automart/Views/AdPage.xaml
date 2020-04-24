@@ -4,9 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              x:Class="Automart.Views.AdPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="ToMainToolBar" Order="Default" Text="На главную" Clicked="ToMain_Clicked" />
     </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <input:Dropdown x:Name="MoreInfoDD"
+                TitleColor="Black"
+                TextColor="Black"
+                Placeholder="Общая информация"
+                            />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

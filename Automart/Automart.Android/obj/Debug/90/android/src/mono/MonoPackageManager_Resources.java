@@ -6,6 +6,7 @@ public class MonoPackageManager_Resources {
 		"Automart.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"Plugin.InputKit.dll",
 		"Plugin.Messaging.Abstractions.dll",
 		"Plugin.Messaging.dll",
 		"Plugin.Settings.Abstractions.dll",

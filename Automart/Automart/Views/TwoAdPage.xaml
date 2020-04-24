@@ -14,7 +14,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10" Margin="10, 0">
             <Label x:Name="DvigTransAboutLabel" Text="Двигатель и трансмиссия" FontSize="Large" TextColor="Black" />
-            <ScrollView>
+            <ScrollView VerticalScrollBarVisibility="Default">
                 <StackLayout>
                     <Label x:Name="DvigTypeLabel" Text="Тип двигателя" FontSize="Medium" TextColor="Black" />
                     <Picker x:Name="DvigTypePicker" />
