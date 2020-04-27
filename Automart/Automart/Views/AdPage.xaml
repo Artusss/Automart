@@ -12,12 +12,46 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <input:Dropdown x:Name="MoreInfoDD"
-                TitleColor="Black"
-                TextColor="Black"
-                Placeholder="Общая информация"
-                            />
+        <StackLayout x:Name="AdSL" Margin="10, 0" Padding="10">
+            <Label x:Name="InfoLabel" Text="" FontSize="Large" TextColor="Black" />
+            <ScrollView x:Name="scrollView">
+                <StackLayout x:Name="stackLayout">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontSize="Medium" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
+                        <Button x:Name="MainInfoTapButton" TextColor="Black" Text="^" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="MainInfoSL" IsVisible="False">
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="DvigTransAboutLabel" TextColor="Black" Text="Двигатель и трансмиссия" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Button x:Name="DvigTransSLTapButton" TextColor="Black" Text="^" Clicked="DvigTransTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="DvigTransSL" IsVisible="False">
+
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="KomplektnostAboutLabel" TextColor="Black" Text="Комплектность" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Button x:Name="KomplektnostSLTapButton" TextColor="Black" Text="^" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="KomplektnostSL" IsVisible="False">
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="KomplektacyaAboutLabel" TextColor="Black" Text="Комплектация" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" Text="^" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="KomplektacyaSL" IsVisible="False">
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="PTSCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="PTSLabel" TextColor="Black" Text="ПТС" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Button x:Name="SaveButton" Text="Сохранить" Clicked="SaveButton_Clicked" VerticalOptions="EndAndExpand" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -116,6 +116,8 @@ namespace Automart.Views
                     };
                     AdVMsLV.ItemSelected += ToAdPage_ItemSelected;
                     signedSL.Children.Add(AdVMsLV);
+                    /*CollectionView adVMsCV = new CollectionView();
+                    adVMsCV.SetBinding(ItemsView.ItemsSourceProperty, "AdVMs");*/
                 }
                 /*Label UserCreatedAtLabel = new Label {
                     Text     = $"{curUserVM.Created_at.ToString()}",
