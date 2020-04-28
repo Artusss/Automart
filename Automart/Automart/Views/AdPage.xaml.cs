@@ -186,5 +186,23 @@ namespace Automart.Views
             }
             KomplektacyaSL.IsVisible = true;
         }
+        void CommentsTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (CommentsSL.IsVisible)
+            {
+                CommentsSL.IsVisible = false;
+                return;
+            }
+            CommentsSL.IsVisible = true;
+        }
+        void SafetyTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (SafetySL.IsVisible)
+            {
+                SafetySL.IsVisible = false;
+                return;
+            }
+            SafetySL.IsVisible = true;
+        }
     }
 }
