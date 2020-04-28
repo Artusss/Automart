@@ -293,7 +293,123 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                
+
+
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="СomfortAboutLabel" TextColor="Black" Text="Комфорт" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="СomfortSLTapButton" TextColor="Black" Text="^" Clicked="СomfortTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="СomfortSL" IsVisible="False">
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="PowerWindowsLabel" TextColor="Black" Text="Электростеклоподъемники" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="FrontPowerWindowCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="FrontPowerWindowLabel" TextColor="Black" Text="Передние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="BackPowerWindowCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="BackPowerWindowLabel" TextColor="Black" Text="Задние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="DoorCurtainsPowerWindowCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="DoorCurtainsPowerWindowLabel" TextColor="Black" Text="Шторки дверей" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="RearWindowBlindPowerWindowCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="RearWindowBlindPowerWindowLabel" TextColor="Black" Text="Шторка заднего стекла" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label x:Name="PowerSteeringLabel" TextColor="Black" Text="Усилитель руля" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <input:RadioButtonGroupView x:Name="PowerSteeringRB" Padding="10">
+                                                <input:RadioButton Text="Гидроусилитель" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Электрогидроусилитель" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Электроусилитель" TextColor="Black" TextFontSize="14" />
+                                            </input:RadioButtonGroupView>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="SensorsLabel" TextColor="Black" Text="Датчики" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="RainSensorCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="RainSensorLabel" TextColor="Black" Text="Датчик дождя" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="LightSensorCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="LightSensorLabel" TextColor="Black" Text="Датчик света" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label x:Name="ClimatLabel" TextColor="Black" Text="Климат" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <input:RadioButtonGroupView x:Name="ClimatRB" Padding="10">
+                                                <input:RadioButton Text="Кондиционер" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Климат-контроль 1-зонный" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Климат-контроль 2-зонный" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Климат-контроль 3-зонный и выше" TextColor="Black" TextFontSize="14" />
+                                            </input:RadioButtonGroupView>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="FrontSeatVentCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="FrontSeatVentLabel" TextColor="Black" Text="Вентиляция передних сидений" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="BackSeatVentCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="BackSeatVentLabel" TextColor="Black" Text="Вентиляция задних сидений" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="CruiseControlCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="CruiseControlLabel" TextColor="Black" Text="Круиз-контроль" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="MultimediaLabel" TextColor="Black" Text="Мультимедиа" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="CassetteMultimediaCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="CassetteMultimediaLabel" TextColor="Black" Text="Кассетная" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="CDMultimediaCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="CDMultimediaLabel" TextColor="Black" Text="CD" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="DVDMultimediaCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="DVDMultimediaLabel" TextColor="Black" Text="DVD" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="USBMultimediaCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="USBMultimediaLabel" TextColor="Black" Text="USB" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="AUXMultimediaCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="AUXMultimediaLabel" TextColor="Black" Text="AUX" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="NavSysCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="NavSysLabel" TextColor="Black" Text="Навигационная система" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="OnBoardCompCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="OnBoardCompLabel" TextColor="Black" Text="Бортовой компьютер" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="CamerasLabel" TextColor="Black" Text="Камеры" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="FrontCameraCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="FrontCameraLabel" TextColor="Black" Text="Переднего вида" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="BackCameraCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="BackCameraLabel" TextColor="Black" Text="Заднего вида" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="SideInMirrorsCameraCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="SideInMirrorsCameraLabel" TextColor="Black" Text="Боковые в зеркалах" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+
+
                             </StackLayout>
                         </StackLayout>
                     </Frame>
