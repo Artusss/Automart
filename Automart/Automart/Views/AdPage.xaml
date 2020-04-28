@@ -206,7 +206,39 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="LightingAboutLabel" TextColor="Black" Text="Освещение" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="LightingSLTapButton" TextColor="Black" Text="^" Clicked="LightingTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="LightingSL" IsVisible="False">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label x:Name="LightsTypeLabel" TextColor="Black" Text="Тип фар" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <input:RadioButtonGroupView x:Name="LightsTypeRB" Padding="10">
+                                                <input:RadioButton Text="Галогенные" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Ксеноновые" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Биксеноновые" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Светодиодные" TextColor="Black" TextFontSize="14" />
+                                            </input:RadioButtonGroupView>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="FogLightsCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="FogLightsLabel" TextColor="Black" Text="Противотуманные фары" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="DayRunLightsCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="DayRunLightsLabel" TextColor="Black" Text="Огни дневного хода" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="HeadlightWashersCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="HeadlightWashersLabel" TextColor="Black" Text="Омыватели фар" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="HeadlightRimLightsCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="HeadlightRimLightsLabel" TextColor="Black" Text="Освещение ободков фар" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
                                 
                                 
                             </StackLayout>

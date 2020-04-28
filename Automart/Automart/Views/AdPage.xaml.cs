@@ -204,5 +204,14 @@ namespace Automart.Views
             }
             SafetySL.IsVisible = true;
         }
+        void LightingTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (LightingSL.IsVisible)
+            {
+                LightingSL.IsVisible = false;
+                return;
+            }
+            LightingSL.IsVisible = true;
+        }
     }
 }
