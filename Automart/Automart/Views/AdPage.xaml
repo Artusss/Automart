@@ -17,14 +17,14 @@
             <ScrollView x:Name="scrollView">
                 <StackLayout x:Name="stackLayout">
                     <StackLayout Orientation="Horizontal">
-                        <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontSize="Medium" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
+                        <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontSize="Large" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
                         <Button x:Name="MainInfoTapButton" TextColor="Black" Text="^" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                     </StackLayout>
                     <StackLayout x:Name="MainInfoSL" IsVisible="False">
 
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label x:Name="DvigTransAboutLabel" TextColor="Black" Text="Двигатель и трансмиссия" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Label x:Name="DvigTransAboutLabel" TextColor="Black" Text="Двигатель и трансмиссия" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                         <Button x:Name="DvigTransSLTapButton" TextColor="Black" Text="^" Clicked="DvigTransTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                     </StackLayout>
                     <StackLayout x:Name="DvigTransSL" IsVisible="False">
@@ -32,22 +32,95 @@
                     </StackLayout>
                     
                     <StackLayout Orientation="Horizontal">
-                        <Label x:Name="KomplektnostAboutLabel" TextColor="Black" Text="Комплектность" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Label x:Name="KomplektnostAboutLabel" TextColor="Black" Text="Комплектность" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                         <Button x:Name="KomplektnostSLTapButton" TextColor="Black" Text="^" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                     </StackLayout>
                     <StackLayout x:Name="KomplektnostSL" IsVisible="False">
-
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal">
-                        <Label x:Name="KomplektacyaAboutLabel" TextColor="Black" Text="Комплектация" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                        <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" Text="^" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
-                    </StackLayout>
-                    <StackLayout x:Name="KomplektacyaSL" IsVisible="False">
                         <StackLayout Orientation="Horizontal">
                             <CheckBox x:Name="PTSCheckBox" VerticalOptions="Center"/>
                             <Label x:Name="PTSLabel" TextColor="Black" Text="ПТС" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                         </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="RukovCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="RukovLabel" TextColor="Black" Text="Руководство" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="AptechkaCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="AptechkaLabel" TextColor="Black" Text="Аптечка" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="BoltKeyCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="BoltKeyLabel" TextColor="Black" Text="Ключ для секретных болтов" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="KeyCollectionLabel" TextColor="Black" Text="Комплект ключей" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Entry x:Name="KeyCollectionEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="ZapaskaLabel" TextColor="Black" Text="Запасное колесо" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <input:RadioButtonGroupView x:Name="ZapaskaRB">
+                                <input:RadioButton Text="Полноразмерное" TextColor="Black" TextFontSize="16" />
+                                <input:RadioButton Text="Докатка" TextColor="Black" TextFontSize="16" />
+                                <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="16" />
+                            </input:RadioButtonGroupView>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="ServiceBookCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="ServiceBookLabel" TextColor="Black" Text="Сервисная книжка" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="ToolsCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="ToolsLabel" TextColor="Black" Text="Инструменты" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="FireExtCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="FireExtLabel" TextColor="Black" Text="Огнетушитель" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="JackCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="JackLabel" TextColor="Black" Text="Домкрат" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label x:Name="WheelCollectionLabel" TextColor="Black" Text="Комплект колес" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Entry x:Name="WheelCollectionEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="MatCollectionLabel" TextColor="Black" Text="Комплект ковриков" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <input:RadioButtonGroupView x:Name="MatCollectionRB">
+                                <input:RadioButton Text="Ткань" TextColor="Black" TextFontSize="16" />
+                                <input:RadioButton Text="Резина" TextColor="Black" TextFontSize="16" />
+                                <input:RadioButton Text="Ткань и резина" TextColor="Black" TextFontSize="16" />
+                                <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="16" />
+                            </input:RadioButtonGroupView>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="RegCertCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="RegCertLabel" TextColor="Black" Text="Свидетельство о регистрации" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="TriangleCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="TriangleLabel" TextColor="Black" Text="Треугольник" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="BaloonKeyCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="BaloonKeyLabel" TextColor="Black" Text="Балонный ключ" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="CompressorCheckBox" VerticalOptions="Center"/>
+                            <Label x:Name="CompressorLabel" TextColor="Black" Text="Компрессор" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="ExtraKomplektnostLabel" TextColor="Black" Text="Дополнительно" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <Editor x:Name="ExtraKomplektnostEditor" HeightRequest="100" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="KomplektacyaAboutLabel" TextColor="Black" Text="Комплектация" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" Text="^" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout x:Name="KomplektacyaSL" IsVisible="False">
+
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
