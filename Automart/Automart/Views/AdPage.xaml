@@ -239,7 +239,60 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="HeatingAboutLabel" TextColor="Black" Text="Обогревы" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="HeatingSLTapButton" TextColor="Black" Text="^" Clicked="HeatingTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="HeatingSL" IsVisible="False">
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="MirrorHeatingCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="MirrorHeatingLabel" TextColor="Black" Text="Обогрев зеркал" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="StearingWheelHeatingCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="StearingWheelHeatingLabel" TextColor="Black" Text="Подогрев руля" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="SeatHeatingLabel" TextColor="Black" Text="Подогрев сидений" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="FrontSeatHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="FrontSeatHeatingLabel" TextColor="Black" Text="Передние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="BackSeatHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="BackSeatHeatingLabel" TextColor="Black" Text="Задние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="GlassHeatingLabel" TextColor="Black" Text="Обогрев стекол" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="BackGlassHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="BackGlassHeatingLabel" TextColor="Black" Text="Заднее" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="RelaxGlassHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="RelaxGlassHeatingLabel" TextColor="Black" Text="Зона покоя стеклоочистителей" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="NozzlesGlassHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="NozzlesGlassHeatingLabel" TextColor="Black" Text="Форсунки" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="FrontGlassHeatingCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="FrontGlassHeatingLabel" TextColor="Black" Text="Лобовое" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="PreheaterCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="PreheaterLabel" TextColor="Black" Text="Предпусковой подогреватель" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="EngineHeaterCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="EngineHeaterLabel" TextColor="Black" Text="Догреватель двигателя" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
                                 
                             </StackLayout>
                         </StackLayout>

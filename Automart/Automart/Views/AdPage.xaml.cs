@@ -213,5 +213,14 @@ namespace Automart.Views
             }
             LightingSL.IsVisible = true;
         }
+        void HeatingTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (HeatingSL.IsVisible)
+            {
+                HeatingSL.IsVisible = false;
+                return;
+            }
+            HeatingSL.IsVisible = true;
+        }
     }
 }
