@@ -15,7 +15,7 @@ namespace Automart.Views
     public partial class AdPage : ContentPage
     {
         public static AdSQLiteHelper adSQLiteH;
-        public static AdSQLiteHelper AdSQLiteHelper
+        public static AdSQLiteHelper AdSQLiteH
         {
             get
             {
@@ -27,14 +27,26 @@ namespace Automart.Views
                 return adSQLiteH;
             }
         }
-        public bool MainInfoSL_visible = false;
-        public bool DvigTransSL_visible = false;
+
+        public static KomplektnostSQLiteHelper komplektnostSQLiteH;
+        public static KomplektnostSQLiteHelper KomplektnostSQLiteH
+        {
+            get
+            {
+                if (komplektnostSQLiteH == null)
+                {
+                    komplektnostSQLiteH = new KomplektnostSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return komplektnostSQLiteH;
+            }
+        }
         public AdPage()
         {
             InitializeComponent();
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-            var AdVM = AdSQLiteHelper.GetById(CurrentAdId);
+            var AdVM = AdSQLiteH.GetById(CurrentAdId);
 
             InfoLabel.Text = $"Объявление № {CurrentAdId}";
 
@@ -136,6 +148,27 @@ namespace Automart.Views
             };
             DvigTransSL.Children.Add(PowerLabel);
 
+            ////////////////////////////////////////////////////////////////////
+            var komplektnostVM = KomplektnostSQLiteH.GetByAd(CurrentAdId);
+            KeyCollectionEntry.Text       = Convert.ToString(komplektnostVM.KeyCollection);
+            WheelCollectionEntry.Text     = Convert.ToString(komplektnostVM.WheelCollection);
+            ExtraKomplektnostEditor.Text  = komplektnostVM.ExtraKomplektnost;
+            //ZapaskaRB.SelectedItem        = ZapaskaRB.FindByName(komplektnostVM.Zapaska);
+            //MatCollectionRB.SelectedItem  = MatCollectionRB.FindByName(komplektnostVM.MatCollection);
+            PTSCheckBox.IsChecked         = komplektnostVM.PTS;
+            RukovCheckBox.IsChecked       = komplektnostVM.Rukov;
+            AptechkaCheckBox.IsChecked    = komplektnostVM.Aptechka;
+            BoltKeyCheckBox.IsChecked     = komplektnostVM.BoltKey;
+            ServiceBookCheckBox.IsChecked = komplektnostVM.ServiceBook;
+            ToolsCheckBox.IsChecked       = komplektnostVM.Tools;
+            FireExtCheckBox.IsChecked     = komplektnostVM.FireExt;
+            JackCheckBox.IsChecked        = komplektnostVM.Jack;
+            RegCertCheckBox.IsChecked     = komplektnostVM.RegCert;
+            TriangleCheckBox.IsChecked    = komplektnostVM.Triangle;
+            BaloonKeyCheckBox.IsChecked   = komplektnostVM.BaloonKey;
+            CompressorCheckBox.IsChecked  = komplektnostVM.Compressor;
+            ////////////////////////////////////////////////////////////////////
+
             this.Content = AdSL;
         }
 
@@ -146,7 +179,29 @@ namespace Automart.Views
         
         async void KomplektnostSaveButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
+            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            KomplektnostViewModel komplektnostVM = KomplektnostSQLiteH.GetByAd(CurrentAdId);
+            if (komplektnostVM == null) return;
+            komplektnostVM.KeyCollection     = Convert.ToInt32(KeyCollectionEntry.Text);
+            komplektnostVM.WheelCollection   = Convert.ToInt32(WheelCollectionEntry.Text);
+            //komplektnostVM.Zapaska           = ZapaskaRB.SelectedItem.ToString();
+            //komplektnostVM.MatCollection     = MatCollectionRB.SelectedItem.ToString();
+            komplektnostVM.ExtraKomplektnost = ExtraKomplektnostEditor.Text;
+            komplektnostVM.PTS               = PTSCheckBox.IsChecked;
+            komplektnostVM.Rukov             = RukovCheckBox.IsChecked;
+            komplektnostVM.Aptechka          = AptechkaCheckBox.IsChecked;
+            komplektnostVM.BoltKey           = BoltKeyCheckBox.IsChecked;
+            komplektnostVM.ServiceBook       = ServiceBookCheckBox.IsChecked;
+            komplektnostVM.Tools             = ToolsCheckBox.IsChecked;
+            komplektnostVM.FireExt           = FireExtCheckBox.IsChecked;
+            komplektnostVM.Jack              = JackCheckBox.IsChecked;
+            komplektnostVM.RegCert           = RegCertCheckBox.IsChecked;
+            komplektnostVM.Triangle          = TriangleCheckBox.IsChecked;
+            komplektnostVM.BaloonKey         = BaloonKeyCheckBox.IsChecked;
+            komplektnostVM.Compressor        = CompressorCheckBox.IsChecked;
+            KomplektnostSQLiteH.SaveItem(komplektnostVM);
+            await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
         }
 
         async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)

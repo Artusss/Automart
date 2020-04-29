@@ -71,7 +71,7 @@
                                     <input:RadioButtonGroupView x:Name="ZapaskaRB" Padding="10">
                                         <input:RadioButton Text="Полноразмерное" TextColor="Black" TextFontSize="16" />
                                         <input:RadioButton Text="Докатка" TextColor="Black" TextFontSize="16" />
-                                        <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="16" />
+                                        <input:RadioButton Text="Отсутствует" TextColor="Black" TextFontSize="16" />
                                     </input:RadioButtonGroupView>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
@@ -100,7 +100,7 @@
                                         <input:RadioButton Text="Ткань" TextColor="Black" TextFontSize="16" />
                                         <input:RadioButton Text="Резина" TextColor="Black" TextFontSize="16" />
                                         <input:RadioButton Text="Ткань и резина" TextColor="Black" TextFontSize="16" />
-                                        <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="16" />
+                                        <input:RadioButton Text="Отсутствует" TextColor="Black" TextFontSize="16" />
                                     </input:RadioButtonGroupView>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
