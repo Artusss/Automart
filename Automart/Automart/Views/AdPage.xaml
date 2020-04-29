@@ -444,6 +444,26 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="SecuritySysAboutLabel" TextColor="Black" Text="Охранные системы" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="SecuritySysSLTapButton" TextColor="Black" Text="^" Clicked="SecuritySysTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="SecuritySysSL" IsVisible="False">
+                                        <StackLayout Orientation = "Horizontal" >
+                                            <CheckBox x:Name="CentralLockingCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="CentralLockingLabel" TextColor="Black" Text="Центральный замок" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation = "Horizontal" >
+                                            <CheckBox x:Name="SignalingCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="SignalingLabel" TextColor="Black" Text="Сигнализация" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation = "Horizontal" >
+                                            <CheckBox x:Name="KeylessAccessCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="KeylessAccessLabel" TextColor="Black" Text="Бесключевой доступ" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
                                 
                                 
                                 

@@ -240,9 +240,18 @@ namespace Automart.Views
             }
             ExteriorSL.IsVisible = true;
         }
+        void SecuritySysTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (SecuritySysSL.IsVisible)
+            {
+                SecuritySysSL.IsVisible = false;
+                return;
+            }
+            SecuritySysSL.IsVisible = true;
+        }
     }
 }
-                                        /*<StackLayout Orientation = "Horizontal" >
+                                      /*<StackLayout Orientation = "Horizontal" >
                                             < CheckBox x:Name="CheckBox" VerticalOptions="Center"/>
                                             <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         </StackLayout>
