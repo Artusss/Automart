@@ -144,7 +144,12 @@ namespace Automart.Views
             await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
         }
         
-        async void SaveButton_Clicked(object sender, EventArgs e)
+        async void KomplektnostSaveButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+        }
+
+        async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
         }

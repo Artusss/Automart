@@ -45,6 +45,7 @@
                                 <Button x:Name="KomplektnostSLTapButton" TextColor="Black" Text="^" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektnostSL" IsVisible="False">
+                                <Button x:Name="KomplektnostSaveButton" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                                 <StackLayout Orientation="Horizontal">
                                     <CheckBox x:Name="PTSCheckBox" VerticalOptions="Center"/>
                                     <Label x:Name="PTSLabel" TextColor="Black" Text="ПТС" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
@@ -132,7 +133,8 @@
                                 <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" Text="^" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektacyaSL" IsVisible="False">
-                                <StackLayout Padding="5">
+                                <Button x:Name="KomplektacyaSave1Button" TextColor="Black" Text="Сохранить" Clicked="KomplektacyaSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="SafetyAboutLabel" TextColor="Black" Text="Безопасность" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="SafetySLTapButton" TextColor="Black" Text="^" Clicked="SafetyTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -206,7 +208,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="LightingAboutLabel" TextColor="Black" Text="Освещение" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="LightingSLTapButton" TextColor="Black" Text="^" Clicked="LightingTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -239,7 +241,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="HeatingAboutLabel" TextColor="Black" Text="Обогревы" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="HeatingSLTapButton" TextColor="Black" Text="^" Clicked="HeatingTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -293,7 +295,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="СomfortAboutLabel" TextColor="Black" Text="Комфорт" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="СomfortSLTapButton" TextColor="Black" Text="^" Clicked="СomfortTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -406,7 +408,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="ExteriorAboutLabel" TextColor="Black" Text="Экстерьер" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="ExteriorSLTapButton" TextColor="Black" Text="^" Clicked="ExteriorTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -441,7 +443,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="SecuritySysAboutLabel" TextColor="Black" Text="Охранные системы" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="SecuritySysSLTapButton" TextColor="Black" Text="^" Clicked="SecuritySysTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -461,7 +463,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="AdjustmentsAboutLabel" TextColor="Black" Text="Регулировки" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="AdjustmentsSLTapButton" TextColor="Black" Text="^" Clicked="AdjustmentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -512,7 +514,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="InteriorAboutLabel" TextColor="Black" Text="Интерьер" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="InteriorSLTapButton" TextColor="Black" Text="^" Clicked="InteriorTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -549,7 +551,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <StackLayout Padding="5">
+                                <StackLayout Padding="10">
                                     <StackLayout Orientation="Horizontal">
                                         <Label x:Name="ExtraKomplektacyaAboutLabel" TextColor="Black" Text="Дополнительно" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                         <Button x:Name="ExtraKomplektacyaSLTapButton" TextColor="Black" Text="^" Clicked="ExtraKomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -577,6 +579,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
+                                <Button x:Name="KomplektacyaSave2Button" TextColor="Black" Text="Сохранить" Clicked="KomplektacyaSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -588,13 +591,12 @@
                             </StackLayout>
                             <StackLayout x:Name="CommentsSL" IsVisible="False">
                                 <Label x:Name="ExtraCommentInfoLabel" TextColor="Black" Text="Дополнительная информация для Аукциона" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                
+
                             </StackLayout>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
             </ScrollView>
-            <Button x:Name="SaveButton" Text="Сохранить" Clicked="SaveButton_Clicked" VerticalOptions="EndAndExpand" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
