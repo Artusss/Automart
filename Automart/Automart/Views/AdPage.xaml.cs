@@ -8,6 +8,9 @@ using Automart.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.Settings;
+using Newtonsoft.Json;
+using Xamarin.Forms.Internals;
+using Plugin.InputKit.Shared.Controls;
 
 namespace Automart.Views
 {
@@ -153,8 +156,6 @@ namespace Automart.Views
             KeyCollectionEntry.Text       = Convert.ToString(komplektnostVM.KeyCollection);
             WheelCollectionEntry.Text     = Convert.ToString(komplektnostVM.WheelCollection);
             ExtraKomplektnostEditor.Text  = komplektnostVM.ExtraKomplektnost;
-            //ZapaskaRB.SelectedItem        = ZapaskaRB.FindByName(komplektnostVM.Zapaska);
-            //MatCollectionRB.SelectedItem  = MatCollectionRB.FindByName(komplektnostVM.MatCollection);
             PTSCheckBox.IsChecked         = komplektnostVM.PTS;
             RukovCheckBox.IsChecked       = komplektnostVM.Rukov;
             AptechkaCheckBox.IsChecked    = komplektnostVM.Aptechka;
@@ -167,6 +168,14 @@ namespace Automart.Views
             TriangleCheckBox.IsChecked    = komplektnostVM.Triangle;
             BaloonKeyCheckBox.IsChecked   = komplektnostVM.BaloonKey;
             CompressorCheckBox.IsChecked  = komplektnostVM.Compressor;
+            foreach (var Zapaska in ZapaskaRB.Children)
+            {
+                if (Zapaska is RadioButton ZapaskaRB && ZapaskaRB.Text.Equals(komplektnostVM.Zapaska)) ZapaskaRB.IsChecked = true;
+            }
+            foreach (var MatCollection in MatCollectionRB.Children)
+            {
+                if (MatCollection is RadioButton MatCollectionRB && MatCollectionRB.Text.Equals(komplektnostVM.MatCollection)) MatCollectionRB.IsChecked = true;
+            }
             ////////////////////////////////////////////////////////////////////
 
             this.Content = AdSL;
@@ -185,8 +194,14 @@ namespace Automart.Views
             if (komplektnostVM == null) return;
             komplektnostVM.KeyCollection     = Convert.ToInt32(KeyCollectionEntry.Text);
             komplektnostVM.WheelCollection   = Convert.ToInt32(WheelCollectionEntry.Text);
-            //komplektnostVM.Zapaska           = ZapaskaRB.SelectedItem.ToString();
-            //komplektnostVM.MatCollection     = MatCollectionRB.SelectedItem.ToString();
+            foreach (var Zapaska in ZapaskaRB.Children)
+            {
+                if (Zapaska is RadioButton ZapaskaRB && ZapaskaRB.IsChecked) komplektnostVM.Zapaska = ZapaskaRB.Text;
+            }
+            foreach (var MatCollection in MatCollectionRB.Children)
+            {
+                if (MatCollection is RadioButton MatCollectionRB && MatCollectionRB.IsChecked) komplektnostVM.MatCollection = MatCollectionRB.Text;
+            }
             komplektnostVM.ExtraKomplektnost = ExtraKomplektnostEditor.Text;
             komplektnostVM.PTS               = PTSCheckBox.IsChecked;
             komplektnostVM.Rukov             = RukovCheckBox.IsChecked;
@@ -201,7 +216,8 @@ namespace Automart.Views
             komplektnostVM.BaloonKey         = BaloonKeyCheckBox.IsChecked;
             komplektnostVM.Compressor        = CompressorCheckBox.IsChecked;
             KomplektnostSQLiteH.SaveItem(komplektnostVM);
-            await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
+            await DisplayAlert("", "Комплектность успешно сохранена", "OK");
+            return;
         }
 
         async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)
@@ -338,14 +354,3 @@ namespace Automart.Views
         }
     }
 }
-                                      /*<StackLayout Orientation = "Horizontal" >
-                                            < CheckBox x:Name="CheckBox" VerticalOptions="Center"/>
-                                            <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" Padding="5">
-                                            <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                            <StackLayout Orientation = "Horizontal" >
-                                                < CheckBox x:Name="CheckBox" VerticalOptions="Center"/>
-                                                <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                            </StackLayout>
-                                        </StackLayout>*/
