@@ -258,6 +258,24 @@ namespace Automart.Views
             }
             AdjustmentsSL.IsVisible = true;
         }
+        void InteriorTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (InteriorSL.IsVisible)
+            {
+                InteriorSL.IsVisible = false;
+                return;
+            }
+            InteriorSL.IsVisible = true;
+        }
+        void ExtraKomplektacyaTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (ExtraKomplektacyaSL.IsVisible)
+            {
+                ExtraKomplektacyaSL.IsVisible = false;
+                return;
+            }
+            ExtraKomplektacyaSL.IsVisible = true;
+        }
     }
 }
                                       /*<StackLayout Orientation = "Horizontal" >
