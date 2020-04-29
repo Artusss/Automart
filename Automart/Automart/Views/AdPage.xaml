@@ -464,7 +464,57 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="AdjustmentsAboutLabel" TextColor="Black" Text="Регулировки" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="AdjustmentsSLTapButton" TextColor="Black" Text="^" Clicked="AdjustmentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="AdjustmentsSL" IsVisible="False">
+                                        <StackLayout Orientation = "Vertical" Padding="5">
+                                            <Label x:Name="DriverSeatAdjustmentLabel" TextColor="Black" Text="Регулировка сиденья водителя" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="HeightDriverSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="HeightDriverSeatAdjustmentLabel" TextColor="Black" Text="По высоте" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="ElectricDriverSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="ElectricDriverSeatAdjustmentLabel" TextColor="Black" Text="Электропривод" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="MemoryDriverSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="MemoryDriverSeatAdjustmentLabel" TextColor="Black" Text="С памятью" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation = "Vertical" Padding="5">
+                                            <Label x:Name="PassSeatAdjustmentLabel" TextColor="Black" Text="Регулировка сиденья пассажира" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="HeightPassSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="HeightPassSeatAdjustmentLabel" TextColor="Black" Text="По высоте" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="ElectricPassSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="ElectricPassSeatAdjustmentLabel" TextColor="Black" Text="Электропривод" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="MemoryPassSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="MemoryPassSeatAdjustmentLabel" TextColor="Black" Text="С памятью" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <CheckBox x:Name="ElectricBackPassSeatAdjustmentCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="ElectricBackPassSeatAdjustmentLabel" TextColor="Black" Text="Электропривод задних сидений" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label x:Name="SteeringWheelAdjustmentLabel" TextColor="Black" Text="Регулировка руля" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <input:RadioButtonGroupView x:Name="SteeringWheelAdjustmentRB" Padding="10">
+                                                <input:RadioButton Text="По высоте" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="По высоте и вылету" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="Электропривод" TextColor="Black" TextFontSize="14" />
+                                                <input:RadioButton Text="С памятью" TextColor="Black" TextFontSize="14" />
+                                            </input:RadioButtonGroupView>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
                                 
                                 
                                 

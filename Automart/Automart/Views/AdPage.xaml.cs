@@ -249,6 +249,15 @@ namespace Automart.Views
             }
             SecuritySysSL.IsVisible = true;
         }
+        void AdjustmentsTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (AdjustmentsSL.IsVisible)
+            {
+                AdjustmentsSL.IsVisible = false;
+                return;
+            }
+            AdjustmentsSL.IsVisible = true;
+        }
     }
 }
                                       /*<StackLayout Orientation = "Horizontal" >
