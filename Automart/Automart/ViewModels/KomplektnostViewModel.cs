@@ -8,7 +8,7 @@ using SQLite;
 namespace Automart.ViewModels
 {
     [Table("Komplektnost_dev01")]
-    class KomplektnostViewModel : INotifyPropertyChanged
+    public class KomplektnostViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Komplektnost komplektnost;
@@ -31,15 +31,15 @@ namespace Automart.ViewModels
             }
         }
 
-        public int UserId
+        public int AdId
         {
-            get { return komplektnost.UserId; }
+            get { return komplektnost.AdId; }
             set
             {
-                if (komplektnost.UserId != value)
+                if (komplektnost.AdId != value)
                 {
-                    komplektnost.UserId = value;
-                    OnPropertyChanged("UserId");
+                    komplektnost.AdId = value;
+                    OnPropertyChanged("AdId");
                 }
             }
         }

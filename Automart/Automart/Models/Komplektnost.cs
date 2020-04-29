@@ -7,7 +7,7 @@ namespace Automart.Models
     class Komplektnost
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public int AdId { get; set; }
 
         public int KeyCollection { get; set; }
         public int WheelCollection { get; set; }
