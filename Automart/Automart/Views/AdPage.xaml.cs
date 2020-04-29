@@ -227,130 +227,59 @@ namespace Automart.Views
 
         void MainInfoTapButton_Clicked(object sender, EventArgs e)
         {
-            if (MainInfoSL.IsVisible)
-            {
-                MainInfoSL.IsVisible = false;
-                return;
-            }
-            MainInfoSL.IsVisible = true;
+            MainInfoSL.IsVisible = MainInfoSL.IsVisible ? false : true;
         }
         void DvigTransTapButton_Clicked(object sender, EventArgs e)
         {
-            if (DvigTransSL.IsVisible)
-            {
-                DvigTransSL.IsVisible = false;
-                return;
-            }
-            DvigTransSL.IsVisible = true;
+            DvigTransSL.IsVisible = DvigTransSL.IsVisible ? false : true;
         }
-
         void KomplektnostTapButton_Clicked(object sender, EventArgs e)
         {
-            if (KomplektnostSL.IsVisible)
-            {
-                KomplektnostSL.IsVisible = false;
-                return;
-            }
-            KomplektnostSL.IsVisible = true;
+            KomplektnostSL.IsVisible = KomplektnostSL.IsVisible ? false : true;
         }
         void KomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
-            if (KomplektacyaSL.IsVisible)
-            {
-                KomplektacyaSL.IsVisible = false;
-                return;
-            }
-            KomplektacyaSL.IsVisible = true;
+            KomplektacyaSL.IsVisible = KomplektacyaSL.IsVisible ? false : true;
         }
         void CommentsTapButton_Clicked(object sender, EventArgs e)
         {
-            if (CommentsSL.IsVisible)
-            {
-                CommentsSL.IsVisible = false;
-                return;
-            }
-            CommentsSL.IsVisible = true;
+            CommentsSL.IsVisible = CommentsSL.IsVisible ? false : true;
         }
         void SafetyTapButton_Clicked(object sender, EventArgs e)
         {
-            if (SafetySL.IsVisible)
-            {
-                SafetySL.IsVisible = false;
-                return;
-            }
-            SafetySL.IsVisible = true;
+            SafetySL.IsVisible = SafetySL.IsVisible ? false : true;
         }
         void LightingTapButton_Clicked(object sender, EventArgs e)
         {
-            if (LightingSL.IsVisible)
-            {
-                LightingSL.IsVisible = false;
-                return;
-            }
-            LightingSL.IsVisible = true;
+            LightingSL.IsVisible = LightingSL.IsVisible ? false : true;
         }
         void HeatingTapButton_Clicked(object sender, EventArgs e)
         {
-            if (HeatingSL.IsVisible)
-            {
-                HeatingSL.IsVisible = false;
-                return;
-            }
-            HeatingSL.IsVisible = true;
+            HeatingSL.IsVisible = HeatingSL.IsVisible ? false : true;
         }
         void СomfortTapButton_Clicked(object sender, EventArgs e)
         {
-            if (СomfortSL.IsVisible)
-            {
-                СomfortSL.IsVisible = false;
-                return;
-            }
-            СomfortSL.IsVisible = true;
+            СomfortSL.IsVisible = СomfortSL.IsVisible ? false : true;
         }
         void ExteriorTapButton_Clicked(object sender, EventArgs e)
         {
-            if (ExteriorSL.IsVisible)
-            {
-                ExteriorSL.IsVisible = false;
-                return;
-            }
-            ExteriorSL.IsVisible = true;
+            ExteriorSL.IsVisible = ExteriorSL.IsVisible ? false : true;
         }
         void SecuritySysTapButton_Clicked(object sender, EventArgs e)
         {
-            if (SecuritySysSL.IsVisible)
-            {
-                SecuritySysSL.IsVisible = false;
-                return;
-            }
-            SecuritySysSL.IsVisible = true;
+            SecuritySysSL.IsVisible = SecuritySysSL.IsVisible ? false : true;
         }
         void AdjustmentsTapButton_Clicked(object sender, EventArgs e)
         {
-            if (AdjustmentsSL.IsVisible)
-            {
-                AdjustmentsSL.IsVisible = false;
-                return;
-            }
-            AdjustmentsSL.IsVisible = true;
+            AdjustmentsSL.IsVisible = AdjustmentsSL.IsVisible ? false : true;
         }
         void InteriorTapButton_Clicked(object sender, EventArgs e)
         {
-            if (InteriorSL.IsVisible)
-            {
-                InteriorSL.IsVisible = false;
-                return;
-            }
-            InteriorSL.IsVisible = true;
+            InteriorSL.IsVisible = InteriorSL.IsVisible ? false : true;
         }
         void ExtraKomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
-            if (ExtraKomplektacyaSL.IsVisible)
-            {
-                ExtraKomplektacyaSL.IsVisible = false;
-                return;
-            }
-            ExtraKomplektacyaSL.IsVisible = true;
+            ExtraKomplektacyaSL.IsVisible = ExtraKomplektacyaSL.IsVisible ? false : true;
         }
     }
 }
