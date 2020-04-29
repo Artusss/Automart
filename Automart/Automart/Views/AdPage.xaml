@@ -408,6 +408,47 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
+                                
+                                <StackLayout Padding="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="ExteriorAboutLabel" TextColor="Black" Text="Экстерьер" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="ExteriorSLTapButton" TextColor="Black" Text="^" Clicked="ExteriorTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="ExteriorSL" IsVisible="False">
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="AlloyWheelsCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="AlloyWheelsLabel" TextColor="Black" Text="Легкосплавные диски" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" Padding="5">
+                                            <Label x:Name="TintedGlassLabel" TextColor="Black" Text="Тонированные стекла" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="FrontTintedGlassCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="FrontTintedGlassLabel" TextColor="Black" Text="Передние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <CheckBox x:Name="BackTintedGlassCheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="BackTintedGlassLabel" TextColor="Black" Text="Задние" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="HitchCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="HitchLabel" TextColor="Black" Text="Тягово-сцепное устройство (фаркоп)" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="RoofRailsCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="RoofRailsLabel" TextColor="Black" Text="Рейлинги" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <CheckBox x:Name="TrunkCheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="TrunkLabel" TextColor="Black" Text="Поперечины рейлингов (багажник)" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                
+                                
+                                
+                                
+                                
 
 
                             </StackLayout>

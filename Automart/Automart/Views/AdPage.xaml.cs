@@ -231,5 +231,25 @@ namespace Automart.Views
             }
             СomfortSL.IsVisible = true;
         }
+        void ExteriorTapButton_Clicked(object sender, EventArgs e)
+        {
+            if (ExteriorSL.IsVisible)
+            {
+                ExteriorSL.IsVisible = false;
+                return;
+            }
+            ExteriorSL.IsVisible = true;
+        }
     }
 }
+                                        /*<StackLayout Orientation = "Horizontal" >
+                                            < CheckBox x:Name="CheckBox" VerticalOptions="Center"/>
+                                            <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation = "Vertical" Padding="5">
+                                            <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            <StackLayout Orientation = "Horizontal" >
+                                                < CheckBox x:Name="CheckBox" VerticalOptions="Center"/>
+                                                <Label x:Name="Label" TextColor="Black" Text="" FontSize="Small"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                        </StackLayout>*/
