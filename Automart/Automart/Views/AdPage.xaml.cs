@@ -315,7 +315,11 @@ namespace Automart.Views
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             KomplektnostViewModel komplektnostVM = KomplektnostSQLiteH.GetByAd(CurrentAdId);
-            if (komplektnostVM == null) return;
+            if (komplektnostVM == null)
+            {
+                await DisplayAlert("", "Не удалось сохранить", "Cancel");
+                return;
+            }
             komplektnostVM.KeyCollection     = Convert.ToInt32(KeyCollectionEntry.Text);
             komplektnostVM.WheelCollection   = Convert.ToInt32(WheelCollectionEntry.Text);
             komplektnostVM.Zapaska           = GetterRB(ZapaskaRB);
@@ -343,9 +347,118 @@ namespace Automart.Views
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             KomplektacyaViewModel komplektacyaVM = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
-            if (komplektacyaVM == null) return;
-            // Add to cur fields here
-            await DisplayAlert("", "Комплектность успешно сохранена", "OK");
+            if (komplektacyaVM == null)
+            {
+                await DisplayAlert("", "Не удалось сохранить", "Cancel");
+                return; 
+            }
+
+            Safety safety             = JsonConvert.DeserializeObject<Safety>(komplektacyaVM.Safety);
+            safety.TractionControlSys = TractionControlSysCheckBox.IsChecked;
+            safety.AntiLockSys        = AntiLockSysCheckBox.IsChecked;
+            safety.CursStable         = CursStableCheckBox.IsChecked;
+            safety.DifBlockSys        = DifBlockSysCheckBox.IsChecked;
+            safety.BrakeForceDistSys  = BrakeForceDistSysCheckBox.IsChecked;
+            safety.ParkHelperSys      = ParkHelperSysCheckBox.IsChecked;
+            safety.DeadZoneContr      = DeadZoneContrCheckBox.IsChecked;
+            safety.AdjacentStripSys   = AdjacentStripSysCheckBox.IsChecked;
+            safety.VoditelAirBag      = VoditelAirBagCheckBox.IsChecked;
+            safety.FrontPassAirBag    = FrontPassAirBagCheckBox.IsChecked;
+            safety.BackPassAirBag     = BackPassAirBagCheckBox.IsChecked;
+            safety.SideAirBag         = SideAirBagCheckBox.IsChecked;
+            safety.CurtainsAirBag     = CurtainsAirBagCheckBox.IsChecked;
+            safety.FrontParkSens      = FrontParkSensCheckBox.IsChecked;
+            safety.BackParkSens       = BackParkSensCheckBox.IsChecked;
+            komplektacyaVM.Safety     = JsonConvert.SerializeObject(safety);
+
+            Lightning lightning          = JsonConvert.DeserializeObject<Lightning>(komplektacyaVM.Lightning);
+            lightning.LightsType         = GetterRB(LightsTypeRB);
+            lightning.FogLights          = FogLightsCheckBox.IsChecked;
+            lightning.DayRunLights       = DayRunLightsCheckBox.IsChecked;
+            lightning.HeadlightWashers   = HeadlightWashersCheckBox.IsChecked;
+            lightning.HeadlightRimLights = HeadlightRimLightsCheckBox.IsChecked;
+            komplektacyaVM.Lightning     = JsonConvert.SerializeObject(lightning);
+
+            Heating heating        = JsonConvert.DeserializeObject<Heating>(komplektacyaVM.Heating);
+            heating.Mirror         = MirrorHeatingCheckBox.IsChecked;
+            heating.StearingWheel  = StearingWheelHeatingCheckBox.IsChecked;
+            heating.FrontSeat      = FrontSeatHeatingCheckBox.IsChecked;
+            heating.BackSeat       = BackSeatHeatingCheckBox.IsChecked;
+            heating.BackGlass      = BackGlassHeatingCheckBox.IsChecked;
+            heating.RelaxGlass     = RelaxGlassHeatingCheckBox.IsChecked;
+            heating.NozzlesGlass   = NozzlesGlassHeatingCheckBox.IsChecked;
+            heating.FrontGlass     = FrontGlassHeatingCheckBox.IsChecked;
+            heating.Preheater      = PreheaterCheckBox.IsChecked;
+            heating.EngineHeater   = EngineHeaterCheckBox.IsChecked;
+            komplektacyaVM.Heating = JsonConvert.SerializeObject(heating);
+
+            Comfort comfort                    = JsonConvert.DeserializeObject<Comfort>(komplektacyaVM.Comfort);
+            comfort.FrontPowerWindow           = FrontPowerWindowCheckBox.IsChecked;
+            comfort.BackPowerWindow            = BackPowerWindowCheckBox.IsChecked;
+            comfort.DoorCurtainsPowerWindow    = DoorCurtainsPowerWindowCheckBox.IsChecked;
+            comfort.RearWindowBlindPowerWindow = RearWindowBlindPowerWindowCheckBox.IsChecked;
+            comfort.PowerSteering              = GetterRB(PowerSteeringRB);
+            comfort.RainSensor                 = RainSensorCheckBox.IsChecked;
+            comfort.LightSensor                = LightSensorCheckBox.IsChecked;
+            comfort.Climat                     = GetterRB(ClimatRB);
+            comfort.FrontSeatVent              = FrontSeatVentCheckBox.IsChecked;
+            comfort.BackSeatVent               = BackSeatVentCheckBox.IsChecked;
+            comfort.CruiseControl              = CruiseControlCheckBox.IsChecked;
+            comfort.CassetteMultimedia         = CassetteMultimediaCheckBox.IsChecked;
+            comfort.CDMultimedia               = CDMultimediaCheckBox.IsChecked;
+            comfort.DVDMultimedia              = DVDMultimediaCheckBox.IsChecked;
+            comfort.USBMultimedia              = USBMultimediaCheckBox.IsChecked;
+            comfort.AUXMultimedia              = AUXMultimediaCheckBox.IsChecked;
+            comfort.NavSys                     = NavSysCheckBox.IsChecked;
+            comfort.OnBoardComp                = OnBoardCompCheckBox.IsChecked;
+            comfort.FrontCamera                = FrontCameraCheckBox.IsChecked;
+            comfort.BackCamera                 = BackCameraCheckBox.IsChecked;
+            comfort.SideInMirrorsCamera        = SideInMirrorsCameraCheckBox.IsChecked;
+            komplektacyaVM.Comfort             = JsonConvert.SerializeObject(comfort);
+
+            Exterior exterior         = JsonConvert.DeserializeObject<Exterior>(komplektacyaVM.Exterior);
+            exterior.AlloyWheels      = AlloyWheelsCheckBox.IsChecked;
+            exterior.FrontTintedGlass = FrontTintedGlassCheckBox.IsChecked;
+            exterior.BackTintedGlass  = BackTintedGlassCheckBox.IsChecked;
+            exterior.Hitch            = HitchCheckBox.IsChecked;
+            exterior.RoofRails        = RoofRailsCheckBox.IsChecked;
+            exterior.Trunk            = TrunkCheckBox.IsChecked;
+            komplektacyaVM.Exterior   = JsonConvert.SerializeObject(exterior);
+
+            SecuritySys securitySys    = JsonConvert.DeserializeObject<SecuritySys>(komplektacyaVM.SecuritySys);
+            securitySys.CentralLocking = CentralLockingCheckBox.IsChecked;
+            securitySys.Signaling      = SignalingCheckBox.IsChecked;
+            securitySys.KeylessAccess  = KeylessAccessCheckBox.IsChecked;
+            komplektacyaVM.SecuritySys = JsonConvert.SerializeObject(securitySys);
+
+            Adjustments adjustments          = JsonConvert.DeserializeObject<Adjustments>(komplektacyaVM.Adjustments);
+            adjustments.HeightDriverSeat     = HeightDriverSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.ElectricDriverSeat   = ElectricDriverSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.MemoryDriverSeat     = MemoryDriverSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.HeightPassSeat       = HeightPassSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.ElectricPassSeat     = ElectricPassSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.MemoryPassSeat       = MemoryPassSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.ElectricBackPassSeat = ElectricBackPassSeatAdjustmentCheckBox.IsChecked ;
+            adjustments.SteeringWheel        = GetterRB(SteeringWheelAdjustmentRB);
+            komplektacyaVM.Adjustments       = JsonConvert.SerializeObject(adjustments);
+
+            Interior interior             = JsonConvert.DeserializeObject<Interior>(komplektacyaVM.Interior);
+            interior.Upholstery           = GetterRB(UpholsteryRB);
+            interior.InteriorColor        = GetterRB(InteriorColorRB);
+            interior.Luke                 = GetterRB(LukeRB);
+            interior.LeatherSteeringWheel = LeatherSteeringWheelCheckBox.IsChecked;
+            komplektacyaVM.Interior       = JsonConvert.SerializeObject(interior);
+
+            ExtraKomplektacya extraKomplektacya = JsonConvert.DeserializeObject<ExtraKomplektacya>(komplektacyaVM.ExtraKomplektacya);
+            extraKomplektacya.GasCylinderEquip  = GasCylinderEquipCheckBox.IsChecked ;
+            extraKomplektacya.ElectricMirrors   = ElectricMirrorsCheckBox.IsChecked ;
+            extraKomplektacya.EngineAutoStart   = EngineAutoStartCheckBox.IsChecked ;
+            extraKomplektacya.AirSuspension     = AirSuspensionCheckBox.IsChecked ;
+            extraKomplektacya.DoorClosers       = DoorClosersCheckBox.IsChecked ;
+            komplektacyaVM.ExtraKomplektacya    = JsonConvert.SerializeObject(extraKomplektacya);
+
+            KomplektacyaSQLiteH.SaveItem(komplektacyaVM);
+            await DisplayAlert("", "Комплектация успешно сохранена", "OK");
             return;
         }
 
