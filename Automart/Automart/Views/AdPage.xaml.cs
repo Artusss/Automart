@@ -344,7 +344,7 @@ namespace Automart.Views
             if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             KomplektacyaViewModel komplektacyaVM = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
             if (komplektacyaVM == null) return;
-            // Add to cur fields
+            // Add to cur fields here
             await DisplayAlert("", "Комплектность успешно сохранена", "OK");
             return;
         }
