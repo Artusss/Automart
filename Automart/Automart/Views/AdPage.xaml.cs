@@ -340,7 +340,13 @@ namespace Automart.Views
 
         async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
+            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            KomplektacyaViewModel komplektacyaVM = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
+            if (komplektacyaVM == null) return;
+            // Add to cur fields
+            await DisplayAlert("", "Комплектность успешно сохранена", "OK");
+            return;
         }
 
         void MainInfoTapButton_Clicked(object sender, EventArgs e)
