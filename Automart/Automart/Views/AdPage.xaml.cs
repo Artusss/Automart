@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Automart.ViewModels;
+using Automart.ViewModels.Sctructs;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Plugin.Settings;
@@ -42,6 +43,20 @@ namespace Automart.Views
                         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
                 }
                 return komplektnostSQLiteH;
+            }
+        }
+
+        public static KomplektacyaSQLiteHelper komplektacyaSQLiteH;
+        public static KomplektacyaSQLiteHelper KomplektacyaSQLiteH
+        {
+            get
+            {
+                if (komplektacyaSQLiteH == null)
+                {
+                    komplektacyaSQLiteH = new KomplektacyaSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return komplektacyaSQLiteH;
             }
         }
         public AdPage()
@@ -168,17 +183,126 @@ namespace Automart.Views
             TriangleCheckBox.IsChecked    = komplektnostVM.Triangle;
             BaloonKeyCheckBox.IsChecked   = komplektnostVM.BaloonKey;
             CompressorCheckBox.IsChecked  = komplektnostVM.Compressor;
-            foreach (var Zapaska in ZapaskaRB.Children)
-            {
-                if (Zapaska is RadioButton ZapaskaRB && ZapaskaRB.Text.Equals(komplektnostVM.Zapaska)) ZapaskaRB.IsChecked = true;
-            }
-            foreach (var MatCollection in MatCollectionRB.Children)
-            {
-                if (MatCollection is RadioButton MatCollectionRB && MatCollectionRB.Text.Equals(komplektnostVM.MatCollection)) MatCollectionRB.IsChecked = true;
-            }
+            SetterRB(ZapaskaRB, komplektnostVM.Zapaska);
+            SetterRB(MatCollectionRB, komplektnostVM.MatCollection);
+
+            var komplektacyaVM                               = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
+
+            Safety safety                                    = JsonConvert.DeserializeObject<Safety>(komplektacyaVM.Safety);
+            TractionControlSysCheckBox.IsChecked             = safety.TractionControlSys;
+            AntiLockSysCheckBox.IsChecked                    = safety.AntiLockSys;
+            CursStableCheckBox.IsChecked                     = safety.CursStable;
+            DifBlockSysCheckBox.IsChecked                    = safety.DifBlockSys;
+            BrakeForceDistSysCheckBox.IsChecked              = safety.BrakeForceDistSys;
+            ParkHelperSysCheckBox.IsChecked                  = safety.ParkHelperSys;
+            DeadZoneContrCheckBox.IsChecked                  = safety.DeadZoneContr;
+            AdjacentStripSysCheckBox.IsChecked               = safety.AdjacentStripSys;
+            VoditelAirBagCheckBox.IsChecked                  = safety.VoditelAirBag;
+            FrontPassAirBagCheckBox.IsChecked                = safety.FrontPassAirBag;
+            BackPassAirBagCheckBox.IsChecked                 = safety.BackPassAirBag;
+            SideAirBagCheckBox.IsChecked                     = safety.SideAirBag;
+            CurtainsAirBagCheckBox.IsChecked                 = safety.CurtainsAirBag;
+            FrontParkSensCheckBox.IsChecked                  = safety.FrontParkSens;
+            BackParkSensCheckBox.IsChecked                   = safety.BackParkSens;
+
+            Lightning lightning                              = JsonConvert.DeserializeObject<Lightning>(komplektacyaVM.Lightning);
+            SetterRB(LightsTypeRB, lightning.LightsType);
+            FogLightsCheckBox.IsChecked                      = lightning.FogLights;
+            DayRunLightsCheckBox.IsChecked                   = lightning.DayRunLights;
+            HeadlightWashersCheckBox.IsChecked               = lightning.HeadlightWashers;
+            HeadlightRimLightsCheckBox.IsChecked             = lightning.HeadlightRimLights;
+
+            Heating heating                                  = JsonConvert.DeserializeObject<Heating>(komplektacyaVM.Heating);
+            MirrorHeatingCheckBox.IsChecked                  = heating.Mirror;
+            StearingWheelHeatingCheckBox.IsChecked           = heating.StearingWheel;
+            FrontSeatHeatingCheckBox.IsChecked               = heating.FrontSeat;
+            BackSeatHeatingCheckBox.IsChecked                = heating.BackSeat;
+            BackGlassHeatingCheckBox.IsChecked               = heating.BackGlass;
+            RelaxGlassHeatingCheckBox.IsChecked              = heating.RelaxGlass;
+            NozzlesGlassHeatingCheckBox.IsChecked            = heating.NozzlesGlass;
+            FrontGlassHeatingCheckBox.IsChecked              = heating.FrontGlass;
+            PreheaterCheckBox.IsChecked                      = heating.Preheater;
+            EngineHeaterCheckBox.IsChecked                   = heating.EngineHeater;
+
+            Comfort comfort                                  = JsonConvert.DeserializeObject<Comfort>(komplektacyaVM.Comfort);
+            FrontPowerWindowCheckBox.IsChecked               = comfort.FrontPowerWindow;
+            BackPowerWindowCheckBox.IsChecked                = comfort.BackPowerWindow;
+            DoorCurtainsPowerWindowCheckBox.IsChecked        = comfort.DoorCurtainsPowerWindow;
+            RearWindowBlindPowerWindowCheckBox.IsChecked     = comfort.RearWindowBlindPowerWindow;
+            SetterRB(PowerSteeringRB, comfort.PowerSteering);
+            RainSensorCheckBox.IsChecked                     = comfort.RainSensor;
+            LightSensorCheckBox.IsChecked                    = comfort.LightSensor;
+            SetterRB(ClimatRB, comfort.Climat);
+            FrontSeatVentCheckBox.IsChecked                  = comfort.FrontSeatVent;
+            BackSeatVentCheckBox.IsChecked                   = comfort.BackSeatVent;
+            CruiseControlCheckBox.IsChecked                  = comfort.CruiseControl;
+            CassetteMultimediaCheckBox.IsChecked             = comfort.CassetteMultimedia;
+            CDMultimediaCheckBox.IsChecked                   = comfort.CDMultimedia;
+            DVDMultimediaCheckBox.IsChecked                  = comfort.DVDMultimedia;
+            USBMultimediaCheckBox.IsChecked                  = comfort.USBMultimedia;
+            AUXMultimediaCheckBox.IsChecked                  = comfort.AUXMultimedia;
+            NavSysCheckBox.IsChecked                         = comfort.NavSys;
+            OnBoardCompCheckBox.IsChecked                    = comfort.OnBoardComp;
+            FrontCameraCheckBox.IsChecked                    = comfort.FrontCamera;
+            BackCameraCheckBox.IsChecked                     = comfort.BackCamera;
+            SideInMirrorsCameraCheckBox.IsChecked            = comfort.SideInMirrorsCamera;
+
+            Exterior exterior                                = JsonConvert.DeserializeObject<Exterior>(komplektacyaVM.Exterior);
+            AlloyWheelsCheckBox.IsChecked                    = exterior.AlloyWheels;
+            FrontTintedGlassCheckBox.IsChecked               = exterior.FrontTintedGlass;
+            BackTintedGlassCheckBox.IsChecked                = exterior.BackTintedGlass;
+            HitchCheckBox.IsChecked                          = exterior.Hitch;
+            RoofRailsCheckBox.IsChecked                      = exterior.RoofRails;
+            TrunkCheckBox.IsChecked                          = exterior.Trunk;
+
+            SecuritySys securitySys                          = JsonConvert.DeserializeObject<SecuritySys>(komplektacyaVM.SecuritySys);
+            CentralLockingCheckBox.IsChecked                 = securitySys.CentralLocking;
+            SignalingCheckBox.IsChecked                      = securitySys.Signaling;
+            KeylessAccessCheckBox.IsChecked                  = securitySys.KeylessAccess;
+
+            Adjustments adjustments                          = JsonConvert.DeserializeObject<Adjustments>(komplektacyaVM.Adjustments);
+            HeightDriverSeatAdjustmentCheckBox.IsChecked     = adjustments.HeightDriverSeat;
+            ElectricDriverSeatAdjustmentCheckBox.IsChecked   = adjustments.ElectricDriverSeat;
+            MemoryDriverSeatAdjustmentCheckBox.IsChecked     = adjustments.MemoryDriverSeat;
+            HeightPassSeatAdjustmentCheckBox.IsChecked       = adjustments.HeightPassSeat;
+            ElectricPassSeatAdjustmentCheckBox.IsChecked     = adjustments.ElectricPassSeat;
+            MemoryPassSeatAdjustmentCheckBox.IsChecked       = adjustments.MemoryPassSeat;
+            ElectricBackPassSeatAdjustmentCheckBox.IsChecked = adjustments.ElectricBackPassSeat;
+            SetterRB(SteeringWheelAdjustmentRB, adjustments.SteeringWheel);
+
+            Interior interior                                = JsonConvert.DeserializeObject<Interior>(komplektacyaVM.Interior);
+            SetterRB(UpholsteryRB, interior.Upholstery);
+            SetterRB(InteriorColorRB, interior.InteriorColor);
+            SetterRB(LukeRB, interior.Luke);
+            LeatherSteeringWheelCheckBox.IsChecked           = interior.LeatherSteeringWheel;
+
+            ExtraKomplektacya extraKomplektacya              = JsonConvert.DeserializeObject<ExtraKomplektacya>(komplektacyaVM.ExtraKomplektacya);
+            GasCylinderEquipCheckBox.IsChecked               = extraKomplektacya.GasCylinderEquip;
+            ElectricMirrorsCheckBox.IsChecked                = extraKomplektacya.ElectricMirrors;
+            EngineAutoStartCheckBox.IsChecked                = extraKomplektacya.EngineAutoStart;
+            AirSuspensionCheckBox.IsChecked                  = extraKomplektacya.AirSuspension;
+            DoorClosersCheckBox.IsChecked                    = extraKomplektacya.DoorClosers;
             ////////////////////////////////////////////////////////////////////
 
             this.Content = AdSL;
+        }
+
+        public void SetterRB(RadioButtonGroupView ItemsRB, string FieldValue)
+        {
+            foreach (var Item in ItemsRB.Children)
+            {
+                if (Item is RadioButton ItemRB && ItemRB.Text.Equals(FieldValue)) ItemRB.IsChecked = true;
+            }
+        }
+
+        public string GetterRB(RadioButtonGroupView ItemsRB)
+        {
+            string FieldValue = "";
+            foreach (var Item in ItemsRB.Children)
+            {
+                if (Item is RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
+            }
+            return FieldValue;
         }
 
         async void ToMain_Clicked(object sender, EventArgs e)
@@ -194,14 +318,8 @@ namespace Automart.Views
             if (komplektnostVM == null) return;
             komplektnostVM.KeyCollection     = Convert.ToInt32(KeyCollectionEntry.Text);
             komplektnostVM.WheelCollection   = Convert.ToInt32(WheelCollectionEntry.Text);
-            foreach (var Zapaska in ZapaskaRB.Children)
-            {
-                if (Zapaska is RadioButton ZapaskaRB && ZapaskaRB.IsChecked) komplektnostVM.Zapaska = ZapaskaRB.Text;
-            }
-            foreach (var MatCollection in MatCollectionRB.Children)
-            {
-                if (MatCollection is RadioButton MatCollectionRB && MatCollectionRB.IsChecked) komplektnostVM.MatCollection = MatCollectionRB.Text;
-            }
+            komplektnostVM.Zapaska           = GetterRB(ZapaskaRB);
+            komplektnostVM.MatCollection     = GetterRB(MatCollectionRB);
             komplektnostVM.ExtraKomplektnost = ExtraKomplektnostEditor.Text;
             komplektnostVM.PTS               = PTSCheckBox.IsChecked;
             komplektnostVM.Rukov             = RukovCheckBox.IsChecked;
@@ -239,7 +357,16 @@ namespace Automart.Views
         }
         void KomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
-            KomplektacyaSL.IsVisible = KomplektacyaSL.IsVisible ? false : true;
+            SafetySL.IsVisible            = false;
+            LightingSL.IsVisible          = false;
+            HeatingSL.IsVisible           = false;
+            СomfortSL.IsVisible           = false;
+            ExteriorSL.IsVisible          = false;
+            SecuritySysSL.IsVisible       = false;
+            AdjustmentsSL.IsVisible       = false;
+            InteriorSL.IsVisible          = false;
+            ExtraKomplektacyaSL.IsVisible = false;
+            KomplektacyaSL.IsVisible      = KomplektacyaSL.IsVisible ? false : true;
         }
         void CommentsTapButton_Clicked(object sender, EventArgs e)
         {
@@ -247,38 +374,110 @@ namespace Automart.Views
         }
         void SafetyTapButton_Clicked(object sender, EventArgs e)
         {
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             SafetySL.IsVisible = SafetySL.IsVisible ? false : true;
         }
         void LightingTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             LightingSL.IsVisible = LightingSL.IsVisible ? false : true;
         }
         void HeatingTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             HeatingSL.IsVisible = HeatingSL.IsVisible ? false : true;
         }
         void СomfortTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             СomfortSL.IsVisible = СomfortSL.IsVisible ? false : true;
         }
         void ExteriorTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             ExteriorSL.IsVisible = ExteriorSL.IsVisible ? false : true;
         }
         void SecuritySysTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             SecuritySysSL.IsVisible = SecuritySysSL.IsVisible ? false : true;
         }
         void AdjustmentsTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             AdjustmentsSL.IsVisible = AdjustmentsSL.IsVisible ? false : true;
         }
         void InteriorTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            ExtraKomplektacyaSL.IsVisible = false;
             InteriorSL.IsVisible = InteriorSL.IsVisible ? false : true;
         }
         void ExtraKomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
+            SafetySL.IsVisible = false;
+            LightingSL.IsVisible = false;
+            HeatingSL.IsVisible = false;
+            СomfortSL.IsVisible = false;
+            ExteriorSL.IsVisible = false;
+            SecuritySysSL.IsVisible = false;
+            AdjustmentsSL.IsVisible = false;
+            InteriorSL.IsVisible = false;
             ExtraKomplektacyaSL.IsVisible = ExtraKomplektacyaSL.IsVisible ? false : true;
         }
     }

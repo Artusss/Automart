@@ -43,7 +43,7 @@ namespace Automart.ViewModels
             }
         }
 
-        public string Zapaska
+        public string Safety
         {
             get { return komplektacya.Safety; }
             set

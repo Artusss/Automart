@@ -86,6 +86,20 @@ namespace Automart.Views
             }
         }
 
+        public static KomplektacyaSQLiteHelper komplektacyaSQLiteH;
+        public static KomplektacyaSQLiteHelper KomplektacyaSQLiteH
+        {
+            get
+            {
+                if (komplektacyaSQLiteH == null)
+                {
+                    komplektacyaSQLiteH = new KomplektacyaSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return komplektacyaSQLiteH;
+            }
+        }
+
         public TwoAdPage()
         {
             InitializeComponent();
@@ -186,6 +200,7 @@ namespace Automart.Views
             int CurrentAdId = AdSQLiteH.SaveItem(adVM);
 
             KomplektnostSQLiteH.SaveItem(KomplektnostSQLiteH.GetDefaultKomplektnostVM(CurrentAdId));
+            KomplektacyaSQLiteH.SaveItem(KomplektacyaSQLiteH.GetDefaultKomplektacyaVM(CurrentAdId));
 
             CrossSettings.Current.AddOrUpdateValue("CurrentAdId", CurrentAdId);
             await Navigation.PushModalAsync(new NavigationPage(new AdPage()));
