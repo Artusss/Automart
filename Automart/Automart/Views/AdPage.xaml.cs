@@ -68,106 +68,24 @@ namespace Automart.Views
 
             InfoLabel.Text = $"Объявление № {CurrentAdId}";
 
-            Label VINLabel = new Label
-            {
-                Text = $"VIN: {AdVM.VIN}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(VINLabel);
+            VINEntry.Text           = AdVM.VIN;
+            TypeEntry.Text          = AdVM.Type;
+            MarkEntry.Text          = AdVM.Mark;
+            ModelEntry.Text         = AdVM.Model;
+            YearEntry.Text          = AdVM.Year;
+            MileageEntry.Text       = AdVM.Mileage.ToString();
+            KuzovEntry.Text         = AdVM.Kuzov;
+            ColorEntry.Text         = AdVM.Color;
+            SteeringWheelEntry.Text = AdVM.SteeringWheel;
 
-            Label TypeLabel = new Label
-            {
-                Text = $"Тип: {AdVM.Type}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(TypeLabel);
+            DvigTypeEntry.Text  = AdVM.DvigType;
+            KPPEntry.Text       = AdVM.KPP;
+            DriveUnitEntry.Text = AdVM.DriveUnit;
+            VolumeEntry.Text    = AdVM.Volume.ToString();
+            PowerEntry.Text     = AdVM.Power.ToString();
 
-            Label MarkLabel = new Label
-            {
-                Text = $"Марка: {AdVM.Mark}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(MarkLabel);
+            var komplektnostVM            = KomplektnostSQLiteH.GetByAd(CurrentAdId);
 
-            Label ModelLabel = new Label
-            {
-                Text = $"Модель: {AdVM.Model}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(ModelLabel);
-
-            Label YearLabel = new Label
-            {
-                Text = $"Год выпуска: {AdVM.Year}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(YearLabel);
-
-            Label MileageLabel = new Label
-            {
-                Text = $"Пробег: {AdVM.Mileage}, км",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(MileageLabel);
-
-            Label KuzovLabel = new Label
-            {
-                Text = $"Кузов: {AdVM.Kuzov}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(KuzovLabel);
-
-            Label ColorLabel = new Label
-            {
-                Text = $"Цвет: {AdVM.Color}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(ColorLabel);
-
-            Label SteeringWheelLabel = new Label
-            {
-                Text = $"Руль: {AdVM.SteeringWheel}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            MainInfoSL.Children.Add(SteeringWheelLabel);
-
-            Label DvigTypeLabel = new Label
-            {
-                Text = $"Тип двигателя: {AdVM.DvigType}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            DvigTransSL.Children.Add(DvigTypeLabel);
-
-            Label KPPLabel = new Label
-            {
-                Text = $"КПП: {AdVM.KPP}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            DvigTransSL.Children.Add(KPPLabel);
-
-            Label DriveUnitLabel = new Label
-            {
-                Text = $"Привод: {AdVM.DriveUnit}",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            DvigTransSL.Children.Add(DriveUnitLabel);
-
-            Label VolumeLabel = new Label
-            {
-                Text = $"Объем: {AdVM.Volume}, л",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            DvigTransSL.Children.Add(VolumeLabel);
-
-            Label PowerLabel = new Label
-            {
-                Text = $"Мощность: {AdVM.Power}, л.с.",
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Button))
-            };
-            DvigTransSL.Children.Add(PowerLabel);
-
-            ////////////////////////////////////////////////////////////////////
-            var komplektnostVM = KomplektnostSQLiteH.GetByAd(CurrentAdId);
             KeyCollectionEntry.Text       = Convert.ToString(komplektnostVM.KeyCollection);
             WheelCollectionEntry.Text     = Convert.ToString(komplektnostVM.WheelCollection);
             ExtraKomplektnostEditor.Text  = komplektnostVM.ExtraKomplektnost;
@@ -186,79 +104,79 @@ namespace Automart.Views
             SetterRB(ZapaskaRB, komplektnostVM.Zapaska);
             SetterRB(MatCollectionRB, komplektnostVM.MatCollection);
 
-            var komplektacyaVM                               = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
+            var komplektacyaVM                   = KomplektacyaSQLiteH.GetByAd(CurrentAdId);
 
-            Safety safety                                    = JsonConvert.DeserializeObject<Safety>(komplektacyaVM.Safety);
-            TractionControlSysCheckBox.IsChecked             = safety.TractionControlSys;
-            AntiLockSysCheckBox.IsChecked                    = safety.AntiLockSys;
-            CursStableCheckBox.IsChecked                     = safety.CursStable;
-            DifBlockSysCheckBox.IsChecked                    = safety.DifBlockSys;
-            BrakeForceDistSysCheckBox.IsChecked              = safety.BrakeForceDistSys;
-            ParkHelperSysCheckBox.IsChecked                  = safety.ParkHelperSys;
-            DeadZoneContrCheckBox.IsChecked                  = safety.DeadZoneContr;
-            AdjacentStripSysCheckBox.IsChecked               = safety.AdjacentStripSys;
-            VoditelAirBagCheckBox.IsChecked                  = safety.VoditelAirBag;
-            FrontPassAirBagCheckBox.IsChecked                = safety.FrontPassAirBag;
-            BackPassAirBagCheckBox.IsChecked                 = safety.BackPassAirBag;
-            SideAirBagCheckBox.IsChecked                     = safety.SideAirBag;
-            CurtainsAirBagCheckBox.IsChecked                 = safety.CurtainsAirBag;
-            FrontParkSensCheckBox.IsChecked                  = safety.FrontParkSens;
-            BackParkSensCheckBox.IsChecked                   = safety.BackParkSens;
+            Safety safety                        = JsonConvert.DeserializeObject<Safety>(komplektacyaVM.Safety);
+            TractionControlSysCheckBox.IsChecked = safety.TractionControlSys;
+            AntiLockSysCheckBox.IsChecked        = safety.AntiLockSys;
+            CursStableCheckBox.IsChecked         = safety.CursStable;
+            DifBlockSysCheckBox.IsChecked        = safety.DifBlockSys;
+            BrakeForceDistSysCheckBox.IsChecked  = safety.BrakeForceDistSys;
+            ParkHelperSysCheckBox.IsChecked      = safety.ParkHelperSys;
+            DeadZoneContrCheckBox.IsChecked      = safety.DeadZoneContr;
+            AdjacentStripSysCheckBox.IsChecked   = safety.AdjacentStripSys;
+            VoditelAirBagCheckBox.IsChecked      = safety.VoditelAirBag;
+            FrontPassAirBagCheckBox.IsChecked    = safety.FrontPassAirBag;
+            BackPassAirBagCheckBox.IsChecked     = safety.BackPassAirBag;
+            SideAirBagCheckBox.IsChecked         = safety.SideAirBag;
+            CurtainsAirBagCheckBox.IsChecked     = safety.CurtainsAirBag;
+            FrontParkSensCheckBox.IsChecked      = safety.FrontParkSens;
+            BackParkSensCheckBox.IsChecked       = safety.BackParkSens;
 
-            Lightning lightning                              = JsonConvert.DeserializeObject<Lightning>(komplektacyaVM.Lightning);
+            Lightning lightning                  = JsonConvert.DeserializeObject<Lightning>(komplektacyaVM.Lightning);
             SetterRB(LightsTypeRB, lightning.LightsType);
-            FogLightsCheckBox.IsChecked                      = lightning.FogLights;
-            DayRunLightsCheckBox.IsChecked                   = lightning.DayRunLights;
-            HeadlightWashersCheckBox.IsChecked               = lightning.HeadlightWashers;
-            HeadlightRimLightsCheckBox.IsChecked             = lightning.HeadlightRimLights;
+            FogLightsCheckBox.IsChecked          = lightning.FogLights;
+            DayRunLightsCheckBox.IsChecked       = lightning.DayRunLights;
+            HeadlightWashersCheckBox.IsChecked   = lightning.HeadlightWashers;
+            HeadlightRimLightsCheckBox.IsChecked = lightning.HeadlightRimLights;
 
-            Heating heating                                  = JsonConvert.DeserializeObject<Heating>(komplektacyaVM.Heating);
-            MirrorHeatingCheckBox.IsChecked                  = heating.Mirror;
-            StearingWheelHeatingCheckBox.IsChecked           = heating.StearingWheel;
-            FrontSeatHeatingCheckBox.IsChecked               = heating.FrontSeat;
-            BackSeatHeatingCheckBox.IsChecked                = heating.BackSeat;
-            BackGlassHeatingCheckBox.IsChecked               = heating.BackGlass;
-            RelaxGlassHeatingCheckBox.IsChecked              = heating.RelaxGlass;
-            NozzlesGlassHeatingCheckBox.IsChecked            = heating.NozzlesGlass;
-            FrontGlassHeatingCheckBox.IsChecked              = heating.FrontGlass;
-            PreheaterCheckBox.IsChecked                      = heating.Preheater;
-            EngineHeaterCheckBox.IsChecked                   = heating.EngineHeater;
+            Heating heating                        = JsonConvert.DeserializeObject<Heating>(komplektacyaVM.Heating);
+            MirrorHeatingCheckBox.IsChecked        = heating.Mirror;
+            StearingWheelHeatingCheckBox.IsChecked = heating.StearingWheel;
+            FrontSeatHeatingCheckBox.IsChecked     = heating.FrontSeat;
+            BackSeatHeatingCheckBox.IsChecked      = heating.BackSeat;
+            BackGlassHeatingCheckBox.IsChecked     = heating.BackGlass;
+            RelaxGlassHeatingCheckBox.IsChecked    = heating.RelaxGlass;
+            NozzlesGlassHeatingCheckBox.IsChecked  = heating.NozzlesGlass;
+            FrontGlassHeatingCheckBox.IsChecked    = heating.FrontGlass;
+            PreheaterCheckBox.IsChecked            = heating.Preheater;
+            EngineHeaterCheckBox.IsChecked         = heating.EngineHeater;
 
-            Comfort comfort                                  = JsonConvert.DeserializeObject<Comfort>(komplektacyaVM.Comfort);
-            FrontPowerWindowCheckBox.IsChecked               = comfort.FrontPowerWindow;
-            BackPowerWindowCheckBox.IsChecked                = comfort.BackPowerWindow;
-            DoorCurtainsPowerWindowCheckBox.IsChecked        = comfort.DoorCurtainsPowerWindow;
-            RearWindowBlindPowerWindowCheckBox.IsChecked     = comfort.RearWindowBlindPowerWindow;
+            Comfort comfort                              = JsonConvert.DeserializeObject<Comfort>(komplektacyaVM.Comfort);
+            FrontPowerWindowCheckBox.IsChecked           = comfort.FrontPowerWindow;
+            BackPowerWindowCheckBox.IsChecked            = comfort.BackPowerWindow;
+            DoorCurtainsPowerWindowCheckBox.IsChecked    = comfort.DoorCurtainsPowerWindow;
+            RearWindowBlindPowerWindowCheckBox.IsChecked = comfort.RearWindowBlindPowerWindow;
             SetterRB(PowerSteeringRB, comfort.PowerSteering);
-            RainSensorCheckBox.IsChecked                     = comfort.RainSensor;
-            LightSensorCheckBox.IsChecked                    = comfort.LightSensor;
+            RainSensorCheckBox.IsChecked                 = comfort.RainSensor;
+            LightSensorCheckBox.IsChecked                = comfort.LightSensor;
             SetterRB(ClimatRB, comfort.Climat);
-            FrontSeatVentCheckBox.IsChecked                  = comfort.FrontSeatVent;
-            BackSeatVentCheckBox.IsChecked                   = comfort.BackSeatVent;
-            CruiseControlCheckBox.IsChecked                  = comfort.CruiseControl;
-            CassetteMultimediaCheckBox.IsChecked             = comfort.CassetteMultimedia;
-            CDMultimediaCheckBox.IsChecked                   = comfort.CDMultimedia;
-            DVDMultimediaCheckBox.IsChecked                  = comfort.DVDMultimedia;
-            USBMultimediaCheckBox.IsChecked                  = comfort.USBMultimedia;
-            AUXMultimediaCheckBox.IsChecked                  = comfort.AUXMultimedia;
-            NavSysCheckBox.IsChecked                         = comfort.NavSys;
-            OnBoardCompCheckBox.IsChecked                    = comfort.OnBoardComp;
-            FrontCameraCheckBox.IsChecked                    = comfort.FrontCamera;
-            BackCameraCheckBox.IsChecked                     = comfort.BackCamera;
-            SideInMirrorsCameraCheckBox.IsChecked            = comfort.SideInMirrorsCamera;
+            FrontSeatVentCheckBox.IsChecked              = comfort.FrontSeatVent;
+            BackSeatVentCheckBox.IsChecked               = comfort.BackSeatVent;
+            CruiseControlCheckBox.IsChecked              = comfort.CruiseControl;
+            CassetteMultimediaCheckBox.IsChecked         = comfort.CassetteMultimedia;
+            CDMultimediaCheckBox.IsChecked               = comfort.CDMultimedia;
+            DVDMultimediaCheckBox.IsChecked              = comfort.DVDMultimedia;
+            USBMultimediaCheckBox.IsChecked              = comfort.USBMultimedia;
+            AUXMultimediaCheckBox.IsChecked              = comfort.AUXMultimedia;
+            NavSysCheckBox.IsChecked                     = comfort.NavSys;
+            OnBoardCompCheckBox.IsChecked                = comfort.OnBoardComp;
+            FrontCameraCheckBox.IsChecked                = comfort.FrontCamera;
+            BackCameraCheckBox.IsChecked                 = comfort.BackCamera;
+            SideInMirrorsCameraCheckBox.IsChecked        = comfort.SideInMirrorsCamera;
 
-            Exterior exterior                                = JsonConvert.DeserializeObject<Exterior>(komplektacyaVM.Exterior);
-            AlloyWheelsCheckBox.IsChecked                    = exterior.AlloyWheels;
-            FrontTintedGlassCheckBox.IsChecked               = exterior.FrontTintedGlass;
-            BackTintedGlassCheckBox.IsChecked                = exterior.BackTintedGlass;
-            HitchCheckBox.IsChecked                          = exterior.Hitch;
-            RoofRailsCheckBox.IsChecked                      = exterior.RoofRails;
-            TrunkCheckBox.IsChecked                          = exterior.Trunk;
+            Exterior exterior                  = JsonConvert.DeserializeObject<Exterior>(komplektacyaVM.Exterior);
+            AlloyWheelsCheckBox.IsChecked      = exterior.AlloyWheels;
+            FrontTintedGlassCheckBox.IsChecked = exterior.FrontTintedGlass;
+            BackTintedGlassCheckBox.IsChecked  = exterior.BackTintedGlass;
+            HitchCheckBox.IsChecked            = exterior.Hitch;
+            RoofRailsCheckBox.IsChecked        = exterior.RoofRails;
+            TrunkCheckBox.IsChecked            = exterior.Trunk;
 
-            SecuritySys securitySys                          = JsonConvert.DeserializeObject<SecuritySys>(komplektacyaVM.SecuritySys);
-            CentralLockingCheckBox.IsChecked                 = securitySys.CentralLocking;
-            SignalingCheckBox.IsChecked                      = securitySys.Signaling;
-            KeylessAccessCheckBox.IsChecked                  = securitySys.KeylessAccess;
+            SecuritySys securitySys          = JsonConvert.DeserializeObject<SecuritySys>(komplektacyaVM.SecuritySys);
+            CentralLockingCheckBox.IsChecked = securitySys.CentralLocking;
+            SignalingCheckBox.IsChecked      = securitySys.Signaling;
+            KeylessAccessCheckBox.IsChecked  = securitySys.KeylessAccess;
 
             Adjustments adjustments                          = JsonConvert.DeserializeObject<Adjustments>(komplektacyaVM.Adjustments);
             HeightDriverSeatAdjustmentCheckBox.IsChecked     = adjustments.HeightDriverSeat;
@@ -270,21 +188,18 @@ namespace Automart.Views
             ElectricBackPassSeatAdjustmentCheckBox.IsChecked = adjustments.ElectricBackPassSeat;
             SetterRB(SteeringWheelAdjustmentRB, adjustments.SteeringWheel);
 
-            Interior interior                                = JsonConvert.DeserializeObject<Interior>(komplektacyaVM.Interior);
+            Interior interior                      = JsonConvert.DeserializeObject<Interior>(komplektacyaVM.Interior);
             SetterRB(UpholsteryRB, interior.Upholstery);
             SetterRB(InteriorColorRB, interior.InteriorColor);
             SetterRB(LukeRB, interior.Luke);
-            LeatherSteeringWheelCheckBox.IsChecked           = interior.LeatherSteeringWheel;
+            LeatherSteeringWheelCheckBox.IsChecked = interior.LeatherSteeringWheel;
 
-            ExtraKomplektacya extraKomplektacya              = JsonConvert.DeserializeObject<ExtraKomplektacya>(komplektacyaVM.ExtraKomplektacya);
-            GasCylinderEquipCheckBox.IsChecked               = extraKomplektacya.GasCylinderEquip;
-            ElectricMirrorsCheckBox.IsChecked                = extraKomplektacya.ElectricMirrors;
-            EngineAutoStartCheckBox.IsChecked                = extraKomplektacya.EngineAutoStart;
-            AirSuspensionCheckBox.IsChecked                  = extraKomplektacya.AirSuspension;
-            DoorClosersCheckBox.IsChecked                    = extraKomplektacya.DoorClosers;
-            ////////////////////////////////////////////////////////////////////
-
-            this.Content = AdSL;
+            ExtraKomplektacya extraKomplektacya = JsonConvert.DeserializeObject<ExtraKomplektacya>(komplektacyaVM.ExtraKomplektacya);
+            GasCylinderEquipCheckBox.IsChecked  = extraKomplektacya.GasCylinderEquip;
+            ElectricMirrorsCheckBox.IsChecked   = extraKomplektacya.ElectricMirrors;
+            EngineAutoStartCheckBox.IsChecked   = extraKomplektacya.EngineAutoStart;
+            AirSuspensionCheckBox.IsChecked     = extraKomplektacya.AirSuspension;
+            DoorClosersCheckBox.IsChecked       = extraKomplektacya.DoorClosers;
         }
 
         public void SetterRB(RadioButtonGroupView ItemsRB, string FieldValue)
