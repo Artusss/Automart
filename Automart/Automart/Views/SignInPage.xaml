@@ -28,7 +28,7 @@
                 <Label x:Name="PasswordErrorLabel" Text="" FontSize="Small" TextColor="Red" />
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="ForPersonalDataCheckBox" />
-                    <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных"  FontSize="Small"/>
+                    <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных" VerticalOptions="Center" FontSize="Small"/>
                 </StackLayout>
                 <Label x:Name="ForPersonalDataErrorLabel" Text="" FontSize="Small" TextColor="Red" />
                 

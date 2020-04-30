@@ -256,6 +256,88 @@ namespace Automart.Views
             await DisplayAlert("", "Комплектность успешно сохранена", "OK");
             return;
         }
+        async void MainInfoSaveButton_Clicked(object sender, EventArgs e)
+        {
+            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
+            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            var AdVM = AdSQLiteH.GetById(CurrentAdId);
+            AdVM.VIN           = VINEntry.Text;
+            AdVM.Type          = TypeEntry.Text;
+            AdVM.Mark          = MarkEntry.Text;
+            AdVM.Model         = ModelEntry.Text;
+            AdVM.Year          = YearEntry.Text;
+            AdVM.Mileage       = Convert.ToDouble(MileageEntry.Text);
+            AdVM.Kuzov         = KuzovEntry.Text;
+            AdVM.Color         = ColorEntry.Text;
+            AdVM.SteeringWheel = SteeringWheelEntry.Text;
+
+            AdSQLiteH.SaveItem(AdVM);
+            await DisplayAlert("", "Общая информация успешно сохранена", "OK");
+
+            VINEntry.IsEnabled           = false;
+            TypeEntry.IsEnabled          = false;
+            MarkEntry.IsEnabled          = false;
+            ModelEntry.IsEnabled         = false;
+            YearEntry.IsEnabled          = false;
+            MileageEntry.IsEnabled       = false;
+            KuzovEntry.IsEnabled         = false;
+            ColorEntry.IsEnabled         = false;
+            SteeringWheelEntry.IsEnabled = false;
+
+            MainInfoEditButton.IsVisible = true;
+            MainInfoSaveButton.IsVisible = false;
+            return;
+        }
+        void MainInfoEditButton_Clicked(object sender, EventArgs e)
+        {
+            VINEntry.IsEnabled           = true;
+            TypeEntry.IsEnabled          = true;
+            MarkEntry.IsEnabled          = true;
+            ModelEntry.IsEnabled         = true;
+            YearEntry.IsEnabled          = true;
+            MileageEntry.IsEnabled       = true;
+            KuzovEntry.IsEnabled         = true;
+            ColorEntry.IsEnabled         = true;
+            SteeringWheelEntry.IsEnabled = true;
+
+            MainInfoEditButton.IsVisible = false;
+            MainInfoSaveButton.IsVisible = true;
+        }
+        async void DvigTransSaveButton_Clicked(object sender, EventArgs e)
+        {
+            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
+            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            var AdVM = AdSQLiteH.GetById(CurrentAdId);
+            AdVM.DvigType  = DvigTypeEntry.Text;
+            AdVM.KPP       = KPPEntry.Text;
+            AdVM.DriveUnit = DriveUnitEntry.Text;
+            AdVM.Volume    = Convert.ToDouble(VolumeEntry.Text);
+            AdVM.Power     = Convert.ToDouble(PowerEntry.Text);
+
+            AdSQLiteH.SaveItem(AdVM);
+            await DisplayAlert("", "Двигатель и трансмиссия успешно сохранена", "OK");
+
+            DvigTypeEntry.IsEnabled       = false;
+            KPPEntry.IsEnabled            = false;
+            DriveUnitEntry.IsEnabled      = false;
+            VolumeEntry.IsEnabled         = false;
+            PowerEntry.IsEnabled          = false;
+
+            DvigTransEditButton.IsVisible = true;
+            DvigTransSaveButton.IsVisible = false;
+            return;
+        }
+        void DvigTransEditButton_Clicked(object sender, EventArgs e)
+        {
+            DvigTypeEntry.IsEnabled       = true;
+            KPPEntry.IsEnabled            = true;
+            DriveUnitEntry.IsEnabled      = true;
+            VolumeEntry.IsEnabled         = true;
+            PowerEntry.IsEnabled          = true;
+
+            DvigTransEditButton.IsVisible = false;
+            DvigTransSaveButton.IsVisible = true;
+        }
 
         async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)
         {

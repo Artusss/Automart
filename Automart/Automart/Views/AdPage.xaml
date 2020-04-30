@@ -23,21 +23,27 @@
                                 <Button x:Name="MainInfoTapButton" TextColor="Black" Text="^" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout x:Name="MainInfoSL" IsVisible="False">
+                                <Button x:Name="MainInfoSaveButton" TextColor="Black" Text="Сохранить" 
+                                        Clicked="MainInfoSaveButton_Clicked" IsVisible="False"
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="MainInfoEditButton" TextColor="Black" Text="Редактировать" 
+                                        Clicked="MainInfoEditButton_Clicked" 
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="VINLabel" TextColor="Black" Text="VIN :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="VINEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="VINEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="TypeLabel" TextColor="Black" Text="Тип :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="TypeEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="TypeEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="MarkLabel" TextColor="Black" Text="Марка :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="MarkEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="MarkEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="ModelLabel" TextColor="Black" Text="Модель :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="ModelEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="ModelEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="YearLabel" TextColor="Black" Text="Год выпуска :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
@@ -49,15 +55,15 @@
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="KuzovLabel" TextColor="Black" Text="Кузов :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="KuzovEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="KuzovEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="ColorLabel" TextColor="Black" Text="Цвет :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="ColorEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="ColorEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="SteeringWheelLabel" TextColor="Black" Text="Руль :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="SteeringWheelEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="SteeringWheelEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
@@ -69,17 +75,23 @@
                                 <Button x:Name="DvigTransSLTapButton" TextColor="Black" Text="^" Clicked="DvigTransTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout x:Name="DvigTransSL" IsVisible="False">
+                                <Button x:Name="DvigTransSaveButton" TextColor="Black" Text="Сохранить" 
+                                        Clicked="DvigTransSaveButton_Clicked" IsVisible="False"
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="DvigTransEditButton" TextColor="Black" Text="Редактировать" 
+                                        Clicked="DvigTransEditButton_Clicked" 
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="DvigTypeLabel" TextColor="Black" Text="Тип двигателя :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="DvigTypeEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="DvigTypeEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="KPPLabel" TextColor="Black" Text="КПП :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="KPPEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="KPPEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="DriveUnitLabel" TextColor="Black" Text="Привод :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
-                                    <Entry x:Name="DriveUnitEntry" VerticalOptions="Center" Keyboard="Numeric" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
+                                    <Entry x:Name="DriveUnitEntry" VerticalOptions="Center" Text="0" HorizontalOptions="CenterAndExpand" IsEnabled="False"/>
                                 </StackLayout>
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="VolumeLabel" TextColor="Black" Text="Объем, л :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
