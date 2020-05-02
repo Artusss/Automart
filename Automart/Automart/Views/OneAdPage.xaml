@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.OneAdPage">
 
@@ -26,44 +27,38 @@
 
                     <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" />
                     <Picker x:Name="MarkPicker" />
-
                     <Label x:Name="MarkErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" />
                     <Picker x:Name="ModelPicker" />
-
                     <Label x:Name="ModelErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" />
                     <Picker x:Name="YearPicker" />
-
                     <Label x:Name="YearErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />
                     <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="" >
                         <Entry.Behaviors>
-                            <behavior:EntryLengthValidator MaxLength="8"/>
+                            <behavior:EntryLengthValidator MaxLength="10"/>
+                            <behavior:FatNumberMaskBehavior x:Name="FatNumberMask" />
                         </Entry.Behaviors>
                     </Entry>
                     <Label x:Name="MileageErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" />
                     <Picker x:Name="KuzovPicker" />
-
                     <Label x:Name="KuzovErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" />
                     <Picker x:Name="ColorPicker" />
-
                     <Label x:Name="ColorErrorLabel" Text="" FontSize="Small" />
 
-                    <Label x:Name="SteeringWheelLabel" Text="Руль" FontSize="Medium" />
-                    <Picker x:Name="SteeringWheelPicker">
-                        <Picker.Items>
-                            <x:String>Левый</x:String>
-                            <x:String>Правый</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <Label x:Name="SteeringWheelLabel" TextColor="Black" Text="Руль" FontSize="Medium"/>
+                    <input:RadioButtonGroupView x:Name="SteeringWheelRB" Padding="10">
+                        <input:RadioButton Text="Левый" TextColor="Black" IsChecked="True" TextFontSize="16" />
+                        <input:RadioButton Text="Правый" TextColor="Black" TextFontSize="16" />
+                    </input:RadioButtonGroupView>
                     <Label x:Name="SteeringWheelErrorLabel" Text="" FontSize="Small" />
                 </StackLayout>
             </ScrollView>

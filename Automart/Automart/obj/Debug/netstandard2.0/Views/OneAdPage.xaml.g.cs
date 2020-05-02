@@ -65,6 +65,9 @@ namespace Automart.Views {
         private global::Xamarin.Forms.Entry MileageEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Automart.FatNumberMaskBehavior FatNumberMask;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label MileageErrorLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -89,7 +92,7 @@ namespace Automart.Views {
         private global::Xamarin.Forms.Label SteeringWheelLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker SteeringWheelPicker;
+        private global::Plugin.InputKit.Shared.Controls.RadioButtonGroupView SteeringWheelRB;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label SteeringWheelErrorLabel;
@@ -113,6 +116,7 @@ namespace Automart.Views {
             YearErrorLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "YearErrorLabel");
             MileageLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "MileageLabel");
             MileageEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "MileageEntry");
+            FatNumberMask = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Automart.FatNumberMaskBehavior>(this, "FatNumberMask");
             MileageErrorLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "MileageErrorLabel");
             KuzovLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "KuzovLabel");
             KuzovPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "KuzovPicker");
@@ -121,7 +125,7 @@ namespace Automart.Views {
             ColorPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "ColorPicker");
             ColorErrorLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "ColorErrorLabel");
             SteeringWheelLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "SteeringWheelLabel");
-            SteeringWheelPicker = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "SteeringWheelPicker");
+            SteeringWheelRB = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButtonGroupView>(this, "SteeringWheelRB");
             SteeringWheelErrorLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "SteeringWheelErrorLabel");
         }
     }

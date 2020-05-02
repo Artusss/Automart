@@ -10,6 +10,7 @@ using Newtonsoft;
 using Newtonsoft.Json;
 using Automart.ViewModels;
 using System.IO;
+using Plugin.InputKit.Shared.Controls;
 
 namespace Automart.Views
 {
@@ -112,6 +113,16 @@ namespace Automart.Views
 
         }
 
+        public string GetterRB(RadioButtonGroupView ItemsRB)
+        {
+            string FieldValue = "";
+            foreach (var Item in ItemsRB.Children)
+            {
+                if (Item is RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
+            }
+            return FieldValue;
+        }
+
         async void Quit_Clicked(object sender, EventArgs e)
         {
             CrossSettings.Current.AddOrUpdateValue("AdData", "");
@@ -185,13 +196,7 @@ namespace Automart.Views
                 return;
             }
             else adVM.Color = ColorPicker.Items[ColorPicker.SelectedIndex];
-            if (SteeringWheelPicker.SelectedIndex.Equals(-1))
-            {
-                SteeringWheelErrorLabel.Text = "Выберите руль";
-                SteeringWheelErrorLabel.TextColor = Color.Red;
-                return;
-            }
-            else adVM.SteeringWheel = SteeringWheelPicker.Items[SteeringWheelPicker.SelectedIndex];
+            adVM.SteeringWheel = GetterRB(SteeringWheelRB);
 
             string AdJson = JsonConvert.SerializeObject(adVM);
             CrossSettings.Current.AddOrUpdateValue("AdData", AdJson);
