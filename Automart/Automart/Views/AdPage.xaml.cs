@@ -206,7 +206,7 @@ namespace Automart.Views
         {
             foreach (var Item in ItemsRB.Children)
             {
-                if (Item is RadioButton ItemRB && ItemRB.Text.Equals(FieldValue)) ItemRB.IsChecked = true;
+                if (Item is Plugin.InputKit.Shared.Controls.RadioButton ItemRB && ItemRB.Text.Equals(FieldValue)) ItemRB.IsChecked = true;
             }
         }
 
@@ -215,7 +215,7 @@ namespace Automart.Views
             string FieldValue = "";
             foreach (var Item in ItemsRB.Children)
             {
-                if (Item is RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
+                if (Item is Plugin.InputKit.Shared.Controls.RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
             }
             return FieldValue;
         }
@@ -595,6 +595,111 @@ namespace Automart.Views
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
             ExtraKomplektacyaSL.IsVisible = ExtraKomplektacyaSL.IsVisible ? false : true;
+        }
+        void PhotosTapButton_Clicked(object sender, EventArgs e)
+        {
+            PhotosSL.IsVisible = PhotosSL.IsVisible ? false : true;
+        }
+        void MainViewPhotosTapButton_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+
+        void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_FRONT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_FRONT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_REAR_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_REAR_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_REAR_RIGHT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_REAR_RIGHT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_LEFT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_LEFT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_RIGHT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_RIGHT_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_DASHBOARD_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_DASHBOARD_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_INTERIOR_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_INTERIOR_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_REAR_SEATS_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_REAR_SEATS_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_BAGGAGE_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_BAGGAGE_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_CAR_ENGINE_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_CAR_ENGINE_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Make_RIGHT_WHEEL_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+        }
+        void Pick_RIGHT_WHEEL_Clicked(object sender, EventArgs e)
+        {
+            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
         }
     }
 }

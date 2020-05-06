@@ -41,7 +41,7 @@
                     <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="" >
                         <Entry.Behaviors>
                             <behavior:EntryLengthValidator MaxLength="10"/>
-                            <behavior:FatNumberMaskBehavior x:Name="FatNumberMask" />
+                            
                         </Entry.Behaviors>
                     </Entry>
                     <Label x:Name="MileageErrorLabel" Text="" FontSize="Small" />

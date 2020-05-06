@@ -34,56 +34,55 @@ namespace Automart
 
                 if (value.Length == 4)
                 {
-                    ((Entry)sender).Text = getWhiteSpace(value);
+                    value = getWhiteSpace(value, 1);
+                    ((Entry)sender).Text = value;
                     return;
                 }
-
-                if (value.Length == 6)
+                else if (value.Length == 6)
                 {
-                    ((Entry)sender).Text = swapWhiteSpace(value, 1);
+                    value = delWhiteSpace(value, 1);
+                    value = getWhiteSpace(value, 2);
+                    ((Entry)sender).Text = value;
                     return;
                 }
-
-                if (value.Length == 7)
+                else if (value.Length == 7)
                 {
-                    ((Entry)sender).Text = swapWhiteSpace(value, 2);
+                    value = delWhiteSpace(value, 2);
+                    value = getWhiteSpace(value, 3);
+                    ((Entry)sender).Text = value;
                     return;
                 }
-
-                if (value.Length == 8)
+                else if (value.Length == 8)
                 {
-                    ((Entry)sender).Text = getWhiteSpace(value);
-                    ((Entry)sender).Text = swapWhiteSpace(value, 4);
+                    value = delWhiteSpace(value, 3);
+                    value = getWhiteSpace(value, 4);
+                    value = getWhiteSpace(value, 1);
+                    ((Entry)sender).Text = value;
                     return;
                 }
-
-                if (value.Length == 10)
+                else if (value.Length == 10)
                 {
-                    ((Entry)sender).Text = swapWhiteSpace(value, 1);
-                    ((Entry)sender).Text = swapWhiteSpace(value, 5);
+                    value = delWhiteSpace(value, 1);
+                    value = getWhiteSpace(value, 2);
+                    value = delWhiteSpace(value, 4);
+                    value = getWhiteSpace(value, 5);
+                    ((Entry)sender).Text = value;
                     return;
                 }
 
-                ((Entry)sender).Text = args.NewTextValue;
+                ((Entry)sender).Text = value;
             }
         }
 
-        public string getWhiteSpace(string Entry)
+        public string getWhiteSpace(string Entry, int startIndex)
         {
-            string newEntry = "";
-            for (int i = 0; i < Entry.Length; i++)
-            {
-                if (i == 1) newEntry += "_";
-                newEntry += Entry[i];
-            }
+            string newEntry = Entry.Insert(startIndex, "_");
             return newEntry;
         }
-        public string swapWhiteSpace(string Entry, int startIndex)
+        public string delWhiteSpace(string Entry, int startIndex)
         {
-            var EntryArr = Entry.ToCharArray();
-            EntryArr[startIndex] = EntryArr[startIndex + 1];
-            EntryArr[startIndex + 1] = '_';
-            return EntryArr.ToString();
+            string newEntry = Entry.Remove(startIndex, 1);
+            return newEntry;
         }
     }
 }

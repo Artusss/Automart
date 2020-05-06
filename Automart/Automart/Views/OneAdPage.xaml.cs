@@ -118,7 +118,7 @@ namespace Automart.Views
             string FieldValue = "";
             foreach (var Item in ItemsRB.Children)
             {
-                if (Item is RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
+                if (Item is Plugin.InputKit.Shared.Controls.RadioButton ItemRB && ItemRB.IsChecked) FieldValue = ItemRB.Text;
             }
             return FieldValue;
         }
