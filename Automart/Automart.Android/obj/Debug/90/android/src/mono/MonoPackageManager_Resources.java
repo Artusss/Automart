@@ -10,6 +10,7 @@ public class MonoPackageManager_Resources {
 		"Plugin.Media.dll",
 		"Plugin.Messaging.Abstractions.dll",
 		"Plugin.Messaging.dll",
+		"Plugin.Permissions.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
 		"SQLite-net.dll",

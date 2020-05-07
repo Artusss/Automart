@@ -144,4 +144,40 @@
       <Name>Automart</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_BAGGAGE_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_DASHBOARD_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_ENGINE_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_FRONT_LEFT_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_FRONT_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_INTERIOR_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_LEFT_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_REAR_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_REAR_RIGHT_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_REAR_SEATS_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_CAR_RIGHT_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_RIGHT_WHEEL_pencil.png" />
+  </ItemGroup>
 </Project>

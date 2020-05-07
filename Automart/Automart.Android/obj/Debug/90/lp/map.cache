@@ -2,6 +2,7 @@ FormsViewGroup
 Plugin.InputKit
 Plugin.Media
 Plugin.Messaging
+Plugin.Permissions
 Plugin.Settings
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2

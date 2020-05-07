@@ -12,6 +12,8 @@ using Plugin.Settings;
 using Newtonsoft.Json;
 using Xamarin.Forms.Internals;
 using Plugin.InputKit.Shared.Controls;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace Automart.Views
 {
@@ -605,13 +607,30 @@ namespace Automart.Views
             MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
         }
 
-        void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        async void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+            {
+                MediaFile file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                {
+                    SaveToAlbum = true,
+                    Directory = "my_images",
+                    Name = $"CAR_FRONT_LEFT_{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.jpg"
+                });
+
+                if (file == null)
+                    return;
+
+                CAR_FRONT_LEFTimg.Source = ImageSource.FromFile(file.Path);
+            }
         }
-        void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        async void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (CrossMedia.Current.IsPickPhotoSupported)
+            {
+                MediaFile photo = await CrossMedia.Current.PickPhotoAsync();
+                CAR_FRONT_LEFTimg.Source = ImageSource.FromFile(photo.Path);
+            }
         }
         void Make_CAR_FRONT_Clicked(object sender, EventArgs e)
         {
