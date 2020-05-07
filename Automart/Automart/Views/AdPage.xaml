@@ -13,7 +13,11 @@
 
     <ContentPage.Content>
         <StackLayout x:Name="AdSL" Margin="10, 0" Padding="10">
-            <Label x:Name="InfoLabel" Text="" FontSize="Large" TextColor="Black" />
+            <Label x:Name="InfoLabel" Text="" FontSize="Medium" TextColor="Black" />
+            <Label Text="Размещение автомобиля" FontSize="Default" TextColor="Black" />
+            <Label x:Name="CityLabel" Text="" FontSize="Default" TextColor="Black" />
+            <Label x:Name="TransTypeLabel" Text="" FontSize="Default" TextColor="Black" />
+            <Label x:Name="VINiLabel" Text="" FontSize="Default" TextColor="Black" />
             <ScrollView x:Name="scrollView">
                 <StackLayout x:Name="stackLayout">
                     <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">

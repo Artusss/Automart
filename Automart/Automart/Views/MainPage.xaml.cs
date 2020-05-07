@@ -67,7 +67,8 @@ namespace Automart.Views
                 SignInToolBar.Text = "Войти";
                 Label InfoLabel = new Label
                 {
-                    Text = "Авторизуйтесь чтобы добавить объявление",
+                    Text = JsonConvert.SerializeObject(UserSQLiteH.GetItems()),
+                    //"Авторизуйтесь чтобы добавить объявление",
                     FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
 

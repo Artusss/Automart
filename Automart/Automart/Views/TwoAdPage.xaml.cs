@@ -107,7 +107,7 @@ namespace Automart.Views
 
             /*KPPSQLiteH.DeleteAll();
             List<string> KPPItemsList = new List<string>()
-            {DATA HERE};
+            {"Default"};
             List<KPPViewModel> KPPVMs = new List<KPPViewModel>();
             foreach (string KPPItem in KPPItemsList)
             {

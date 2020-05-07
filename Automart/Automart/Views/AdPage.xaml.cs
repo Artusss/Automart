@@ -64,11 +64,17 @@ namespace Automart.Views
         public AdPage()
         {
             InitializeComponent();
+            string curUserCity = JsonConvert.DeserializeObject<UserViewModel>(
+                CrossSettings.Current.GetValueOrDefault("current_user", null)
+            ).City;
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             var AdVM = AdSQLiteH.GetById(CurrentAdId);
 
-            InfoLabel.Text = $"Объявление № {CurrentAdId}";
+            InfoLabel.Text       = $"{AdVM.Mark} {AdVM.Model} ({AdVM.Power} л.с.) {AdVM.DvigType} {AdVM.DriveUnit} {AdVM.Year} год {AdVM.Mileage} км";
+            CityLabel.Text       = $"Город: {curUserCity}";
+            TransTypeLabel.Text  = $"Тип транспорта: {AdVM.Type}";
+            VINiLabel.Text       = $"VIN: {AdVM.VIN}";
 
             VINEntry.Text           = AdVM.VIN;
             TypeEntry.Text          = AdVM.Type;
@@ -609,28 +615,53 @@ namespace Automart.Views
 
         async void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
         {
-            if (CrossMedia.Current.IsCameraAvailable && CrossMedia.Current.IsTakePhotoSupported)
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                MediaFile file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    SaveToAlbum = true,
-                    Directory = "my_images",
-                    Name = $"CAR_FRONT_LEFT_{DateTime.Now.ToString("dd.MM.yyyy_hh.mm.ss")}.jpg"
-                });
-
-                if (file == null)
-                    return;
-
-                CAR_FRONT_LEFTimg.Source = ImageSource.FromFile(file.Path);
+                await DisplayAlert("", "No Camera", "OK");
+                return;
             }
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                Directory = "my_images",
+                SaveToAlbum = true,
+                CompressionQuality = 75,
+                CustomPhotoSize = 50,
+                PhotoSize = PhotoSize.MaxWidthHeight,
+                MaxWidthHeight = 2000,
+                DefaultCamera = CameraDevice.Front
+            });
+            if (file == null) return;
+
+            await DisplayAlert("File Location", file.Path, "OK");
+
+            CAR_FRONT_LEFTimg.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
         }
         async void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
         {
-            if (CrossMedia.Current.IsPickPhotoSupported)
+            if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                MediaFile photo = await CrossMedia.Current.PickPhotoAsync();
-                CAR_FRONT_LEFTimg.Source = ImageSource.FromFile(photo.Path);
+                await DisplayAlert("", "Photos Not Supported", "OK");
+                return;
             }
+            var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+
+            });
+
+            if (file == null) return;
+
+            CAR_FRONT_LEFTimg.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                file.Dispose();
+                return stream;
+            });
         }
         void Make_CAR_FRONT_Clicked(object sender, EventArgs e)
         {

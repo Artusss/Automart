@@ -81,18 +81,18 @@ namespace Automart.Views
                 Created_at = DateTime.Now
             };
 
-            string phoneNumber = LoginEntry.Text
+            /*string phoneNumber = LoginEntry.Text
                 .Replace("+", "")
                 .Replace("(", "")
                 .Replace(")", "")
                 .Replace("-", "")
                 .Replace(" ", "");
-            string sendMessageParams = "number=" + phoneNumber + "&text=" + password + "&sign=SMS+Aero&channel=DIRECT";
+           string sendMessageParams = "number=" + phoneNumber + "&text=" + password + "&sign=SMS+Aero&channel=DIRECT";
             var sendMessageUri       = new Uri(String.Concat(SMSAeroURI, "/v2/sms/send?", sendMessageParams));
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(sendMessageUri);
             request.Credentials = new NetworkCredential(SMSAeroEMAIL, SMSAeroAPI_KEY);
-            HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();
+            HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync();*/
 
             UserSQLiteH.SaveItem(userVM);
             await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));

@@ -26,15 +26,27 @@
                     <Label x:Name="VINErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="MarkPicker" />
+                    <Picker x:Name="MarkPicker">
+                        <Picker.Items>
+                            <x:String>Default</x:String>
+                        </Picker.Items>
+                    </Picker>
                     <Label x:Name="MarkErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="ModelPicker" />
+                    <Picker x:Name="ModelPicker" >
+                    <Picker.Items>
+                        <x:String>Default</x:String>
+                    </Picker.Items>
+                    </Picker>
                     <Label x:Name="ModelErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="YearPicker" />
+                    <Picker x:Name="YearPicker" >
+                    <Picker.Items>
+                        <x:String>Default</x:String>
+                    </Picker.Items>
+                    </Picker>
                     <Label x:Name="YearErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />
@@ -47,11 +59,19 @@
                     <Label x:Name="MileageErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="KuzovPicker" />
+                    <Picker x:Name="KuzovPicker" >
+                        <Picker.Items>
+                            <x:String>Default</x:String>
+                        </Picker.Items>
+                    </Picker>
                     <Label x:Name="KuzovErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" />
-                    <Picker x:Name="ColorPicker" />
+                    <Picker x:Name="ColorPicker" >
+                        <Picker.Items>
+                            <x:String>Default</x:String>
+                        </Picker.Items>
+                    </Picker>
                     <Label x:Name="ColorErrorLabel" Text="" FontSize="Small" />
 
                     <Label x:Name="SteeringWheelLabel" TextColor="Black" Text="Руль" FontSize="Medium"/>
