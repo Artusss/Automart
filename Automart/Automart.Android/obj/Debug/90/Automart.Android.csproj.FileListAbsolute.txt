@@ -78,7 +78,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\empty_car_rear_seats_pencil.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\empty_car_right_pencil.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\empty_right_wheel_pencil.png
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\xml\file_path.xml
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\uploadflags.txt
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Automart.Android.dll
@@ -538,3 +537,5 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\xml\file_paths.xml
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\downarrow.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\uparrow.png

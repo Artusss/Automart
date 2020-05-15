@@ -469,19 +469,42 @@ namespace Automart.Views
 
         void MainInfoTapButton_Clicked(object sender, EventArgs e)
         {
-            MainInfoSL.IsVisible = MainInfoSL.IsVisible ? false : true;
+            if (MainInfoSL.IsVisible)
+            {
+                MainInfoSL.IsVisible = false;
+                MainInfoTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            MainInfoSL.IsVisible = true;
+            MainInfoTapButton.ImageSource = "upArrow.png";
         }
         void DvigTransTapButton_Clicked(object sender, EventArgs e)
         {
-            DvigTransSL.IsVisible = DvigTransSL.IsVisible ? false : true;
+            //DvigTransSL.IsVisible = DvigTransSL.IsVisible ? false : true;
+            if (DvigTransSL.IsVisible)
+            {
+                DvigTransSL.IsVisible = false;
+                DvigTransSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            DvigTransSL.IsVisible = true;
+            DvigTransSLTapButton.ImageSource = "upArrow.png";
         }
         void KomplektnostTapButton_Clicked(object sender, EventArgs e)
         {
-            KomplektnostSL.IsVisible = KomplektnostSL.IsVisible ? false : true;
+            //KomplektnostSL.IsVisible = KomplektnostSL.IsVisible ? false : true;
+            if (KomplektnostSL.IsVisible)
+            {
+                KomplektnostSL.IsVisible = false;
+                KomplektnostSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            KomplektnostSL.IsVisible = true;
+            KomplektnostSLTapButton.ImageSource = "upArrow.png";
         }
         void KomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible            = false;
+/*            SafetySL.IsVisible            = false;
             LightingSL.IsVisible          = false;
             HeatingSL.IsVisible           = false;
             СomfortSL.IsVisible           = false;
@@ -489,128 +512,232 @@ namespace Automart.Views
             SecuritySysSL.IsVisible       = false;
             AdjustmentsSL.IsVisible       = false;
             InteriorSL.IsVisible          = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            KomplektacyaSL.IsVisible      = KomplektacyaSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //KomplektacyaSL.IsVisible      = KomplektacyaSL.IsVisible ? false : true;
+            if (KomplektacyaSL.IsVisible)
+            {
+                KomplektacyaSL.IsVisible = false;
+                KomplektacyaSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            KomplektacyaSL.IsVisible = true;
+            KomplektacyaSLTapButton.ImageSource = "upArrow.png";
         }
         void CommentsTapButton_Clicked(object sender, EventArgs e)
         {
-            CommentsSL.IsVisible = CommentsSL.IsVisible ? false : true;
+            //CommentsSL.IsVisible = CommentsSL.IsVisible ? false : true;
+            if (CommentsSL.IsVisible)
+            {
+                CommentsSL.IsVisible = false;
+                CommentsSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            CommentsSL.IsVisible = true;
+            CommentsSLTapButton.ImageSource = "upArrow.png";
         }
         void SafetyTapButton_Clicked(object sender, EventArgs e)
         {
-            LightingSL.IsVisible = false;
+            /*LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            SafetySL.IsVisible = SafetySL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //SafetySL.IsVisible = SafetySL.IsVisible ? false : true;
+            if (SafetySL.IsVisible)
+            {
+                SafetySL.IsVisible = false;
+                SafetySLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            SafetySL.IsVisible = true;
+            SafetySLTapButton.ImageSource = "upArrow.png";
         }
         void LightingTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            LightingSL.IsVisible = LightingSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //LightingSL.IsVisible = LightingSL.IsVisible ? false : true;
+            if (LightingSL.IsVisible)
+            {
+                LightingSL.IsVisible = false;
+                LightingSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            LightingSL.IsVisible = true;
+            LightingSLTapButton.ImageSource = "upArrow.png";
         }
         void HeatingTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            HeatingSL.IsVisible = HeatingSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //HeatingSL.IsVisible = HeatingSL.IsVisible ? false : true;
+            if (HeatingSL.IsVisible)
+            {
+                HeatingSL.IsVisible = false;
+                HeatingSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            HeatingSL.IsVisible = true;
+            HeatingSLTapButton.ImageSource = "upArrow.png";
         }
         void СomfortTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            СomfortSL.IsVisible = СomfortSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //СomfortSL.IsVisible = СomfortSL.IsVisible ? false : true;
+            if (СomfortSL.IsVisible)
+            {
+                СomfortSL.IsVisible = false;
+                СomfortSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            СomfortSL.IsVisible = true;
+            СomfortSLTapButton.ImageSource = "upArrow.png";
         }
         void ExteriorTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            ExteriorSL.IsVisible = ExteriorSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //ExteriorSL.IsVisible = ExteriorSL.IsVisible ? false : true;
+            if (ExteriorSL.IsVisible)
+            {
+                ExteriorSL.IsVisible = false;
+                ExteriorSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            ExteriorSL.IsVisible = true;
+            ExteriorSLTapButton.ImageSource = "upArrow.png";
         }
         void SecuritySysTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            SecuritySysSL.IsVisible = SecuritySysSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //SecuritySysSL.IsVisible = SecuritySysSL.IsVisible ? false : true;
+            if (SecuritySysSL.IsVisible)
+            {
+                SecuritySysSL.IsVisible = false;
+                SecuritySysSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            SecuritySysSL.IsVisible = true;
+            SecuritySysSLTapButton.ImageSource = "upArrow.png";
         }
         void AdjustmentsTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            AdjustmentsSL.IsVisible = AdjustmentsSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //AdjustmentsSL.IsVisible = AdjustmentsSL.IsVisible ? false : true;
+            if (AdjustmentsSL.IsVisible)
+            {
+                AdjustmentsSL.IsVisible = false;
+                AdjustmentsSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            AdjustmentsSL.IsVisible = true;
+            AdjustmentsSLTapButton.ImageSource = "upArrow.png";
         }
         void InteriorTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = false;
-            InteriorSL.IsVisible = InteriorSL.IsVisible ? false : true;
+            ExtraKomplektacyaSL.IsVisible = false;*/
+            //InteriorSL.IsVisible = InteriorSL.IsVisible ? false : true;
+            if (InteriorSL.IsVisible)
+            {
+                InteriorSL.IsVisible = false;
+                InteriorSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            InteriorSL.IsVisible = true;
+            InteriorSLTapButton.ImageSource = "upArrow.png";
         }
         void ExtraKomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
-            SafetySL.IsVisible = false;
+            /*SafetySL.IsVisible = false;
             LightingSL.IsVisible = false;
             HeatingSL.IsVisible = false;
             СomfortSL.IsVisible = false;
             ExteriorSL.IsVisible = false;
             SecuritySysSL.IsVisible = false;
             AdjustmentsSL.IsVisible = false;
-            InteriorSL.IsVisible = false;
-            ExtraKomplektacyaSL.IsVisible = ExtraKomplektacyaSL.IsVisible ? false : true;
+            InteriorSL.IsVisible = false;*/
+            //ExtraKomplektacyaSL.IsVisible = ExtraKomplektacyaSL.IsVisible ? false : true;
+            if (ExtraKomplektacyaSL.IsVisible)
+            {
+                ExtraKomplektacyaSL.IsVisible = false;
+                ExtraKomplektacyaSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            ExtraKomplektacyaSL.IsVisible = true;
+            ExtraKomplektacyaSLTapButton.ImageSource = "upArrow.png";
         }
         void PhotosTapButton_Clicked(object sender, EventArgs e)
         {
-            PhotosSL.IsVisible = PhotosSL.IsVisible ? false : true;
+            //PhotosSL.IsVisible = PhotosSL.IsVisible ? false : true;
+            if (PhotosSL.IsVisible)
+            {
+                PhotosSL.IsVisible = false;
+                PhotosSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            PhotosSL.IsVisible = true;
+            PhotosSLTapButton.ImageSource = "upArrow.png";
         }
         void MainViewPhotosTapButton_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            //MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (MainViewPhotosSL.IsVisible)
+            {
+                MainViewPhotosSL.IsVisible = false;
+                MainViewPhotosSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            MainViewPhotosSL.IsVisible = true;
+            MainViewPhotosSLTapButton.ImageSource = "upArrow.png";
         }
 
         async void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)

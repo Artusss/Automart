@@ -180,4 +180,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\empty_RIGHT_WHEEL_pencil.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\downArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\upArrow.png" />
+  </ItemGroup>
 </Project>
