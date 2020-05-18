@@ -290,40 +290,10 @@ namespace Automart.Views
         {
             await Navigation.PushAsync(new MainInfoEditPage());
         }
-        async void DvigTransSaveButton_Clicked(object sender, EventArgs e)
+        
+        async void DvigTransEditButton_Clicked(object sender, EventArgs e)
         {
-            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
-            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
-            var AdVM = AdSQLiteH.GetById(CurrentAdId);
-            AdVM.DvigType  = DvigTypeEntry.Text;
-            AdVM.KPP       = KPPEntry.Text;
-            AdVM.DriveUnit = DriveUnitEntry.Text;
-            AdVM.Volume    = Convert.ToDouble(VolumeEntry.Text);
-            AdVM.Power     = Convert.ToDouble(PowerEntry.Text);
-
-            AdSQLiteH.SaveItem(AdVM);
-            await DisplayAlert("", "Двигатель и трансмиссия успешно сохранена", "OK");
-
-            DvigTypeEntry.IsEnabled       = false;
-            KPPEntry.IsEnabled            = false;
-            DriveUnitEntry.IsEnabled      = false;
-            VolumeEntry.IsEnabled         = false;
-            PowerEntry.IsEnabled          = false;
-
-            DvigTransEditButton.IsVisible = true;
-            DvigTransSaveButton.IsVisible = false;
-            return;
-        }
-        void DvigTransEditButton_Clicked(object sender, EventArgs e)
-        {
-            DvigTypeEntry.IsEnabled       = true;
-            KPPEntry.IsEnabled            = true;
-            DriveUnitEntry.IsEnabled      = true;
-            VolumeEntry.IsEnabled         = true;
-            PowerEntry.IsEnabled          = true;
-
-            DvigTransEditButton.IsVisible = false;
-            DvigTransSaveButton.IsVisible = true;
+            await Navigation.PushAsync(new DvigTransEditPage());
         }
 
         async void KomplektacyaSaveButton_Clicked(object sender, EventArgs e)

@@ -4,12 +4,40 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.DvigTransEditPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="10" Margin="10, 0">
+            <Label x:Name="DvigTransAboutLabel" Text="Двигатель и трансмиссия" FontSize="Large" TextColor="Black" />
+            <Button x:Name="DvigTransSaveButton" TextColor="Black" Text="Сохранить" 
+                                        Clicked="DvigTransSaveButton_Clicked"
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
+            <ScrollView VerticalScrollBarVisibility="Default">
+                <StackLayout>
+                    <Label x:Name="DvigTypeLabel" Text="Тип двигателя" FontSize="Medium" TextColor="Black" />
+                    <Picker x:Name="DvigTypePicker" />
+
+                    <Label x:Name="KPPLabel" Text="КПП" FontSize="Medium" TextColor="Black" />
+                    <Picker x:Name="KPPPicker" />
+
+                    <Label x:Name="DriveUnitLabel" Text="Привод" FontSize="Medium" TextColor="Black" />
+                    <Picker x:Name="DriveUnitPicker" />
+
+                    <Label x:Name="VolumeLabel" Text="Объем, л" FontSize="Medium" TextColor="Black" />
+                    <Entry x:Name="VolumeEntry" Keyboard="Numeric" Text="" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="8" MinLength="1"/>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <Label x:Name="PowerLabel" Text="Мощность, л.с." FontSize="Medium" TextColor="Black" />
+                    <Entry x:Name="PowerEntry" Keyboard="Numeric" Text="" >
+                        <Entry.Behaviors>
+                            <behavior:EntryLengthValidator MaxLength="6" MinLength="2"/>
+                        </Entry.Behaviors>
+                    </Entry>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
