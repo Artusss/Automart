@@ -61,6 +61,21 @@ namespace Automart.Views
                 return komplektacyaSQLiteH;
             }
         }
+
+        public static AdCommentSQLiteHelper adCommentSQLiteH;
+        public static AdCommentSQLiteHelper AdCommentSQLiteH
+        {
+            get
+            {
+                if (adCommentSQLiteH == null)
+                {
+                    adCommentSQLiteH = new AdCommentSQLiteHelper(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+                }
+                return adCommentSQLiteH;
+            }
+        }
+
         public AdPage()
         {
             InitializeComponent();
@@ -208,6 +223,12 @@ namespace Automart.Views
             EngineAutoStartCheckBox.IsChecked   = extraKomplektacya.EngineAutoStart;
             AirSuspensionCheckBox.IsChecked     = extraKomplektacya.AirSuspension;
             DoorClosersCheckBox.IsChecked       = extraKomplektacya.DoorClosers;
+
+            var AdCommentVM = AdCommentSQLiteH.GetByAd(CurrentAdId);
+            if(AdCommentVM != null)
+            {
+                ExtraCommentInfoEditor.Text = AdCommentVM.Text;
+            }
         }
 
         public void SetterRB(RadioButtonGroupView ItemsRB, string FieldValue)
@@ -464,6 +485,24 @@ namespace Automart.Views
 
             KomplektacyaSQLiteH.SaveItem(komplektacyaVM);
             await DisplayAlert("", "Комплектация успешно сохранена", "OK");
+            return;
+        }
+
+        async void CommentsSaveButton_Clicked(object sender, EventArgs e)
+        {
+            int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
+            if (CurrentAdId.Equals(0)) await Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+            AdCommentViewModel adCommentVM = AdCommentSQLiteH.GetByAd(CurrentAdId);
+            if (adCommentVM == null)
+            {
+                adCommentVM = new AdCommentViewModel();
+                adCommentVM.AdId       = CurrentAdId;
+                adCommentVM.Created_at = DateTime.Now;
+            }
+            adCommentVM.Text = ExtraCommentInfoEditor.Text;
+
+            AdCommentSQLiteH.SaveItem(adCommentVM);
+            await DisplayAlert("", "Комментарий успешно сохранен", "OK");
             return;
         }
 
