@@ -27,9 +27,6 @@
                                 <Button x:Name="MainInfoTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                             <StackLayout x:Name="MainInfoSL" IsVisible="False">
-                                <Button x:Name="MainInfoSaveButton" TextColor="Black" Text="Сохранить" 
-                                        Clicked="MainInfoSaveButton_Clicked" IsVisible="False"
-                                        HorizontalOptions="End" VerticalOptions="Center"/>
                                 <Button x:Name="MainInfoEditButton" TextColor="Black" Text="Редактировать" 
                                         Clicked="MainInfoEditButton_Clicked" 
                                         HorizontalOptions="End" VerticalOptions="Center"/>
