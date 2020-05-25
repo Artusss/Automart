@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Automart.ViewModels
 {
-    [Table("Advertisements_dev01")]
+    [Table("Advertisements_dev02")]
     public class AdViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -229,22 +229,30 @@ namespace Automart.ViewModels
                 }
             }
         }
-
-        /*public string InfoLabel_1
+        [Ignore]
+        public string InfoLabel_1
         {
-            get { return this.InfoLabel_1 != null ? this.InfoLabel_1 : ""; }
-            set { this.InfoLabel_1 = value; }
+            get
+            {
+                return string.Format("{0} {1} ({2} л.с.) {3} {4} {5} год {6} км", this.Mark, this.Model, this.Power, this.DvigType, this.DriveUnit, this.Year, this.Mileage);
+            }
         }
+        [Ignore]
         public string InfoLabel_2
         {
-            get { return this.InfoLabel_2 != null ? this.InfoLabel_2 : ""; }
-            set { this.InfoLabel_2 = value; }
+            get
+            {
+                return string.Format("VIN: {0}", this.VIN);
+            }
         }
+        [Ignore]
         public string InfoLabel_3
         {
-            get { return this.InfoLabel_3 != null ? this.InfoLabel_3 : ""; }
-            set { this.InfoLabel_3 = value; }
-        }*/
+            get
+            {
+                return string.Format("{0}, {1}, {2}, {3} л., {4} л.с.", this.KPP, this.Kuzov, this.DvigType, this.Volume, this.Power);
+            }
+        }
 
         protected void OnPropertyChanged(string propName)
         {

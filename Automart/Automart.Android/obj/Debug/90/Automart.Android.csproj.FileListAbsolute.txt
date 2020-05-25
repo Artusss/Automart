@@ -533,3 +533,5 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\andro
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\typemaps.x86.o
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\typemaps.x86_64.o
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\stamp\_CleanIntermediateIfNeeded.stamp
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\sendad.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\deletead.png

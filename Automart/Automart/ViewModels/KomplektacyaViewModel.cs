@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Automart.ViewModels
 {
-    [Table("Komplektacya_dev01")]
+    [Table("Komplektacya_dev02")]
     public class KomplektacyaViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

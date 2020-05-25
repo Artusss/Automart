@@ -186,4 +186,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\upArrow.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sendAd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\deleteAd.png" />
+  </ItemGroup>
 </Project>

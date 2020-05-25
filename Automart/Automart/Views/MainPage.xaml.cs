@@ -16,8 +16,6 @@ using Plugin.Settings;
 
 namespace Automart.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
@@ -111,13 +109,13 @@ namespace Automart.Views
                 }
                 else
                 {
-                    List<AdInfoViewModel> AdInfoVMs = new List<AdInfoViewModel>();
+                    /*List<AdInfoViewModel> AdInfoVMs = new List<AdInfoViewModel>();
                     foreach (var AdVM in AdVMs)
                     {
-                        AdInfoVMs.Add(new AdInfoViewModel(AdVM));
-                    }
+                        AdInfoVMs.Add(new AdInfoViewModel(AdVM, AdSQLiteH));
+                    }*/
                     CollectionView AdCollectionView = new CollectionView();
-                    AdCollectionView.ItemsSource = AdInfoVMs;
+                    AdCollectionView.ItemsSource = AdVMs;
                     AdCollectionView.SelectionMode = SelectionMode.Single;
                     AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
@@ -135,15 +133,15 @@ namespace Automart.Views
                             WidthRequest = 60,
                             Source = "empty_CAR_FRONT_LEFT_pencil.png"
                         };
-
+                        
                         Label InfoLabel_1 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
-                        InfoLabel_1.SetBinding(Label.TextProperty, "Label_1");
+                        InfoLabel_1.SetBinding(Label.TextProperty, "InfoLabel_1");
 
                         Label InfoLabel_2 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
-                        InfoLabel_2.SetBinding(Label.TextProperty, "Label_2");
+                        InfoLabel_2.SetBinding(Label.TextProperty, "InfoLabel_2");
 
                         Label InfoLabel_3 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
-                        InfoLabel_3.SetBinding(Label.TextProperty, "Label_3");
+                        InfoLabel_3.SetBinding(Label.TextProperty, "InfoLabel_3");
 
                         Grid.SetRowSpan(image, 2);
 
@@ -152,23 +150,31 @@ namespace Automart.Views
                         grid.Children.Add(InfoLabel_2, 1, 1);
                         grid.Children.Add(InfoLabel_3, 1, 2);
 
-                        return grid;
+                        SwipeView AdSwipeView = new SwipeView();
+                        SwipeItem sendSwipeItem = new SwipeItem
+                        {
+                            Text = "Send",
+                            IconImageSource = "sendAd.png",
+                            BackgroundColor = Color.LightGreen
+                        };
+                        sendSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.SendCommand", source: AdCollectionView));
+                        sendSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+                        SwipeItem deleteSwipeItem = new SwipeItem
+                        {
+                            Text = "Delete",
+                            IconImageSource = "deleteAd.png",
+                            BackgroundColor = Color.LightPink
+                        };
+                        deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: AdCollectionView));
+                        deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+                        AdSwipeView.RightItems = new SwipeItems { sendSwipeItem, deleteSwipeItem };
+                        AdSwipeView.Content = grid;
+                        return AdSwipeView;
                     });
                     signedSL.Children.Add(AdCollectionView);
-
-                    /*ListView AdVMsLV = new ListView
-                    {
-                        ItemsSource = AdVMs
-                    };
-                    AdVMsLV.ItemSelected += ToAdPage_ItemSelected;
-                    signedSL.Children.Add(AdVMsLV);*/
-
                 }
-                /*Label UserCreatedAtLabel = new Label {
-                    Text     = $"{curUserVM.Created_at.ToString()}",
-                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
-                };
-                signedSL.Children.Add(UserCreatedAtLabel);*/
 
                 Button AddAdvertisement = new Button {
                     Text              = "Добавить объявление",
@@ -203,7 +209,7 @@ namespace Automart.Views
 
         async void ToAdPage_ItemSelected(object sender, SelectionChangedEventArgs e)
         {
-            AdInfoViewModel selectedAd = (AdInfoViewModel)e.CurrentSelection.FirstOrDefault();
+            AdViewModel selectedAd = (AdViewModel)e.CurrentSelection.FirstOrDefault();
             if(selectedAd != null)
             {
                 CrossSettings.Current.AddOrUpdateValue("CurrentAdId", selectedAd.Id);
