@@ -18,3 +18,4 @@ C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\X
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.dll
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\ref\Automart.dll
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.pdb
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.csprojAssemblyReference.cache

@@ -118,6 +118,8 @@ namespace Automart.Views
                     }
                     CollectionView AdCollectionView = new CollectionView();
                     AdCollectionView.ItemsSource = AdInfoVMs;
+                    AdCollectionView.SelectionMode = SelectionMode.Single;
+                    AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
                     {
                         Grid grid = new Grid();
@@ -199,9 +201,9 @@ namespace Automart.Views
             }
         }
 
-        async void ToAdPage_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void ToAdPage_ItemSelected(object sender, SelectionChangedEventArgs e)
         {
-            AdViewModel selectedAd = (AdViewModel)e.SelectedItem;
+            AdInfoViewModel selectedAd = (AdInfoViewModel)e.CurrentSelection.FirstOrDefault();
             if(selectedAd != null)
             {
                 CrossSettings.Current.AddOrUpdateValue("CurrentAdId", selectedAd.Id);
