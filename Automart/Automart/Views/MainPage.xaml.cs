@@ -111,14 +111,56 @@ namespace Automart.Views
                 }
                 else
                 {
-                    ListView AdVMsLV = new ListView
+                    List<AdInfoViewModel> AdInfoVMs = new List<AdInfoViewModel>();
+                    foreach (var AdVM in AdVMs)
+                    {
+                        AdInfoVMs.Add(new AdInfoViewModel(AdVM));
+                    }
+                    CollectionView AdCollectionView = new CollectionView();
+                    AdCollectionView.ItemsSource = AdInfoVMs;
+                    AdCollectionView.ItemTemplate = new DataTemplate(() =>
+                    {
+                        Grid grid = new Grid();
+                        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+                        grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+
+                        Image image = new Image
+                        {
+                            Aspect = Aspect.AspectFill,
+                            HeightRequest = 60,
+                            WidthRequest = 60,
+                            Source = "empty_CAR_FRONT_LEFT_pencil.png"
+                        };
+
+                        Label InfoLabel_1 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        InfoLabel_1.SetBinding(Label.TextProperty, "Label_1");
+
+                        Label InfoLabel_2 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        InfoLabel_2.SetBinding(Label.TextProperty, "Label_2");
+
+                        Label InfoLabel_3 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        InfoLabel_3.SetBinding(Label.TextProperty, "Label_3");
+
+                        Grid.SetRowSpan(image, 2);
+
+                        grid.Children.Add(image);
+                        grid.Children.Add(InfoLabel_1, 1, 0);
+                        grid.Children.Add(InfoLabel_2, 1, 1);
+                        grid.Children.Add(InfoLabel_3, 1, 2);
+
+                        return grid;
+                    });
+                    signedSL.Children.Add(AdCollectionView);
+
+                    /*ListView AdVMsLV = new ListView
                     {
                         ItemsSource = AdVMs
                     };
                     AdVMsLV.ItemSelected += ToAdPage_ItemSelected;
-                    signedSL.Children.Add(AdVMsLV);
-                    /*CollectionView adVMsCV = new CollectionView();
-                    adVMsCV.SetBinding(ItemsView.ItemsSourceProperty, "AdVMs");*/
+                    signedSL.Children.Add(AdVMsLV);*/
+
                 }
                 /*Label UserCreatedAtLabel = new Label {
                     Text     = $"{curUserVM.Created_at.ToString()}",

@@ -230,6 +230,22 @@ namespace Automart.ViewModels
             }
         }
 
+        /*public string InfoLabel_1
+        {
+            get { return this.InfoLabel_1 != null ? this.InfoLabel_1 : ""; }
+            set { this.InfoLabel_1 = value; }
+        }
+        public string InfoLabel_2
+        {
+            get { return this.InfoLabel_2 != null ? this.InfoLabel_2 : ""; }
+            set { this.InfoLabel_2 = value; }
+        }
+        public string InfoLabel_3
+        {
+            get { return this.InfoLabel_3 != null ? this.InfoLabel_3 : ""; }
+            set { this.InfoLabel_3 = value; }
+        }*/
+
         protected void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
