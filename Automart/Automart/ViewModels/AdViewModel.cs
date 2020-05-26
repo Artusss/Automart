@@ -4,6 +4,9 @@ using System.Text;
 using Automart.Models;
 using System.ComponentModel;
 using SQLite;
+using System.Windows.Input;
+using Xamarin.Forms;
+using System.IO;
 
 namespace Automart.ViewModels
 {
@@ -12,11 +15,26 @@ namespace Automart.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Advertisement advertisement;
+        public ICommand DeleteCommand { get; }
+        public ICommand SendCommand { get; }
 
         public AdViewModel()
         {
             advertisement = new Advertisement();
+            DeleteCommand = new Command(DeleteAd);
+            SendCommand   = new Command(SendAd);
         }
+
+        public void DeleteAd()
+        {
+            var adSQLiteH = new AdSQLiteHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), App.DATABASE_NAME));
+            adSQLiteH.DeleteItem(this.Id);
+        }
+        public void SendAd()
+        {
+
+        }
+
         [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id
         {

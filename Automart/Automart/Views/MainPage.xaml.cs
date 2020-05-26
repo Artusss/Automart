@@ -197,6 +197,7 @@ namespace Automart.Views
         async void AddAd_Clicked(object sender, EventArgs e)
         {
             var categoryAction = await DisplayActionSheet("Выберите категорию", CANCEL, null, PASS_AUTO, FREIGHT_AUTO);
+            if (categoryAction == null) return;
             if (!categoryAction.Equals(CANCEL))
             {
                 AdViewModel adVM = new AdViewModel();
