@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.automart" android:installLocation="auto">
-  <uses-sdk android:minSdkVersion="25" android:targetSdkVersion="28" />
+  <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="28" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-feature android:name="android.hardware.camera" android:required="true" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
@@ -9,6 +9,9 @@
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="Automart.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.automart.fileprovider" android:exported="false" android:grantUriPermissions="true">
+      <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+    </provider>
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Automart" android:theme="@style/MainTheme" android:name="crc64b1638ef2e451e317.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

@@ -707,7 +707,7 @@ namespace Automart.Views
             MainViewPhotosSLTapButton.ImageSource = "upArrow.png";
         }
 
-        async void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        public async void MakePhotoAsync(Image image)
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
@@ -726,16 +726,17 @@ namespace Automart.Views
             });
             if (file == null) return;
 
-            await DisplayAlert("File Location", file.Path, "OK");
+            /*await DisplayAlert("File Location", file.Path, "OK");*/
 
-            CAR_FRONT_LEFTimg.Source = ImageSource.FromStream(() =>
+            image.Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
                 file.Dispose();
                 return stream;
             });
         }
-        async void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+
+        public async void PickPhotoAsync(Image image)
         {
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
@@ -750,100 +751,109 @@ namespace Automart.Views
 
             if (file == null) return;
 
-            CAR_FRONT_LEFTimg.Source = ImageSource.FromStream(() =>
+            image.Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
                 file.Dispose();
                 return stream;
             });
         }
+
+        void Make_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        {
+            MakePhotoAsync(CAR_FRONT_LEFTimg);
+        }
+        void Pick_CAR_FRONT_LEFT_Clicked(object sender, EventArgs e)
+        {
+            PickPhotoAsync(CAR_FRONT_LEFTimg);
+        }
         void Make_CAR_FRONT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_FRONTimg);
         }
         void Pick_CAR_FRONT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_FRONTimg);
         }
         void Make_CAR_REAR_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_REARimg);
         }
         void Pick_CAR_REAR_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_REARimg);
         }
         void Make_CAR_REAR_RIGHT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_REAR_RIGHTimg);
         }
         void Pick_CAR_REAR_RIGHT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_REAR_RIGHTimg);
         }
         void Make_CAR_LEFT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_LEFTimg);
         }
         void Pick_CAR_LEFT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_LEFTimg);
         }
         void Make_CAR_RIGHT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_RIGHTimg);
         }
         void Pick_CAR_RIGHT_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_RIGHTimg);
         }
         void Make_CAR_DASHBOARD_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_DASHBOARDimg);
         }
         void Pick_CAR_DASHBOARD_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_DASHBOARDimg);
         }
         void Make_CAR_INTERIOR_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_INTERIORimg);
         }
         void Pick_CAR_INTERIOR_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_INTERIORimg);
         }
         void Make_CAR_REAR_SEATS_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_REAR_SEATSimg);
         }
         void Pick_CAR_REAR_SEATS_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_REAR_SEATSimg);
         }
         void Make_CAR_BAGGAGE_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_BAGGAGEimg);
         }
         void Pick_CAR_BAGGAGE_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_BAGGAGEimg);
         }
         void Make_CAR_ENGINE_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(CAR_ENGINEimg);
         }
         void Pick_CAR_ENGINE_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(CAR_ENGINEimg);
         }
         void Make_RIGHT_WHEEL_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            MakePhotoAsync(RIGHT_WHEELimg);
         }
         void Pick_RIGHT_WHEEL_Clicked(object sender, EventArgs e)
         {
-            MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            PickPhotoAsync(RIGHT_WHEELimg);
         }
     }
 }
