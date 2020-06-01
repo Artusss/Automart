@@ -779,6 +779,20 @@
                     <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
+                                <Label x:Name="DocumentsAboutLabel" TextColor="Black" Text="Документы" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout x:Name="DocumentsSL" IsVisible="False">
+                                <Button x:Name="DocumentsSave1Button" TextColor="Black" Text="Выбрать" Clicked="DocumentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical">
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
                                 <Label x:Name="CommentsAboutLabel" TextColor="Black" Text="Комментарии" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Button x:Name="CommentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="CommentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>

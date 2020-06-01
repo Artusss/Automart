@@ -14,6 +14,8 @@ using Xamarin.Forms.Internals;
 using Plugin.InputKit.Shared.Controls;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.FilePicker.Abstractions;
+using Plugin.FilePicker;
 
 namespace Automart.Views
 {
@@ -720,6 +722,19 @@ namespace Automart.Views
             ExtraViewPhotosSLTapButton.ImageSource = "upArrow.png";
         }
 
+        void DocumentsTapButton_Clicked(object sender, EventArgs e)
+        {
+            //MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (DocumentsSL.IsVisible)
+            {
+                DocumentsSL.IsVisible = false;
+                DocumentsSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            DocumentsSL.IsVisible = true;
+            DocumentsSLTapButton.ImageSource = "upArrow.png";
+        }
+
         public async void MakePhotoAsync(Image image)
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -882,6 +897,41 @@ namespace Automart.Views
             var ImageTmp = new Image();
             PickPhotoAsync(ImageTmp);
             ExtraCarPhotosSL.Children.Add(ImageTmp);
+        }
+
+        public async void PickFileAsync(StackLayout stackLayout)
+        {
+            FileData fileData = await CrossFilePicker.Current.PickFile();
+            if (fileData == null)
+                return; // user canceled file picking
+            var Icon = new Image
+            {
+                Source = "document.png"
+            };
+            var Name = new Label{
+                TextColor = Color.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                Text = fileData.FileName,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var Content = new Label{
+                Text = Encoding.UTF8.GetString(fileData.DataArray),
+                IsVisible = false,
+            };
+            stackLayout.Children.Add(Icon);
+            stackLayout.Children.Add(Name);
+            stackLayout.Children.Add(Content);
+        }
+        void DocumentsSaveButton_Clicked(object sender, EventArgs e)
+        {
+            var StackLayoutTmp = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                Padding = new Thickness(10, 10)
+            };
+            PickFileAsync(StackLayoutTmp);
+            PickedDocumentsSL.Children.Add(StackLayoutTmp);
         }
     }
 }

@@ -18,6 +18,7 @@
           "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.6.0.726",
           "Xamarin.Forms.InputKit": "3.3.0",
+          "Xamarin.Plugin.FilePicker": "2.1.41",
           "sqlite-net-pcl": "1.6.292"
         },
         "runtime": {
@@ -171,6 +172,14 @@
             "fileVersion": "3.3.0.0"
           }
         }
+      },
+      "Xamarin.Plugin.FilePicker/2.1.41": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.FilePicker.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
       }
     }
   },
@@ -277,6 +286,13 @@
       "sha512": "sha512-eplF1aGjxIRqrV4Ry6uNU9f1az1QCyUko67AfHW5bXeXNyzUrigyTAVq9TEVYkc8EFGsrySRyu0SnOYmDbNYzA==",
       "path": "xamarin.forms.inputkit/3.3.0",
       "hashPath": "xamarin.forms.inputkit.3.3.0.nupkg.sha512"
+    },
+    "Xamarin.Plugin.FilePicker/2.1.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
+      "path": "xamarin.plugin.filepicker/2.1.41",
+      "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
     }
   }
 }

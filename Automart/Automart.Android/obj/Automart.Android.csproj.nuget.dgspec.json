@@ -134,6 +134,10 @@
               "target": "Package",
               "version": "[3.3.0, )"
             },
+            "Xamarin.Plugin.FilePicker": {
+              "target": "Package",
+              "version": "[2.1.41, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.6.292, )"

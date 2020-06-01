@@ -192,4 +192,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\deleteAd.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\document.png" />
+  </ItemGroup>
 </Project>
