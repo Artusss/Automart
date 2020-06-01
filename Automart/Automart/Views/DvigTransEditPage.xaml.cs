@@ -79,7 +79,8 @@ namespace Automart.Views
             int CurrentAdId = CrossSettings.Current.GetValueOrDefault("CurrentAdId", 0);
             if (CurrentAdId.Equals(0)) Navigation.PushModalAsync(new NavigationPage(new MainPage()));
             var AdVM = AdSQLiteH.GetById(CurrentAdId);
-
+            VolumeEntry.Text = AdVM.Volume.ToString();
+            PowerEntry.Text = AdVM.Power.ToString();
             foreach (var DvigType in DvigTypeSQLiteH.GetItems())
             {
                 DvigTypePicker.Items.Add(DvigType.Value);

@@ -758,7 +758,21 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-
+                                <StackLayout Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="ExtraViewPhotosAboutLabel" TextColor="Black" Text="Дополнительные ракурсы" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Button x:Name="ExtraViewPhotosSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="ExtraViewPhotosTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout x:Name="ExtraViewPhotosSL" IsVisible="False">
+                                        <StackLayout x:Name="ExtraCarPhotosSL"  Orientation = "Vertical">
+                                            <StackLayout Orientation = "Horizontal" >
+                                                <Button x:Name="Make_EXTRA_CAR" TextColor="Black" Text="Сделать" Clicked="Make_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Button x:Name="Pick_EXTRA_CAR" TextColor="Black" Text="Выбрать" Clicked="Pick_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </Frame>

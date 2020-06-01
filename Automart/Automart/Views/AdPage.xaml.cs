@@ -707,6 +707,19 @@ namespace Automart.Views
             MainViewPhotosSLTapButton.ImageSource = "upArrow.png";
         }
 
+        void ExtraViewPhotosTapButton_Clicked(object sender, EventArgs e)
+        {
+            //MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (ExtraViewPhotosSL.IsVisible)
+            {
+                ExtraViewPhotosSL.IsVisible = false;
+                ExtraViewPhotosSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            ExtraViewPhotosSL.IsVisible = true;
+            ExtraViewPhotosSLTapButton.ImageSource = "upArrow.png";
+        }
+
         public async void MakePhotoAsync(Image image)
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -721,7 +734,7 @@ namespace Automart.Views
                 CompressionQuality = 75,
                 CustomPhotoSize = 50,
                 PhotoSize = PhotoSize.MaxWidthHeight,
-                MaxWidthHeight = 2000,
+                MaxWidthHeight = 1500,
                 DefaultCamera = CameraDevice.Front
             });
             if (file == null) return;
@@ -745,8 +758,10 @@ namespace Automart.Views
             }
             var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-
+                CompressionQuality = 75,
+                CustomPhotoSize = 50,
+                PhotoSize = PhotoSize.MaxWidthHeight,
+                MaxWidthHeight = 1500
             });
 
             if (file == null) return;
@@ -854,6 +869,19 @@ namespace Automart.Views
         void Pick_RIGHT_WHEEL_Clicked(object sender, EventArgs e)
         {
             PickPhotoAsync(RIGHT_WHEELimg);
+        }
+
+        void Make_EXTRA_CAR_Clicked(object sender, EventArgs e)
+        {
+            var ImageTmp = new Image();
+            MakePhotoAsync(ImageTmp);
+            ExtraCarPhotosSL.Children.Add(ImageTmp);
+        }
+        void Pick_EXTRA_CAR_Clicked(object sender, EventArgs e)
+        {
+            var ImageTmp = new Image();
+            PickPhotoAsync(ImageTmp);
+            ExtraCarPhotosSL.Children.Add(ImageTmp);
         }
     }
 }
