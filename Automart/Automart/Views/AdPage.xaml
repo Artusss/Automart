@@ -779,6 +779,17 @@
                     <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
+                                <Label x:Name="StatesAboutLabel" TextColor="Black" Text="Состояние" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Button x:Name="StatesSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="StatesTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                            </StackLayout>
+                            <StackLayout x:Name="StatesSL" IsVisible="False">
+                                
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
                                 <Label x:Name="DocumentsAboutLabel" TextColor="Black" Text="Документы" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>

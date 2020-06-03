@@ -226,6 +226,8 @@ namespace Automart.Views
             AirSuspensionCheckBox.IsChecked     = extraKomplektacya.AirSuspension;
             DoorClosersCheckBox.IsChecked       = extraKomplektacya.DoorClosers;
 
+            
+
             var AdCommentVM = AdCommentSQLiteH.GetByAd(CurrentAdId);
             if(AdCommentVM != null)
             {
@@ -720,6 +722,19 @@ namespace Automart.Views
             }
             ExtraViewPhotosSL.IsVisible = true;
             ExtraViewPhotosSLTapButton.ImageSource = "upArrow.png";
+        }
+
+        void StatesTapButton_Clicked(object sender, EventArgs e)
+        {
+            //MainViewPhotosSL.IsVisible = MainViewPhotosSL.IsVisible ? false : true;
+            if (StatesSL.IsVisible)
+            {
+                StatesSL.IsVisible = false;
+                StatesSLTapButton.ImageSource = "downArrow.png";
+                return;
+            }
+            StatesSL.IsVisible = true;
+            StatesSLTapButton.ImageSource = "upArrow.png";
         }
 
         void DocumentsTapButton_Clicked(object sender, EventArgs e)
