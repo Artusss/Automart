@@ -226,7 +226,112 @@ namespace Automart.Views
             AirSuspensionCheckBox.IsChecked     = extraKomplektacya.AirSuspension;
             DoorClosersCheckBox.IsChecked       = extraKomplektacya.DoorClosers;
 
-            
+            StackLayout statesListSL = new StackLayout
+            {
+                Margin = new Thickness(10, 0),
+                Padding = new Thickness(10),
+            };
+            var StateVMs = new List<StateViewModel>();
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+            StateVMs.Add(new StateViewModel
+            {
+                // Id
+                // AdId
+                Type = "Отчет о состоянии Автомарт",
+                Status = "Закрыт",
+                WhoClosed = "Ivanov Ivan",
+                Created_at = new DateTime(),
+                Closed_at = new DateTime()
+            });
+
+            CollectionView StateCollectionView = new CollectionView();
+            StateCollectionView.ItemsSource = StateVMs;
+            StateCollectionView.SelectionMode = SelectionMode.Single;
+            StateCollectionView.SelectionChanged += ToState_ItemSelected;
+            StateCollectionView.ItemTemplate = new DataTemplate(() =>
+            {
+                Grid grid = new Grid();
+                grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+                grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+
+                Label TypeLabel = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.CenterAndExpand };
+                TypeLabel.SetBinding(Label.TextProperty, "Type");
+
+                Label Created_atLabel = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.CenterAndExpand };
+                Created_atLabel.SetBinding(Label.TextProperty, "Created_atField");
+
+                Label StatusLabel = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.CenterAndExpand };
+                StatusLabel.SetBinding(Label.TextProperty, "StatusField");
+
+                Label Closed_atLabel = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.CenterAndExpand };
+                Closed_atLabel.SetBinding(Label.TextProperty, "Closed_atField");
+
+                Label WhoClosedLabel = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.CenterAndExpand };
+                WhoClosedLabel.SetBinding(Label.TextProperty, "WhoClosedField");
+
+                Grid.SetColumnSpan(TypeLabel, 2);
+                grid.Children.Add(TypeLabel);
+                grid.Children.Add(Created_atLabel, 0, 1);
+                grid.Children.Add(StatusLabel, 1, 1);
+                grid.Children.Add(Closed_atLabel, 0, 2);
+                grid.Children.Add(WhoClosedLabel, 1, 2);
+
+                return grid;
+            });
+            statesListSL.Children.Add(StateCollectionView);
+            StatesSL.Children.Add(statesListSL);
 
             var AdCommentVM = AdCommentSQLiteH.GetByAd(CurrentAdId);
             if(AdCommentVM != null)
@@ -947,6 +1052,16 @@ namespace Automart.Views
             };
             PickFileAsync(StackLayoutTmp);
             PickedDocumentsSL.Children.Add(StackLayoutTmp);
+        }
+
+        async void ToState_ItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+            StateViewModel selectedState = (StateViewModel)e.CurrentSelection.FirstOrDefault();
+            if (selectedState != null)
+            {
+                CrossSettings.Current.AddOrUpdateValue("CurrentStateId", selectedState.Id);
+                await Navigation.PushAsync(new NavigationPage(new StatePage()));
+            }
         }
     }
 }

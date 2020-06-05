@@ -48,7 +48,7 @@ namespace Automart.ViewModels
                 if (state.Type != value)
                 {
                     state.Type = value;
-                    OnPropertyChanged("Safety");
+                    OnPropertyChanged("Type");
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace Automart.ViewModels
                 if (state.Status != value)
                 {
                     state.Status = value;
-                    OnPropertyChanged("Safety");
+                    OnPropertyChanged("Status");
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace Automart.ViewModels
                 if (state.WhoClosed != value)
                 {
                     state.WhoClosed = value;
-                    OnPropertyChanged("Safety");
+                    OnPropertyChanged("WhoClosed");
                 }
             }
         }
@@ -102,6 +102,37 @@ namespace Automart.ViewModels
             }
         }
 
+        public string WhoClosedField
+        {
+            get
+            {
+                return string.Format("Кто перевел: {0}", this.WhoClosed);
+            }
+        }
+
+        public string StatusField
+        {
+            get
+            {
+                return string.Format("Статус: {0}", this.Status);
+            }
+        }
+
+        public string Created_atField
+        {
+            get
+            {
+                return string.Format("Создан: {0:MM.dd.yyyy}", this.Created_at);
+            }
+        }
+        public string Closed_atField
+        {
+            get
+            {
+                return string.Format("Закрыт: {0:MM.dd.yyyy}", this.Closed_at);
+            }
+        }
+        
         protected void OnPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
