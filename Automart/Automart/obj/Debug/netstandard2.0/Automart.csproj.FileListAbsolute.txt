@@ -19,3 +19,4 @@ C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\A
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.csprojAssemblyReference.cache
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Automart.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\source\repos\Automart\Automart\Automart\obj\Debug\netstandard2.0\Views\StatePage.xaml.g.cs

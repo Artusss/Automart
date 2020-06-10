@@ -91,7 +91,7 @@ namespace Automart.Views
 
                 Label AdsLabel = new Label
                 {
-                    Text      = "Объявления",
+                    Text      = "Автомобили",
                     TextColor = Color.Black,
                     FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
@@ -103,6 +103,7 @@ namespace Automart.Views
                     Label AdsListLabel = new Label
                     {
                         Text = "У вас пока нет объявлений",
+                        TextColor = Color.Black,
                         FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
                     };
                     signedSL.Children.Add(AdsListLabel);
@@ -120,7 +121,16 @@ namespace Automart.Views
                     AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
                     {
+                        Frame frame = new Frame
+                        {
+                            CornerRadius = 10,
+                            BorderColor = Color.FromHex("#e1e1e1"),
+                            BackgroundColor = Color.FromHex("#f5f5f5"),
+                            Padding = new Thickness(2),
+                            Margin = new Thickness(10, 2)
+                        };
                         Grid grid = new Grid();
+                        grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                         grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
@@ -130,20 +140,20 @@ namespace Automart.Views
                         {
                             Aspect = Aspect.AspectFill,
                             HeightRequest = 60,
-                            WidthRequest = 60,
+                            WidthRequest = 100,
                             Source = "empty_CAR_FRONT_LEFT_pencil.png"
                         };
                         
-                        Label InfoLabel_1 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        Label InfoLabel_1 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, TextColor = Color.Black, HorizontalOptions = LayoutOptions.StartAndExpand };
                         InfoLabel_1.SetBinding(Label.TextProperty, "InfoLabel_1");
 
-                        Label InfoLabel_2 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        Label InfoLabel_2 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, TextColor = Color.FromHex("#428bca"), HorizontalOptions = LayoutOptions.StartAndExpand };
                         InfoLabel_2.SetBinding(Label.TextProperty, "InfoLabel_2");
 
-                        Label InfoLabel_3 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.StartAndExpand };
+                        Label InfoLabel_3 = new Label { FontAttributes = FontAttributes.Italic, VerticalOptions = LayoutOptions.Center, TextColor = Color.Black, HorizontalOptions = LayoutOptions.StartAndExpand };
                         InfoLabel_3.SetBinding(Label.TextProperty, "InfoLabel_3");
 
-                        Grid.SetRowSpan(image, 2);
+                        Grid.SetRowSpan(image, 3);
 
                         grid.Children.Add(image);
                         grid.Children.Add(InfoLabel_1, 1, 0);
@@ -171,16 +181,19 @@ namespace Automart.Views
 
                         AdSwipeView.RightItems = new SwipeItems { sendSwipeItem, deleteSwipeItem };
                         AdSwipeView.Content = grid;
-                        return AdSwipeView;
+                        frame.Content = AdSwipeView;
+                        return frame;
                     });
                     signedSL.Children.Add(AdCollectionView);
                 }
 
                 Button AddAdvertisement = new Button {
-                    Text              = "Добавить объявление",
-                    BackgroundColor   = Color.Green,
+                    ImageSource       = "document.png",
+                    Text              = "Добавить автомобиль",
+                    BackgroundColor   = Color.FromHex("#5cb85c"),
                     TextColor         = Color.White,
-                    FontSize          = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
+                    FontSize          = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                    FontAttributes    = FontAttributes.Bold,
                     BorderWidth       = 1,
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions   = LayoutOptions.EndAndExpand,
