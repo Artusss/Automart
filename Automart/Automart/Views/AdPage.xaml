@@ -668,102 +668,151 @@
                                         <Button x:Name="MainViewPhotosSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="MainViewPhotosTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                                     </StackLayout>
                                     <StackLayout x:Name="MainViewPhotosSL" IsVisible="False">
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_FRONT_LEFTLabel" TextColor="Black" Text="Фронтальная часть и левый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_FRONT_LEFTimg" Source="empty_CAR_FRONT_LEFT_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_FRONT_LEFT" TextColor="Black" Text="Сделать" Clicked="Make_CAR_FRONT_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_FRONT_LEFT" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_FRONT_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_FRONT_LEFTLabel" TextColor="Black" Padding="0" Margin="0" Text="Фронтальная часть и левый борт" FontSize="Small" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_FRONT_LEFTimg" Margin="0" WidthRequest="100" HeightRequest="250" Source="empty_CAR_FRONT_LEFT_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal"
+                                                         Padding="0" Margin="0">
+                                                    <Button x:Name="Make_CAR_FRONT_LEFT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_FRONT_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_FRONT_LEFT" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_FRONT_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_FRONTLabel" TextColor="Black" Text="Фронтальная часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_FRONTimg" Source="empty_CAR_FRONT_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_FRONT" TextColor="Black" Text="Сделать" Clicked="Make_CAR_FRONT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_FRONT" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_FRONT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_FRONTLabel" Padding="0" Margin="0" TextColor="Black" Text="Фронтальная часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_FRONTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_FRONT_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0">
+                                                    <Button x:Name="Make_CAR_FRONT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_FRONT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_FRONT" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_FRONT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_REARLabel" TextColor="Black" Text="Задняя часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_REARimg" Source="empty_CAR_REAR_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_REAR" TextColor="Black" Text="Сделать" Clicked="Make_CAR_REAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_REAR" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_REAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_REARLabel" Padding="0" Margin="0" TextColor="Black" Text="Задняя часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_REARimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_REAR" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_REAR" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_REAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_REAR_RIGHTLabel" TextColor="Black" Text="Задняя часть и правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_REAR_RIGHTimg" Source="empty_CAR_REAR_RIGHT_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_REAR_RIGHT" TextColor="Black" Text="Сделать" Clicked="Make_CAR_REAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_REAR_RIGHT" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_REAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_REAR_RIGHTLabel" Padding="0" Margin="0" TextColor="Black" Text="Задняя часть и правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_REAR_RIGHTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_RIGHT_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_REAR_RIGHT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_REAR_RIGHT" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_REAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_LEFTLabel" TextColor="Black" Text="Левый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_LEFTimg" Source="empty_CAR_LEFT_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_LEFT" TextColor="Black" Text="Сделать" Clicked="Make_CAR_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_LEFT" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_LEFTLabel" Padding="0" Margin="0" TextColor="Black" Text="Левый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_LEFTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_LEFT_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_LEFT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_LEFT" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_RIGHTLabel" TextColor="Black" Text="Правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_RIGHTimg" Source="empty_CAR_RIGHT_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_RIGHT" TextColor="Black" Text="Сделать" Clicked="Make_CAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_RIGHT" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_RIGHTLabel" Padding="0" Margin="0" TextColor="Black" Text="Правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_RIGHTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_RIGHT_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_RIGHT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_RIGHT" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_DASHBOARDLabel" TextColor="Black" Text="Панель приборов" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_DASHBOARDimg" Source="empty_CAR_DASHBOARD_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_DASHBOARD" TextColor="Black" Text="Сделать" Clicked="Make_CAR_DASHBOARD_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_DASHBOARD" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_DASHBOARD_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_DASHBOARDLabel" Padding="0" Margin="0" TextColor="Black" Text="Панель приборов" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_DASHBOARDimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_DASHBOARD_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_DASHBOARD" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_DASHBOARD_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_DASHBOARD" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_DASHBOARD_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_INTERIORLabel" TextColor="Black" Text="Передние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_INTERIORimg" Source="empty_CAR_INTERIOR_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_INTERIOR" TextColor="Black" Text="Сделать" Clicked="Make_CAR_INTERIOR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_INTERIOR" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_INTERIOR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_INTERIORLabel" Padding="0" Margin="0" TextColor="Black" Text="Передние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_INTERIORimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_INTERIOR_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_INTERIOR" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_INTERIOR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_INTERIOR" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_INTERIOR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_REAR_SEATSLabel" TextColor="Black" Text="Задние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_REAR_SEATSimg" Source="empty_CAR_REAR_SEATS_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_REAR_SEATS" TextColor="Black" Text="Сделать" Clicked="Make_CAR_REAR_SEATS_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_REAR_SEATS" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_REAR_SEATS_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_REAR_SEATSLabel" Padding="0" Margin="0" TextColor="Black" Text="Задние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_REAR_SEATSimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_SEATS_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_REAR_SEATS" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_SEATS_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_REAR_SEATS" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_REAR_SEATS_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_BAGGAGELabel" Padding="0" Margin="0" TextColor="Black" Text="Багажник" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_BAGGAGEimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_BAGGAGE_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_BAGGAGE" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_BAGGAGE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_BAGGAGE" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_BAGGAGE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                         </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_BAGGAGELabel" TextColor="Black" Text="Багажник" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_BAGGAGEimg" Source="empty_CAR_BAGGAGE_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_BAGGAGE" TextColor="Black" Text="Сделать" Clicked="Make_CAR_BAGGAGE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_BAGGAGE" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_BAGGAGE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="CAR_ENGINELabel" Padding="0" Margin="0" TextColor="Black" Text="Подкапотное пространство" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="CAR_ENGINEimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_ENGINE_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_CAR_ENGINE" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_ENGINE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_CAR_ENGINE" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_CAR_ENGINE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="CAR_ENGINELabel" TextColor="Black" Text="Подкапотное пространство" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="CAR_ENGINEimg" Source="empty_CAR_ENGINE_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_CAR_ENGINE" TextColor="Black" Text="Сделать" Clicked="Make_CAR_ENGINE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_CAR_ENGINE" TextColor="Black" Text="Выбрать" Clicked="Pick_CAR_ENGINE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        </Frame>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout Orientation = "Vertical" >
+                                                <Label x:Name="RIGHT_WHEELLabel" Padding="0" Margin="0" TextColor="Black" Text="Передний правый колесный диск" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
+                                                    <Image x:Name="RIGHT_WHEELimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_RIGHT_WHEEL_pencil.png" />
+                                                </Frame>
+                                                <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
+                                                    <Button x:Name="Make_RIGHT_WHEEL" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_RIGHT_WHEEL_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_RIGHT_WHEEL" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_RIGHT_WHEEL_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                        </StackLayout>
-                                        <StackLayout Orientation = "Vertical" >
-                                            <Label x:Name="RIGHT_WHEELLabel" TextColor="Black" Text="Передний правый колесный диск" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            <Image x:Name="RIGHT_WHEELimg" Source="empty_RIGHT_WHEEL_pencil.png" />
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_RIGHT_WHEEL" TextColor="Black" Text="Сделать" Clicked="Make_RIGHT_WHEEL_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_RIGHT_WHEEL" TextColor="Black" Text="Выбрать" Clicked="Pick_RIGHT_WHEEL_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                            </StackLayout>
-                                        </StackLayout>
+                                        </Frame>
                                     </StackLayout>
                                 </StackLayout>
                                 <StackLayout Padding="10">
@@ -772,13 +821,14 @@
                                         <Button x:Name="ExtraViewPhotosSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="ExtraViewPhotosTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                                     </StackLayout>
                                     <StackLayout x:Name="ExtraViewPhotosSL" IsVisible="False">
-                                        <StackLayout x:Name="ExtraCarPhotosSL"  Orientation = "Vertical">
-                                            <StackLayout Orientation = "Horizontal" >
-                                                <Button x:Name="Make_EXTRA_CAR" TextColor="Black" Text="Сделать" Clicked="Make_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
-                                                <Button x:Name="Pick_EXTRA_CAR" TextColor="Black" Text="Выбрать" Clicked="Pick_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                        <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                            <StackLayout x:Name="ExtraCarPhotosSL"  Orientation = "Vertical">
+                                                <StackLayout Orientation = "Horizontal" >
+                                                    <Button x:Name="Make_EXTRA_CAR" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                    <Button x:Name="Pick_EXTRA_CAR" BackgroundColor="#428bca" TextColor="White" Text="Выбрать" Clicked="Pick_EXTRA_CAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                                                </StackLayout>
                                             </StackLayout>
-                                            
-                                        </StackLayout>
+                                        </Frame>
                                     </StackLayout>
                                 </StackLayout>
                             </StackLayout>

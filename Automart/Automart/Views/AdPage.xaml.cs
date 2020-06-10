@@ -1008,15 +1008,41 @@ namespace Automart.Views
 
         void Make_EXTRA_CAR_Clicked(object sender, EventArgs e)
         {
-            var ImageTmp = new Image();
+            Frame imageFrame = new Frame
+            {
+                CornerRadius = 10,
+                BackgroundColor = Color.FromHex("#f5f5f5"),
+                BorderColor = Color.FromHex("#e1e1e1"),
+                Margin = new Thickness(0),
+                Padding = new Thickness(0),
+            };
+            var ImageTmp = new Image()
+            {
+                WidthRequest = 100,
+                HeightRequest = 250
+            };
             MakePhotoAsync(ImageTmp);
-            ExtraCarPhotosSL.Children.Add(ImageTmp);
+            imageFrame.Content = ImageTmp;
+            ExtraCarPhotosSL.Children.Add(imageFrame);
         }
         void Pick_EXTRA_CAR_Clicked(object sender, EventArgs e)
         {
-            var ImageTmp = new Image();
+            Frame imageFrame = new Frame
+            {
+                CornerRadius = 10,
+                BackgroundColor = Color.FromHex("#f5f5f5"),
+                BorderColor = Color.FromHex("#e1e1e1"),
+                Margin = new Thickness(0),
+                Padding = new Thickness(0),
+            };
+            var ImageTmp = new Image()
+            {
+                WidthRequest = 100,
+                HeightRequest = 250
+            };
             PickPhotoAsync(ImageTmp);
-            ExtraCarPhotosSL.Children.Add(ImageTmp);
+            imageFrame.Content = ImageTmp;
+            ExtraCarPhotosSL.Children.Add(imageFrame);
         }
 
         public async void PickFileAsync(StackLayout stackLayout)
