@@ -195,4 +195,31 @@
   <ItemGroup>
     <BundleResource Include="Resources\document.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\docs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\states.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\komplectnost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\komplectacya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drive.png" />
+  </ItemGroup>
 </Project>

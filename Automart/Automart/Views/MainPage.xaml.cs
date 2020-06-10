@@ -190,7 +190,7 @@ namespace Automart.Views
                     signedSL.Children.Add(AdCollectionView);
                 }
                 Button AddAdvertisement = new Button {
-                    //ImageSource       = "",
+                    ImageSource       = "wplus.png",
                     Text              = "Добавить автомобиль",
                     BackgroundColor   = Color.FromHex("#5cb85c"),
                     TextColor         = Color.White,

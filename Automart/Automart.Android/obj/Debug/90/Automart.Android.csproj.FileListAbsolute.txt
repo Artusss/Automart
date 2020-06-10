@@ -539,3 +539,12 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\andro
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Plugin.FilePicker.pdb
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\src\crc64424a8adc5a1fbe28\FilePickerActivity.java
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\document.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\wplus.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\comment.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\docs.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\states.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\image.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\komplectnost.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\komplectacya.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\info.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\drive.png
