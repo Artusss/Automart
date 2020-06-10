@@ -13,23 +13,30 @@
 
     <ContentPage.Content>
         <StackLayout x:Name="AdSL" Margin="10, 0" Padding="10">
-            <Label x:Name="InfoLabel" Text="" FontSize="Medium" TextColor="Black" />
+            <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                <Label x:Name="InfoLabel" Text="" FontSize="Medium" TextColor="Black" />
+            </Frame>
             <ScrollView x:Name="scrollView">
                 <StackLayout x:Name="stackLayout">
-                    <Label Text="Размещение автомобиля" FontSize="Default" TextColor="Black" />
-                    <Label x:Name="CityLabel" Text="" FontSize="Default" TextColor="Black" />
-                    <Label x:Name="TransTypeLabel" Text="" FontSize="Default" TextColor="Black" />
-                    <Label x:Name="VINiLabel" Text="" FontSize="Default" TextColor="Black" />
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                        <StackLayout>
+                            <Label Text="Размещение автомобиля" FontSize="Default" TextColor="Black" />
+                            <Label x:Name="CityLabel" Text="" FontSize="Default" TextColor="Black" />
+                            <Label x:Name="TransTypeLabel" Text="" FontSize="Default" TextColor="Black" />
+                            <Label x:Name="VINiLabel" Text="" FontSize="Default" TextColor="Black" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontSize="Large" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
-                                <Button x:Name="MainInfoTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="MainInfoTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="MainInfoTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="MainInfoSL" IsVisible="False">
                                 <Button x:Name="MainInfoEditButton" TextColor="Black" Text="Редактировать" 
                                         Clicked="MainInfoEditButton_Clicked" 
-                                        HorizontalOptions="End" VerticalOptions="Center"/>
+                                        HorizontalOptions="End" VerticalOptions="Center"
+                                        BackgroundColor="#e3e3e3" />
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="VINLabel" TextColor="Black" Text="VIN :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
                                     <Label x:Name="VINEntry" TextColor="Black" VerticalOptions="Center" Text="0" HorizontalOptions="StartAndExpand"/>
@@ -69,16 +76,17 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="DvigTransAboutLabel" TextColor="Black" Text="Двигатель и трансмиссия" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="DvigTransSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DvigTransTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="DvigTransSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DvigTransTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="DvigTransSL" IsVisible="False">
                                 <Button x:Name="DvigTransEditButton" TextColor="Black" Text="Редактировать" 
                                         Clicked="DvigTransEditButton_Clicked" 
-                                        HorizontalOptions="End" VerticalOptions="Center"/>
+                                        HorizontalOptions="End" VerticalOptions="Center"
+                                        BackgroundColor="#e3e3e3" />
                                 <StackLayout Orientation="Horizontal">
                                     <Label x:Name="DvigTypeLabel" TextColor="Black" Text="Тип двигателя :" FontSize="Medium"  HorizontalOptions="Start" VerticalOptions="Center"/>
                                     <Label x:Name="DvigTypeEntry" TextColor="Black" VerticalOptions="Center" Text="0" HorizontalOptions="StartAndExpand"/>
@@ -102,11 +110,11 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="KomplektnostAboutLabel" TextColor="Black" Text="Комплектность" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="KomplektnostSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="KomplektnostSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektnostSL" IsVisible="False">
                                 <Button x:Name="KomplektnostSaveButton" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -190,11 +198,11 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="KomplektacyaAboutLabel" TextColor="Black" Text="Комплектация" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="KomplektacyaSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="KomplektacyaTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektacyaSL" IsVisible="False">
                                 <Button x:Name="KomplektacyaSave1Button" TextColor="Black" Text="Сохранить" Clicked="KomplektacyaSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -647,11 +655,11 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="PhotosAboutLabel" TextColor="Black" Text="Фото и видео" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="PhotosSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="PhotosTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="PhotosSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="PhotosTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="PhotosSL" IsVisible="False">
                                 <StackLayout Padding="10">
@@ -776,22 +784,22 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="StatesAboutLabel" TextColor="Black" Text="Состояние" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="StatesSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="StatesTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="StatesSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="StatesTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="StatesSL" IsVisible="False">
                                 
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="DocumentsAboutLabel" TextColor="Black" Text="Документы" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="DocumentsSL" IsVisible="False">
                                 <Button x:Name="DocumentsSave1Button" TextColor="Black" Text="Выбрать" Clicked="DocumentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
@@ -801,11 +809,11 @@
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <Frame CornerRadius="10" BackgroundColor="LightGray" OutlineColor="Gray" Padding="5">
+                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                         <StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label x:Name="CommentsAboutLabel" TextColor="Black" Text="Комментарии" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="CommentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="CommentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="CommentsSLTapButton" TextColor="Black" ImageSource="downArrow.png" Clicked="CommentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="CommentsSL" IsVisible="False">
                                 <Button x:Name="CommentsSave1Button" TextColor="Black" Text="Сохранить" Clicked="CommentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>

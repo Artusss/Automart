@@ -76,23 +76,20 @@ namespace Automart.Views
             else
             {
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
-
+                UserNameToolBar.Text = $"{curUserVM.FirstName} {curUserVM.LastName}";
+                SignInToolBar.Text = "Выйти";
                 StackLayout signedSL = new StackLayout
                 {
                     Margin = new Thickness(10, 0),
                     Padding = new Thickness(10)
                 };
-                SignInToolBar.Text       = "Выйти";
-                Label UserNameLabel      = new Label {
-                    Text     = $"{curUserVM.FirstName} {curUserVM.LastName} #{curUserVM.Id}",
-                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
-                };
-                signedSL.Children.Add(UserNameLabel);
 
                 Label AdsLabel = new Label
                 {
-                    Text      = "Автомобили",
+                    Text = "Ваши автомобили",
                     TextColor = Color.Black,
+                    Margin = new Thickness(0, 10),
+                    HorizontalOptions = LayoutOptions.CenterAndExpand,
                     FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
                 signedSL.Children.Add(AdsLabel);
@@ -104,6 +101,8 @@ namespace Automart.Views
                     {
                         Text = "У вас пока нет объявлений",
                         TextColor = Color.Black,
+                        Margin = new Thickness(0, 10),
+                        HorizontalOptions = LayoutOptions.CenterAndExpand,
                         FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
                     };
                     signedSL.Children.Add(AdsListLabel);
@@ -117,19 +116,23 @@ namespace Automart.Views
                     }*/
                     CollectionView AdCollectionView = new CollectionView();
                     AdCollectionView.ItemsSource = AdVMs;
-                    AdCollectionView.SelectionMode = SelectionMode.Single;
+                    AdCollectionView.SelectionMode = SelectionMode.Single; 
                     AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
                     {
                         Frame frame = new Frame
                         {
-                            CornerRadius = 10,
+                            CornerRadius = 5,
                             BorderColor = Color.FromHex("#e1e1e1"),
+                            HasShadow = true,
                             BackgroundColor = Color.FromHex("#f5f5f5"),
-                            Padding = new Thickness(2),
-                            Margin = new Thickness(10, 2)
+                            Padding = new Thickness(5),
+                            Margin = new Thickness(10, 5)
                         };
-                        Grid grid = new Grid();
+                        Grid grid = new Grid()
+                        {
+                            BackgroundColor = Color.FromHex("#f5f5f5")
+                        };
                         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
                         grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
@@ -186,9 +189,8 @@ namespace Automart.Views
                     });
                     signedSL.Children.Add(AdCollectionView);
                 }
-
                 Button AddAdvertisement = new Button {
-                    ImageSource       = "document.png",
+                    //ImageSource       = "",
                     Text              = "Добавить автомобиль",
                     BackgroundColor   = Color.FromHex("#5cb85c"),
                     TextColor         = Color.White,
