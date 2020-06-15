@@ -180,10 +180,13 @@
     <AndroidResource Include="Resources\drawable\drive.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\LogoAutomart.png" />
+    <AndroidResource Include="Resources\drawable\LogoFullAutomart.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\LogoFullAutomart.png" />
+    <AndroidResource Include="Resources\drawable\LogoAutomartBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\LogoAutomartWhite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

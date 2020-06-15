@@ -223,9 +223,12 @@
     <BundleResource Include="Resources\drive.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\LogoAutomart.png" />
+    <BundleResource Include="Resources\LogoFullAutomart.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\LogoFullAutomart.png" />
+    <BundleResource Include="Resources\LogoAutomartBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoAutomartWhite.png" />
   </ItemGroup>
 </Project>

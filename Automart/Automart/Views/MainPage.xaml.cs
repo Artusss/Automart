@@ -59,7 +59,7 @@ namespace Automart.Views
             else
             {
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
-                UserNameToolBar.Text = $"{curUserVM.FirstName} {curUserVM.LastName}";
+                //UserNameToolBar.Text = $"{curUserVM.FirstName} {curUserVM.LastName}";
                 SignInToolBar.Text = "Выйти";
                 StackLayout signedSL = new StackLayout
                 {

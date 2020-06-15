@@ -6,10 +6,13 @@
             mc:Ignorable="d"
             x:Class="Automart.Views.MainPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="UserNameToolBar" />
-        <ToolbarItem x:Name="LogoAutomart" IconImageSource="LogoAutomart.png" />
-        <ToolbarItem x:Name="SignInToolBar" Clicked="SignIn_Clicked" />
-    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+            <Label x:Name="UserNameToolBar" Text="Artur Volkov" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium"/>
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" HorizontalOptions="Start"  VerticalOptions="Center"/>
+            <Button x:Name="SignInToolBar" Text="Выйти" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" BackgroundColor="#428bca" Clicked="SignIn_Clicked"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
 
 </ContentPage>

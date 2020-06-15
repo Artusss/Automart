@@ -23,7 +23,7 @@
                                     <Label x:Name="DvigTypeLabel" Text="Тип двигателя" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Picker x:Name="DvigTypePicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -38,7 +38,7 @@
                                     <Label x:Name="KPPLabel" Text="КПП" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Picker x:Name="KPPPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -53,7 +53,7 @@
                                     <Label x:Name="DriveUnitLabel" Text="Привод" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Picker x:Name="DriveUnitPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>

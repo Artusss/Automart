@@ -548,5 +548,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\komplectacya.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\info.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\drive.png
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomart.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logofullautomart.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomartblue.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomartwhite.png

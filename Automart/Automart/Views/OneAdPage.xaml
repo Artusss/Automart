@@ -39,7 +39,7 @@
                                     <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
                                     <Picker x:Name="MarkPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -54,7 +54,7 @@
                                     <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
                                     <Picker x:Name="ModelPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -69,7 +69,7 @@
                                     <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Picker x:Name="YearPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -99,7 +99,7 @@
                                     <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
                                     <Picker x:Name="KuzovPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
@@ -114,7 +114,7 @@
                                     <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
                                     <Picker x:Name="ColorPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Picker.Items>
-                                            <x:String>Default</x:String>
+                                            <x:String>Не указано</x:String>
                                         </Picker.Items>
                                     </Picker>
                                 </StackLayout>
