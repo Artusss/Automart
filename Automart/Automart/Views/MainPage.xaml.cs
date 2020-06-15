@@ -89,6 +89,7 @@ namespace Automart.Views
                     Text = "Ваши автомобили",
                     TextColor = Color.Black,
                     Margin = new Thickness(0, 10),
+                    FontAttributes = FontAttributes.Bold,
                     HorizontalOptions = LayoutOptions.CenterAndExpand,
                     FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
@@ -168,7 +169,7 @@ namespace Automart.Views
                         {
                             Text = "Send",
                             IconImageSource = "sendAd.png",
-                            BackgroundColor = Color.LightGreen
+                            BackgroundColor = Color.FromHex("#5cb85c")
                         };
                         sendSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.SendCommand", source: AdCollectionView));
                         sendSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
@@ -177,7 +178,7 @@ namespace Automart.Views
                         {
                             Text = "Delete",
                             IconImageSource = "deleteAd.png",
-                            BackgroundColor = Color.LightPink
+                            BackgroundColor = Color.FromHex("#f2dede")
                         };
                         deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: AdCollectionView));
                         deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");

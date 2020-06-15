@@ -8,6 +8,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="UserNameToolBar" />
+        <ToolbarItem x:Name="LogoAutomart" IconImageSource="LogoAutomart.png" />
         <ToolbarItem x:Name="SignInToolBar" Clicked="SignIn_Clicked" />
     </ContentPage.ToolbarItems>
 

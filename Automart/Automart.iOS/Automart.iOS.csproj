@@ -222,4 +222,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\drive.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoAutomart.png" />
+  </ItemGroup>
 </Project>
