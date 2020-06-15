@@ -121,9 +121,13 @@ namespace Automart.Views
                     AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
                     {
+                        StackLayout stackLayout = new StackLayout
+                        {
+                            Padding = new Thickness(0, 0, 0, 5)
+                        };
                         Frame frame = new Frame
                         {
-                            CornerRadius = 5,
+                            CornerRadius = 10,
                             BorderColor = Color.FromHex("#e1e1e1"),
                             HasShadow = true,
                             BackgroundColor = Color.FromHex("#f5f5f5"),
@@ -186,7 +190,8 @@ namespace Automart.Views
                         AdSwipeView.RightItems = new SwipeItems { sendSwipeItem, deleteSwipeItem };
                         AdSwipeView.Content = grid;
                         frame.Content = AdSwipeView;
-                        return frame;
+                        stackLayout.Children.Add(frame);
+                        return stackLayout;
                     });
                     signedSL.Children.Add(AdCollectionView);
                 }
