@@ -55,24 +55,7 @@ namespace Automart.Views
             InitializeComponent();
             CrossSettings.Current.AddOrUpdateValue("AdData", "");
             string curUserVM_json = CrossSettings.Current.GetValueOrDefault("current_user", null);
-            if (String.IsNullOrEmpty(curUserVM_json))
-            {
-                StackLayout notSignedSL = new StackLayout
-                {
-                    Margin = new Thickness(10, 0),
-                    Padding = new Thickness(10)
-                };
-                SignInToolBar.Text = "Войти";
-                Label InfoLabel = new Label
-                {
-                    Text = JsonConvert.SerializeObject(UserSQLiteH.GetItems()),
-                    //"Авторизуйтесь чтобы добавить объявление",
-                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
-                };
-
-                notSignedSL.Children.Add(InfoLabel);
-                this.Content = notSignedSL;
-            }
+            if (String.IsNullOrEmpty(curUserVM_json)) ToSignIn();
             else
             {
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
@@ -91,7 +74,7 @@ namespace Automart.Views
                     Margin = new Thickness(0, 10),
                     FontAttributes = FontAttributes.Bold,
                     HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    FontSize  = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
                 };
                 signedSL.Children.Add(AdsLabel);
 
@@ -110,14 +93,9 @@ namespace Automart.Views
                 }
                 else
                 {
-                    /*List<AdInfoViewModel> AdInfoVMs = new List<AdInfoViewModel>();
-                    foreach (var AdVM in AdVMs)
-                    {
-                        AdInfoVMs.Add(new AdInfoViewModel(AdVM, AdSQLiteH));
-                    }*/
                     CollectionView AdCollectionView = new CollectionView();
                     AdCollectionView.ItemsSource = AdVMs;
-                    AdCollectionView.SelectionMode = SelectionMode.Single; 
+                    AdCollectionView.SelectionMode = SelectionMode.Single;
                     AdCollectionView.SelectionChanged += ToAdPage_ItemSelected;
                     AdCollectionView.ItemTemplate = new DataTemplate(() =>
                     {
@@ -151,7 +129,7 @@ namespace Automart.Views
                             WidthRequest = 100,
                             Source = "empty_CAR_FRONT_LEFT_pencil.png"
                         };
-                        
+
                         Label InfoLabel_1 = new Label { FontAttributes = FontAttributes.Bold, VerticalOptions = LayoutOptions.Center, TextColor = Color.Black, HorizontalOptions = LayoutOptions.StartAndExpand };
                         InfoLabel_1.SetBinding(Label.TextProperty, "InfoLabel_1");
 
@@ -195,18 +173,19 @@ namespace Automart.Views
                     });
                     signedSL.Children.Add(AdCollectionView);
                 }
-                Button AddAdvertisement = new Button {
-                    ImageSource       = "wplus.png",
-                    Text              = "Добавить автомобиль",
-                    BackgroundColor   = Color.FromHex("#5cb85c"),
-                    TextColor         = Color.White,
-                    FontSize          = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
-                    FontAttributes    = FontAttributes.Bold,
-                    BorderWidth       = 1,
+                Button AddAdvertisement = new Button
+                {
+                    ImageSource = "wplus.png",
+                    Text = "Добавить автомобиль",
+                    BackgroundColor = Color.FromHex("#5cb85c"),
+                    TextColor = Color.White,
+                    FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                    FontAttributes = FontAttributes.Bold,
+                    BorderWidth = 1,
                     HorizontalOptions = LayoutOptions.Center,
-                    VerticalOptions   = LayoutOptions.EndAndExpand,
-                    Margin            = new Thickness(0, 20),
-                    Padding           = new Thickness(50, 0)
+                    VerticalOptions = LayoutOptions.EndAndExpand,
+                    Margin = new Thickness(0, 20),
+                    Padding = new Thickness(50, 0)
                 };
                 AddAdvertisement.Clicked += AddAd_Clicked;
                 signedSL.Children.Add(AddAdvertisement);
@@ -239,9 +218,15 @@ namespace Automart.Views
             }
         }
 
+
         async void SignIn_Clicked(object sender, EventArgs e)
         {
             SessionEnd();
+            await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
+        }
+
+        async private void ToSignIn()
+        {
             await Navigation.PushModalAsync(new NavigationPage(new SignInPage()));
         }
 

@@ -13,28 +13,44 @@
     
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-                <Label x:Name="LoginLabel" Text="Логин: " FontSize="Medium"/>
-                <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите логин">
-                    <Entry.Behaviors>
-                        <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
-                        <behavior:EntryLengthValidator MaxLength="15"/>
-                    </Entry.Behaviors>
-                </Entry>
-                <Label x:Name="LoginErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="20, 0">
+                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="0, 15" HorizontalOptions="CenterAndExpand">
+                            <Image Source="LogoFullAutomart.png" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="LoginLabel" Text="Логин" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите логин"
+                                   HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220">
+                                <Entry.Behaviors>
+                                    <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
+                                    <behavior:EntryLengthValidator MaxLength="15"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </StackLayout>
+                        <Label x:Name="LoginErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="PasswordLabel" Text="Пароль" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Entry x:Name="PasswordEntry" Placeholder = "Введите пароль" IsPassword="true"
+                                   HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220" />
+                        </StackLayout>
+                        <Label x:Name="PasswordErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <CheckBox x:Name="ForPersonalDataCheckBox" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Small"/>
+                        </StackLayout>
+                        <Label x:Name="ForPersonalDataErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        
+                        <Button Text="Войти" FontSize="Large" Padding="50, 0" BorderWidth="1"
+                            Clicked="SignIn_OnButtonClicked" BackgroundColor="#5cb85c"
+                            FontAttributes="Bold" TextColor="White"/>
+                    </StackLayout>
+                </Frame>
+
                 
-                <Label x:Name="PasswordLabel" Text="Пароль: "  FontSize="Medium"/>
-                <Entry x:Name="PasswordEntry" Placeholder = "Введите пароль" IsPassword="true"/>
-                <Label x:Name="PasswordErrorLabel" Text="" FontSize="Small" TextColor="Red" />
-                <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="ForPersonalDataCheckBox" />
-                    <Label x:Name="ForPersonalDataLabel" Text="Соглашаюсь на обработку персональных данных" VerticalOptions="Center" FontSize="Small"/>
-                </StackLayout>
-                <Label x:Name="ForPersonalDataErrorLabel" Text="" FontSize="Small" TextColor="Red" />
-                
-                <Button Text="Войти" FontSize="Large" Padding="75, 0" BorderWidth="1"
-                        Clicked="SignIn_OnButtonClicked" BackgroundColor="#2196F3"
-                        TextColor="White" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

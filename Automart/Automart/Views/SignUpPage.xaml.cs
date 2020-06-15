@@ -64,7 +64,11 @@ namespace Automart.Views
                 LastNameErrorLabel.Text = "Введите фамилию";
                 return;
             }
-
+            if (CityPicker.SelectedIndex.Equals(-1))
+            {
+                CityErrorLabel.Text = "Выберите город";
+                return;
+            }
             if (UserSQLiteH.IssetToLogin(LoginEntry.Text))
             {
                 await DisplayAlert("Указанный номер уже зарегистрирован", "Восстановить пароль?", "Да", "Нет");

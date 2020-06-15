@@ -115,7 +115,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Image Source="komplectnost.png" />
                                 <Label x:Name="KomplektnostAboutLabel" TextColor="Black" Text="Комплектность" FontSize="Large"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Button x:Name="KomplektnostSLTapButton" TextColor="Black" ImageSource="downArrow.png" WidthRequest="50" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
+                                <Button x:Name="KomplektnostSLTapButton" TextColor="White" ImageSource="downArrow.png" WidthRequest="50" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektnostSL" IsVisible="False">
                                 <Button x:Name="KomplektnostSaveButton" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>

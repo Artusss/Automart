@@ -135,7 +135,10 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-            <Button Text="Далее" VerticalOptions="EndAndExpand" FontSize="Medium" BackgroundColor="#e3e3e3" FontAttributes="Bold" Margin="0, 20" Padding="50, 0" BorderWidth="1" Clicked="Continue_OnClicked" />
+            <Button Text="Далее" VerticalOptions="EndAndExpand" FontSize="Medium"
+                    BackgroundColor="#428bca" FontAttributes="Bold" Margin="0, 20" 
+                    Padding="50, 0" BorderWidth="1" TextColor="White"
+                    Clicked="Continue_OnClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

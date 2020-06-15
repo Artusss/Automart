@@ -9,41 +9,53 @@
 
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
-                <Label x:Name="NumberLabel" Text="Номер: " FontSize="Medium" />
-                <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите логин">
-                    <Entry.Behaviors>
-                        <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
-                        <behavior:EntryLengthValidator MaxLength="15"/>
-                    </Entry.Behaviors>
-                </Entry>
-                <Label x:Name="NumberErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Padding="20, 0">
+                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="NumberLabel" Text="Номер" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Entry x:Name="LoginEntry" Text="+7(" Keyboard="Telephone" Placeholder = "Введите номер"
+                                   HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220">
+                                <Entry.Behaviors>
+                                    <behavior:PhoneNumberMaskBehavior x:Name="PhoneMask" />
+                                    <behavior:EntryLengthValidator MaxLength="15"/>
+                                </Entry.Behaviors>
+                            </Entry>
+                        </StackLayout>
+                        <Label x:Name="NumberErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
 
-                <Label x:Name="FirstNameLabel" Text="Имя: " FontSize="Medium" />
-                <Entry x:Name="FirstNameEntry" Placeholder = "Введите имя"/>
-                <Label x:Name="FirstNameErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="FirstNameLabel" Text="Имя" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Entry x:Name="FirstNameEntry" Placeholder = "Введите имя" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220" />
+                        </StackLayout>
+                        <Label x:Name="FirstNameErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
 
-                <Label x:Name="LastNameLabel" Text="Фамилия: " FontSize="Medium" />
-                <Entry x:Name="LastNameEntry" Placeholder = "Введите фамилию"/>
-                <Label x:Name="LastNameErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="LastNameLabel" Text="Фамилия" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Entry x:Name="LastNameEntry" Placeholder = "Введите фамилию" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220" />
+                        </StackLayout>
+                        <Label x:Name="LastNameErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
 
-                <Label x:Name="CityLabel" Text="Город: " FontSize="Medium" />
-                <Picker x:Name="CityPicker">
-                    <Picker.Items>
-                        <x:String>Москва</x:String>
-                        <x:String>Санкт-Петербург</x:String>
-                        <x:String>Нижний Новгород</x:String>
-                        <x:String>Набережные Челны</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Label x:Name="CityErrorLabel" Text="" FontSize="Small" TextColor="Red" />
+                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                            <Label x:Name="CityLabel" Text="Город" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Picker x:Name="CityPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="220">
+                                <Picker.Items>
+                                    <x:String>Москва</x:String>
+                                    <x:String>Санкт-Петербург</x:String>
+                                    <x:String>Нижний Новгород</x:String>
+                                    <x:String>Набережные Челны</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <Label x:Name="CityErrorLabel" Text="" TextColor="#a94442" FontSize="Small" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
 
-                <Label x:Name="SmsDataLabel" Text="Пароль придет в виде SMS на телефон"  FontSize="Small"/>
-
-                <Label x:Name="CurUserLogin" Text="" FontSize="Medium" TextColor="Black" />
-                <Button Text="Регистрация" FontSize="Large" Padding="75, 0" BorderWidth="1"
-                        Clicked="SignUp_OnButtonClicked" BackgroundColor="#2196F3" 
-                        TextColor="White" />
+                        <Label x:Name="SmsDataLabel" Text="Пароль придет в виде SMS на телефон" FontAttributes="Italic" Padding="15, 0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Small"/>
+                        <Button Text="Регистрация" VerticalOptions="EndAndExpand" FontSize="Medium"
+                            BackgroundColor="#428bca" FontAttributes="Bold" Margin="0, 20" 
+                            Padding="50, 0" BorderWidth="1" TextColor="White"
+                            Clicked="SignUp_OnButtonClicked"/>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

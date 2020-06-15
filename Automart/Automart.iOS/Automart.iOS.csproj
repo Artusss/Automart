@@ -225,4 +225,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\LogoAutomart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoFullAutomart.png" />
+  </ItemGroup>
 </Project>

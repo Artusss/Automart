@@ -152,41 +152,35 @@ namespace Automart.Views
             if (DvigTypePicker.SelectedIndex.Equals(-1))
             {
                 DvigTypeErrorLabel.Text      = "Выберите тип двигателя";
-                DvigTypeErrorLabel.TextColor = Color.Red;
                 return;
             }
             else adVM.DvigType = DvigTypePicker.Items[DvigTypePicker.SelectedIndex];
             if (KPPPicker.SelectedIndex.Equals(-1))
             {
                 KPPErrorLabel.Text      = "Выберите КПП";
-                KPPErrorLabel.TextColor = Color.Red;
                 return;
             }
             else adVM.KPP = KPPPicker.Items[KPPPicker.SelectedIndex];
             if (DriveUnitPicker.SelectedIndex.Equals(-1))
             {
                 DriveUnitErrorLabel.Text      = "Выберите привод";
-                DriveUnitErrorLabel.TextColor = Color.Red;
                 return;
             }
             else adVM.DriveUnit = DriveUnitPicker.Items[DriveUnitPicker.SelectedIndex];
             if (String.IsNullOrEmpty(VolumeEntry.Text))
             {
                 VolumeErrorLabel.Text      = "Введите объем";
-                VolumeErrorLabel.TextColor = Color.Red;
                 return;
             }
             else adVM.Volume = Convert.ToDouble(VolumeEntry.Text);
             if (String.IsNullOrEmpty(PowerEntry.Text))
             {
                 PowerErrorLabel.Text      = "Введите мощность";
-                PowerErrorLabel.TextColor = Color.Red;
                 return;
             }
             else if (PowerEntry.Text.Length < 2 || PowerEntry.Text.Length > 6)
             {
                 PowerErrorLabel.Text = "Мощность должна содержать от 2 до 6 символов";
-                PowerErrorLabel.TextColor = Color.Red;
                 return;
             }
             else adVM.Power = Convert.ToDouble(PowerEntry.Text);
