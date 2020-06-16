@@ -93,29 +93,19 @@ namespace Automart.Views
             TransTypeLabel.Text  = $"Тип транспорта: {AdVM.Type}";
             VINiLabel.Text       = $"VIN: {AdVM.VIN}";
 
-            /*VINEntry.Text           = AdVM.VIN;
-            TypeEntry.Text          = AdVM.Type;
-            MarkEntry.Text          = AdVM.Mark;
-            ModelEntry.Text         = AdVM.Model;
-            YearEntry.Text          = AdVM.Year;
-            MileageEntry.Text       = AdVM.Mileage.ToString();
-            KuzovEntry.Text         = AdVM.Kuzov;
-            ColorEntry.Text         = AdVM.Color;
-            SteeringWheelEntry.Text = AdVM.SteeringWheel;*/
-
             Grid MainInfoGrid = new Grid
             {
                 Padding = new Thickness(15, 10)
             };
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             MainInfoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             MainInfoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             var VINLabel = new Label
@@ -283,11 +273,110 @@ namespace Automart.Views
 
             MainInfoSL.Children.Add(MainInfoGrid);
 
-            DvigTypeEntry.Text  = AdVM.DvigType;
-            KPPEntry.Text       = AdVM.KPP;
-            DriveUnitEntry.Text = AdVM.DriveUnit;
-            VolumeEntry.Text    = AdVM.Volume.ToString();
-            PowerEntry.Text     = AdVM.Power.ToString();
+            Grid DvigTransGrid = new Grid
+            {
+                Padding = new Thickness(15, 10)
+            };
+            DvigTransGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            DvigTransGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            DvigTransGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            DvigTransGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            DvigTransGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            DvigTransGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            DvigTransGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            var DvigTypeLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Тип двигателя :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var DvigTypeEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.DvigType,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var KPPLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "КПП :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var KPPEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.KPP,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var DriveUnitLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Привод :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var DriveUnitEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.DriveUnit,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var VolumeLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Объем, л :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var VolumeEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Volume.ToString(),
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var PowerLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Мощность, л.с :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var PowerEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Power.ToString(),
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+
+            DvigTransGrid.Children.Add(DvigTypeLabel, 0, 1);
+            DvigTransGrid.Children.Add(DvigTypeEntry, 1, 1);
+            DvigTransGrid.Children.Add(KPPLabel, 0, 2);
+            DvigTransGrid.Children.Add(KPPEntry, 1, 2);
+            DvigTransGrid.Children.Add(DriveUnitLabel, 0, 3);
+            DvigTransGrid.Children.Add(DriveUnitEntry, 1, 3);
+            DvigTransGrid.Children.Add(VolumeLabel, 0, 4);
+            DvigTransGrid.Children.Add(VolumeEntry, 1, 4);
+            DvigTransGrid.Children.Add(PowerLabel, 0, 5);
+            DvigTransGrid.Children.Add(PowerEntry, 1, 5);
+
+            DvigTransSL.Children.Add(DvigTransGrid);
 
             var komplektnostVM            = KomplektnostSQLiteH.GetByAd(CurrentAdId);
 
