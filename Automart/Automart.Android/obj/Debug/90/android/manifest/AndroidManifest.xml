@@ -8,11 +8,11 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="Automart.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+  <application android:label="Automart.Android" android:icon="@drawable/logoautomartblue" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.automart.fileprovider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
     </provider>
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Automart" android:theme="@style/MainTheme" android:name="crc64b1638ef2e451e317.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/logoautomart_164x164" android:label="Automart" android:theme="@style/MainTheme" android:name="crc64b1638ef2e451e317.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
