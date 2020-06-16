@@ -824,7 +824,9 @@
                             </StackLayout>
                             <StackLayout x:Name="DocumentsSL" IsVisible="False">
                                 <Button x:Name="DocumentsSave1Button" TextColor="Black" Text="Выбрать" Clicked="DocumentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical"></StackLayout>
+                                <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                    <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical"></StackLayout>
+                                </Frame>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -837,10 +839,12 @@
                             </StackLayout>
                             <StackLayout x:Name="CommentsSL" IsVisible="False">
                                 <Button x:Name="CommentsSave1Button" TextColor="Black" Text="Сохранить" Clicked="CommentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <StackLayout Orientation="Vertical">
-                                    <Label x:Name="ExtraCommentInfoLabel" TextColor="Black" Text="Дополнительная информация для Аукциона" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                    <Editor x:Name="ExtraCommentInfoEditor" HeightRequest="100" />
-                                </StackLayout>
+                                <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label x:Name="ExtraCommentInfoLabel" TextColor="Black" Text="Дополнительная информация для Аукциона" FontSize="Medium"  HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                        <Editor x:Name="ExtraCommentInfoEditor" HeightRequest="100" />
+                                    </StackLayout>
+                                </Frame>
                             </StackLayout>
                         </StackLayout>
                     </Frame>

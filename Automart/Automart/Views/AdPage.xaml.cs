@@ -502,8 +502,8 @@ namespace Automart.Views
                 Type = "Отчет о состоянии Автомарт",
                 Status = "Закрыт",
                 WhoClosed = "Ivanov Ivan",
-                Created_at = new DateTime(),
-                Closed_at = new DateTime()
+                Created_at = DateTime.Now,
+                Closed_at = DateTime.Now
             };
             Frame StateFrame = new Frame
             {
@@ -514,46 +514,77 @@ namespace Automart.Views
                 Padding = new Thickness(0),
             };
             //StateCollectionView.SelectionChanged += ToState_ItemSelected;
-            Grid StateGrid = new Grid();
+            Grid StateGrid = new Grid
+            {
+                //Padding = new Thickness(15, 10),
+                HorizontalOptions = LayoutOptions.Center
+            };
             StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
-            Label StTypeLabel = new Label { FontAttributes = FontAttributes.Bold,
+            Label StTypeLabel = new Label { 
+                FontAttributes = FontAttributes.Bold,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = StateVM.Type
+                HorizontalOptions = LayoutOptions.Center,
+                Text = StateVM.Type,
+                TextColor = Color.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
             };
-            Label Created_atLabel = new Label { FontAttributes = FontAttributes.Italic,
+            Label Created_atLabel = new Label { 
+                FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = StateVM.Created_atField
+                HorizontalOptions = LayoutOptions.Start,
+                Text = $"Создан: {StateVM.Created_at:dd.MM.yyyy}",
+                TextColor = Color.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
             };
-            Label StatusLabel = new Label { FontAttributes = FontAttributes.Italic,
+            var statusTextColor = StateVM.Status.Equals("Закрыт") ? Color.FromHex("#a94442") : Color.FromHex("#5cb85c");
+            Label StatusLabel = new Label { 
+                FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = StateVM.StatusField
+                HorizontalOptions = LayoutOptions.Start,
+                Text = $"Статус: {StateVM.Status}",
+                TextColor = statusTextColor,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
             };
-            Label Closed_atLabel = new Label { FontAttributes = FontAttributes.Italic,
+            Label Closed_atLabel = new Label { 
+                FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = StateVM.Closed_atField
+                HorizontalOptions = LayoutOptions.Start,
+                Text = $"Закрыт: {StateVM.Closed_at:dd.MM.yyyy}",
+                TextColor = Color.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
             };
             Label WhoClosedLabel = new Label
             {
                 FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                Text = StateVM.WhoClosedField
+                HorizontalOptions = LayoutOptions.Start,
+                Text = $"Перевел: {StateVM.WhoClosed}",
+                TextColor = Color.Black,
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
             };
+            Button MoreStateInfoButton = new Button
+            {
+                TextColor = Color.Black,
+                //ImageSource = "downArrowWh.png",
+                Text = "->",
+                /*WidthRequest = 32,
+                HeightRequest = 32,*/
+                HorizontalOptions = LayoutOptions.End,
+                VerticalOptions = LayoutOptions.Center
+            };
+            //MoreStateInfoButton.Clicked += someButFunc();
             Grid.SetColumnSpan(StTypeLabel, 2);
             StateGrid.Children.Add(StTypeLabel);
-            StateGrid.Children.Add(Created_atLabel, 0, 1);
-            StateGrid.Children.Add(StatusLabel, 1, 1);
-            StateGrid.Children.Add(Closed_atLabel, 0, 2);
-            StateGrid.Children.Add(WhoClosedLabel, 1, 2);
+            StateGrid.Children.Add(StatusLabel, 0, 1);
+            StateGrid.Children.Add(MoreStateInfoButton, 1, 1);
+            StateGrid.Children.Add(Created_atLabel, 0, 2);
+            StateGrid.Children.Add(Closed_atLabel, 0, 3);
+            StateGrid.Children.Add(WhoClosedLabel, 0, 4);
 
             StateFrame.Content = StateGrid;
             StatesSL.Children.Add(StateFrame);
