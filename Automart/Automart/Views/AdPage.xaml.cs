@@ -93,7 +93,7 @@ namespace Automart.Views
             TransTypeLabel.Text  = $"Тип транспорта: {AdVM.Type}";
             VINiLabel.Text       = $"VIN: {AdVM.VIN}";
 
-            VINEntry.Text           = AdVM.VIN;
+            /*VINEntry.Text           = AdVM.VIN;
             TypeEntry.Text          = AdVM.Type;
             MarkEntry.Text          = AdVM.Mark;
             ModelEntry.Text         = AdVM.Model;
@@ -101,7 +101,187 @@ namespace Automart.Views
             MileageEntry.Text       = AdVM.Mileage.ToString();
             KuzovEntry.Text         = AdVM.Kuzov;
             ColorEntry.Text         = AdVM.Color;
-            SteeringWheelEntry.Text = AdVM.SteeringWheel;
+            SteeringWheelEntry.Text = AdVM.SteeringWheel;*/
+
+            Grid MainInfoGrid = new Grid
+            {
+                Padding = new Thickness(15, 10)
+            };
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            MainInfoGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            MainInfoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            MainInfoGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            var VINLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "VIN :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var VINEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.VIN,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var TypeLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Тип :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var TypeEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Type,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var MarkLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Марка :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var MarkEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Mark,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var ModelLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Модель :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var ModelEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Model,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var YearLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Год выпуска :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var YearEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Year,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var MileageLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Пробег, км :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var MileageEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Mileage.ToString(),
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var KuzovLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Кузов :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var KuzovEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Kuzov,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var ColorLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Цвет :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var ColorEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.Color,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            var SteeringWheelLabel = new Label
+            {
+                TextColor = Color.Black,
+                Text = "Руль :",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
+                FontAttributes = FontAttributes.Bold,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.EndAndExpand
+            };
+            var SteeringWheelEntry = new Label
+            {
+                TextColor = Color.Black,
+                Text = AdVM.SteeringWheel,
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.StartAndExpand
+            };
+            MainInfoGrid.Children.Add(VINLabel, 0, 1);
+            MainInfoGrid.Children.Add(VINEntry, 1, 1);
+            MainInfoGrid.Children.Add(TypeLabel, 0, 2);
+            MainInfoGrid.Children.Add(TypeEntry, 1, 2);
+            MainInfoGrid.Children.Add(MarkLabel, 0, 3);
+            MainInfoGrid.Children.Add(MarkEntry, 1, 3);
+            MainInfoGrid.Children.Add(ModelLabel, 0, 4);
+            MainInfoGrid.Children.Add(ModelEntry, 1, 4);
+            MainInfoGrid.Children.Add(YearLabel, 0, 5);
+            MainInfoGrid.Children.Add(YearEntry, 1, 5);
+            MainInfoGrid.Children.Add(MileageLabel, 0, 6);
+            MainInfoGrid.Children.Add(MileageEntry, 1, 6);
+            MainInfoGrid.Children.Add(KuzovLabel, 0, 7);
+            MainInfoGrid.Children.Add(KuzovEntry, 1, 7);
+            MainInfoGrid.Children.Add(ColorLabel, 0, 8);
+            MainInfoGrid.Children.Add(ColorEntry, 1, 8);
+            MainInfoGrid.Children.Add(SteeringWheelLabel, 0, 9);
+            MainInfoGrid.Children.Add(SteeringWheelEntry, 1, 9);
+
+            MainInfoSL.Children.Add(MainInfoGrid);
 
             DvigTypeEntry.Text  = AdVM.DvigType;
             KPPEntry.Text       = AdVM.KPP;
@@ -226,12 +406,6 @@ namespace Automart.Views
             AirSuspensionCheckBox.IsChecked     = extraKomplektacya.AirSuspension;
             DoorClosersCheckBox.IsChecked       = extraKomplektacya.DoorClosers;
 
-            StackLayout statesListSL = new StackLayout
-            {
-                Margin = new Thickness(10, 0),
-                Padding = new Thickness(10),
-            };
-
             var StateVM = new StateViewModel
             {
                 // Id
@@ -258,7 +432,7 @@ namespace Automart.Views
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
-            Label TypeLabel = new Label { FontAttributes = FontAttributes.Bold,
+            Label StTypeLabel = new Label { FontAttributes = FontAttributes.Bold,
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = StateVM.Type
@@ -285,8 +459,8 @@ namespace Automart.Views
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = StateVM.WhoClosedField
             };
-            Grid.SetColumnSpan(TypeLabel, 2);
-            StateGrid.Children.Add(TypeLabel);
+            Grid.SetColumnSpan(StTypeLabel, 2);
+            StateGrid.Children.Add(StTypeLabel);
             StateGrid.Children.Add(Created_atLabel, 0, 1);
             StateGrid.Children.Add(StatusLabel, 1, 1);
             StateGrid.Children.Add(Closed_atLabel, 0, 2);
