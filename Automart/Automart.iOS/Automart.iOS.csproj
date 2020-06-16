@@ -243,5 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoAutomart_164x164.ico" />
+    <BundleResource Include="Resources\upArrowWh.png" />
+    <BundleResource Include="Resources\downArrowWh.png" />
   </ItemGroup>
 </Project>

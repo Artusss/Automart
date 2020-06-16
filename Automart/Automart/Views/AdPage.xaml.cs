@@ -773,11 +773,11 @@ namespace Automart.Views
             if (MainInfoSL.IsVisible)
             {
                 MainInfoSL.IsVisible = false;
-                MainInfoTapButton.ImageSource = "downArrow.png";
+                MainInfoTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             MainInfoSL.IsVisible = true;
-            MainInfoTapButton.ImageSource = "upArrow.png";
+            MainInfoTapButton.ImageSource = "upArrowWh.png";
         }
         void DvigTransTapButton_Clicked(object sender, EventArgs e)
         {
@@ -785,11 +785,11 @@ namespace Automart.Views
             if (DvigTransSL.IsVisible)
             {
                 DvigTransSL.IsVisible = false;
-                DvigTransSLTapButton.ImageSource = "downArrow.png";
+                DvigTransSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             DvigTransSL.IsVisible = true;
-            DvigTransSLTapButton.ImageSource = "upArrow.png";
+            DvigTransSLTapButton.ImageSource = "upArrowWh.png";
         }
         void KomplektnostTapButton_Clicked(object sender, EventArgs e)
         {
@@ -797,11 +797,11 @@ namespace Automart.Views
             if (KomplektnostSL.IsVisible)
             {
                 KomplektnostSL.IsVisible = false;
-                KomplektnostSLTapButton.ImageSource = "downArrow.png";
+                KomplektnostSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             KomplektnostSL.IsVisible = true;
-            KomplektnostSLTapButton.ImageSource = "upArrow.png";
+            KomplektnostSLTapButton.ImageSource = "upArrowWh.png";
         }
         void KomplektacyaTapButton_Clicked(object sender, EventArgs e)
         {
@@ -818,11 +818,11 @@ namespace Automart.Views
             if (KomplektacyaSL.IsVisible)
             {
                 KomplektacyaSL.IsVisible = false;
-                KomplektacyaSLTapButton.ImageSource = "downArrow.png";
+                KomplektacyaSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             KomplektacyaSL.IsVisible = true;
-            KomplektacyaSLTapButton.ImageSource = "upArrow.png";
+            KomplektacyaSLTapButton.ImageSource = "upArrowWh.png";
         }
         void CommentsTapButton_Clicked(object sender, EventArgs e)
         {
@@ -830,11 +830,11 @@ namespace Automart.Views
             if (CommentsSL.IsVisible)
             {
                 CommentsSL.IsVisible = false;
-                CommentsSLTapButton.ImageSource = "downArrow.png";
+                CommentsSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             CommentsSL.IsVisible = true;
-            CommentsSLTapButton.ImageSource = "upArrow.png";
+            CommentsSLTapButton.ImageSource = "upArrowWh.png";
         }
         void SafetyTapButton_Clicked(object sender, EventArgs e)
         {
@@ -1022,11 +1022,11 @@ namespace Automart.Views
             if (PhotosSL.IsVisible)
             {
                 PhotosSL.IsVisible = false;
-                PhotosSLTapButton.ImageSource = "downArrow.png";
+                PhotosSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             PhotosSL.IsVisible = true;
-            PhotosSLTapButton.ImageSource = "upArrow.png";
+            PhotosSLTapButton.ImageSource = "upArrowWh.png";
         }
         void MainViewPhotosTapButton_Clicked(object sender, EventArgs e)
         {
@@ -1060,11 +1060,11 @@ namespace Automart.Views
             if (StatesSL.IsVisible)
             {
                 StatesSL.IsVisible = false;
-                StatesSLTapButton.ImageSource = "downArrow.png";
+                StatesSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             StatesSL.IsVisible = true;
-            StatesSLTapButton.ImageSource = "upArrow.png";
+            StatesSLTapButton.ImageSource = "upArrowWh.png";
         }
 
         void DocumentsTapButton_Clicked(object sender, EventArgs e)
@@ -1073,11 +1073,11 @@ namespace Automart.Views
             if (DocumentsSL.IsVisible)
             {
                 DocumentsSL.IsVisible = false;
-                DocumentsSLTapButton.ImageSource = "downArrow.png";
+                DocumentsSLTapButton.ImageSource = "downArrowWh.png";
                 return;
             }
             DocumentsSL.IsVisible = true;
-            DocumentsSLTapButton.ImageSource = "upArrow.png";
+            DocumentsSLTapButton.ImageSource = "upArrowWh.png";
         }
 
         public async void MakePhotoAsync(Image image)

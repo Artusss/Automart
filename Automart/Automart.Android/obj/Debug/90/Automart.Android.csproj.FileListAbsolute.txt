@@ -552,3 +552,5 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomartblue.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomartwhite.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomart_164x164.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\downarrowwh.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\uparrowwh.png
