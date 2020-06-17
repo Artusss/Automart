@@ -194,12 +194,6 @@
     <BundleResource Include="Resources\upArrow.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\sendAd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\deleteAd.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\document.png" />
   </ItemGroup>
   <ItemGroup>
@@ -245,5 +239,8 @@
     <Content Include="LogoAutomart_164x164.ico" />
     <BundleResource Include="Resources\upArrowWh.png" />
     <BundleResource Include="Resources\downArrowWh.png" />
+    <BundleResource Include="Resources\next.png" />
+    <BundleResource Include="Resources\delete.png" />
+    <BundleResource Include="Resources\send.png" />
   </ItemGroup>
 </Project>

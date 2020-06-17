@@ -5,6 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Automart.Views.StatePage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"

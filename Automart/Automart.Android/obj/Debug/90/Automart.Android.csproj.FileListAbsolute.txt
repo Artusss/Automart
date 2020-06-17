@@ -70,8 +70,6 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\xml\file_paths.xml
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\downarrow.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\uparrow.png
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\sendad.png
-C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\deletead.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\uploadflags.txt
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\resolvedassemblies.hash
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\android\assets\Automart.Android.dll
@@ -554,3 +552,7 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\logoautomart_164x164.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\downarrowwh.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\uparrowwh.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\next.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\trash.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\delete.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\send.png

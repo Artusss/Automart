@@ -7,7 +7,11 @@
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.OneAdPage">
-
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="QuitToolBar" Order="Default" Text="Закрыть" Clicked="Quit_Clicked" />
     </ContentPage.ToolbarItems>

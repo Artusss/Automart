@@ -521,7 +521,9 @@ namespace Automart.Views
             };
             StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Star });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
             StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
 
@@ -570,10 +572,10 @@ namespace Automart.Views
             Button MoreStateInfoButton = new Button
             {
                 TextColor = Color.Black,
-                //ImageSource = "downArrowWh.png",
-                Text = "->",
-                /*WidthRequest = 32,
-                HeightRequest = 32,*/
+                ImageSource = "next.png",
+                WidthRequest = 60,
+                HeightRequest = 32,
+                BackgroundColor = Color.FromHex("#f5f5f5"),
                 HorizontalOptions = LayoutOptions.End,
                 VerticalOptions = LayoutOptions.Center
             };

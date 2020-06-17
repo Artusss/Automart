@@ -59,8 +59,9 @@ namespace Automart.Views
             else
             {
                 UserViewModel curUserVM = JsonConvert.DeserializeObject<UserViewModel>(curUserVM_json);
-                //UserNameToolBar.Text = $"{curUserVM.FirstName} {curUserVM.LastName}";
-                SignInToolBar.Text = "Выйти";
+                UserNameToolBar.Text = $"{curUserVM.FirstName} {curUserVM.LastName}";
+                
+                //SignInToolBar.Text = "Выйти";
                 StackLayout signedSL = new StackLayout
                 {
                     Margin = new Thickness(10, 0),
@@ -101,6 +102,7 @@ namespace Automart.Views
                     {
                         StackLayout stackLayout = new StackLayout
                         {
+                            BackgroundColor = Color.White,
                             Padding = new Thickness(0, 0, 0, 5)
                         };
                         Frame frame = new Frame
@@ -149,18 +151,16 @@ namespace Automart.Views
                         SwipeView AdSwipeView = new SwipeView();
                         SwipeItem sendSwipeItem = new SwipeItem
                         {
-                            Text = "Send",
-                            IconImageSource = "sendAd.png",
-                            BackgroundColor = Color.FromHex("#5cb85c")
+                            IconImageSource = "send.png",
+                            BackgroundColor = Color.FromHex("#428bca")
                         };
                         sendSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.SendCommand", source: AdCollectionView));
                         sendSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
 
                         SwipeItem deleteSwipeItem = new SwipeItem
                         {
-                            Text = "Delete",
-                            IconImageSource = "deleteAd.png",
-                            BackgroundColor = Color.FromHex("#f2dede")
+                            IconImageSource = "delete.png",
+                            BackgroundColor = Color.FromHex("#a94442")
                         };
                         deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: AdCollectionView));
                         deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");

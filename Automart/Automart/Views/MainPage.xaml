@@ -5,14 +5,15 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             x:Class="Automart.Views.MainPage">
-
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
-            <Label x:Name="UserNameToolBar" Text="Artur Volkov" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Medium"/>
-            <Image Source="LogoAutomartWhite.png" WidthRequest="32" HorizontalOptions="Start"  VerticalOptions="Center"/>
-            <Button x:Name="SignInToolBar" Text="Выйти" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" BackgroundColor="#428bca" Clicked="SignIn_Clicked"/>
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
         </StackLayout>
     </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="UserNameToolBar" />
+        <ToolbarItem x:Name="SignInToolBar" Text="Выйти" Clicked="SignIn_Clicked" />
+    </ContentPage.ToolbarItems>
     
 
 </ContentPage>

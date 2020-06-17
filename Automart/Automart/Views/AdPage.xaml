@@ -6,7 +6,11 @@
              mc:Ignorable="d"
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              x:Class="Automart.Views.AdPage">
-
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="ToMainToolBar" Order="Default" Text="На главную" Clicked="ToMain_Clicked" />
     </ContentPage.ToolbarItems>

@@ -6,7 +6,11 @@
              mc:Ignorable="d"
              xmlns:behavior="clr-namespace:Automart"
              x:Class="Automart.Views.SignInPage">
-
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Padding="0" Margin="0">
+            <Image Source="LogoAutomartWhite.png" WidthRequest="32" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Регистрация" Clicked="SignUp_Clicked"/>
     </ContentPage.ToolbarItems>
