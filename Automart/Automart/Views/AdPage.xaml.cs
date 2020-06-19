@@ -516,16 +516,15 @@ namespace Automart.Views
             //StateCollectionView.SelectionChanged += ToState_ItemSelected;
             Grid StateGrid = new Grid
             {
-                //Padding = new Thickness(15, 10),
                 HorizontalOptions = LayoutOptions.Center
             };
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
-            StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            StateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            StateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
             Label StTypeLabel = new Label { 
                 FontAttributes = FontAttributes.Bold,
@@ -538,7 +537,7 @@ namespace Automart.Views
             Label Created_atLabel = new Label { 
                 FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = $"Создан: {StateVM.Created_at:dd.MM.yyyy}",
                 TextColor = Color.Black,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
@@ -547,7 +546,7 @@ namespace Automart.Views
             Label StatusLabel = new Label { 
                 FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = $"Статус: {StateVM.Status}",
                 TextColor = statusTextColor,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
@@ -555,7 +554,7 @@ namespace Automart.Views
             Label Closed_atLabel = new Label { 
                 FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = $"Закрыт: {StateVM.Closed_at:dd.MM.yyyy}",
                 TextColor = Color.Black,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
@@ -564,7 +563,7 @@ namespace Automart.Views
             {
                 FontAttributes = FontAttributes.Italic,
                 VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 Text = $"Перевел: {StateVM.WhoClosed}",
                 TextColor = Color.Black,
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button))
