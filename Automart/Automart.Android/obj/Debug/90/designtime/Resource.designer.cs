@@ -10751,31 +10751,28 @@ namespace Automart.Droid
 			public const int send = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int sendAd = 2131165323;
+			public const int states = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int states = 2131165324;
+			public const int tooltip_frame_dark = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int tooltip_frame_dark = 2131165325;
+			public const int tooltip_frame_light = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int tooltip_frame_light = 2131165326;
+			public const int trash = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int trash = 2131165327;
+			public const int upArrow = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int upArrow = 2131165328;
+			public const int upArrowWh = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int upArrowWh = 2131165329;
+			public const int wplus = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int wplus = 2131165330;
-			
-			// aapt resource value: 0x7F070093
-			public const int xamarin_logo = 2131165331;
+			public const int xamarin_logo = 2131165330;
 			
 			static Drawable()
 			{

@@ -14,49 +14,128 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="10" Margin="10, 0">
-            <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontSize="Large" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
-            <Button x:Name="MainInfoSaveButton" TextColor="Black" Text="Сохранить" 
-                                        Clicked="MainInfoSaveButton_Clicked"
-                                        HorizontalOptions="End" VerticalOptions="Center"/>
-            <ScrollView HorizontalScrollBarVisibility="Default">
+            <Label x:Name="MainAutoAboutLabel" TextColor="Black" Text="Общая информация" FontAttributes="Bold" Margin="0, 10" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
                 <StackLayout>
-                    <Label x:Name="VINLabel" Text="VIN" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="VINEntry" >
-                        <Entry.Behaviors>
-                            <behavior:EntryLengthValidator MaxLength="17" MinLength="10"/>
-                        </Entry.Behaviors>
-                    </Entry>
-
-                    <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="MarkPicker" />
-
-                    <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="ModelPicker" />
-
-                    <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="YearPicker" />
-
-                    <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" />
-                    <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="" >
-                        <Entry.Behaviors>
-                            <behavior:EntryLengthValidator MaxLength="10"/>
-                        </Entry.Behaviors>
-                    </Entry>
-
-                    <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" />
-                    <Picker x:Name="KuzovPicker" />
-
-                    <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" />
-                    <Picker x:Name="ColorPicker" />
-
-                    <Label x:Name="SteeringWheelLabel" TextColor="Black" Text="Руль" FontSize="Medium"/>
-                    <input:RadioButtonGroupView x:Name="SteeringWheelRB" Padding="10">
-                        <input:RadioButton Text="Левый" TextColor="Black" IsChecked="True" TextFontSize="16" />
-                        <input:RadioButton Text="Правый" TextColor="Black" TextFontSize="16" />
-                    </input:RadioButtonGroupView>
-                    <Label x:Name="SteeringWheelErrorLabel" Text="" FontSize="Small" />
+                    <Button x:Name="MainInfoSaveButton" TextColor="White" Text="Сохранить" 
+                                        Clicked="MainInfoSaveButton_Clicked"
+                                        BackgroundColor="#5cb85c" Margin="5, 10"
+                                        HorizontalOptions="End" VerticalOptions="Center"/>
+                    <ScrollView HorizontalScrollBarVisibility="Default">
+                        <StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="VINLabel" Text="VIN" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Entry x:Name="VINEntry" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Entry.Behaviors>
+                                                    <behavior:EntryLengthValidator MaxLength="17" MinLength="10"/>
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="MarkLabel" Text="Марка" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Picker x:Name="MarkPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Picker.Items>
+                                                    <x:String>Не указано</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="ModelLabel" Text="Модель" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Picker x:Name="ModelPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Picker.Items>
+                                                    <x:String>Не указано</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="YearLabel" Text="Год выпуска" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            <Picker x:Name="YearPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Picker.Items>
+                                                    <x:String>Не указано</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="MileageLabel" Text="Пробег, км" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Entry x:Name="MileageEntry" Keyboard="Numeric" Text="" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Entry.Behaviors>
+                                                    <behavior:EntryLengthValidator MaxLength="10"/>
+                                                </Entry.Behaviors>
+                                            </Entry>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="KuzovLabel" Text="Кузов" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Picker x:Name="KuzovPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Picker.Items>
+                                                    <x:String>Не указано</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                            <Label x:Name="ColorLabel" Text="Цвет" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" />
+                                            <Picker x:Name="ColorPicker" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
+                                                <Picker.Items>
+                                                    <x:String>Не указано</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Padding="0, 0, 0, 10">
+                                <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
+                                    <StackLayout Orientation="Horizontal" Padding="15, 0">
+                                        <Label x:Name="SteeringWheelLabel" TextColor="Black" Text="Руль" FontSize="Medium"/>
+                                        <input:RadioButtonGroupView x:Name="SteeringWheelRB" Padding="10" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                                            <input:RadioButton Text="Левый" TextColor="Black" IsChecked="True" TextFontSize="16" />
+                                            <input:RadioButton Text="Правый" TextColor="Black" TextFontSize="16" />
+                                        </input:RadioButtonGroupView>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
                 </StackLayout>
-            </ScrollView>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
