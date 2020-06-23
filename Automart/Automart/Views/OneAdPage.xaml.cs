@@ -140,14 +140,40 @@ namespace Automart.Views
             MileageErrorLabel.Text       = "";
             KuzovErrorLabel.Text         = "";
             ColorErrorLabel.Text         = "";
+
+            List<char> incorrectChars        = new List<char>();
+            bool isIncorrectVIN              = false;
+            string incorrectVIN_errorMessage = "";
+            incorrectChars.Add('i');
+            incorrectChars.Add('I');
+            incorrectChars.Add('o');
+            incorrectChars.Add('O');
+            incorrectChars.Add('l');
+            incorrectChars.Add('Q');
+            
+            foreach(char incorrectChar in incorrectChars)
+            {
+                if(VINEntry.Text.Contains(incorrectChar))
+                {
+                    isIncorrectVIN = true;
+                    incorrectVIN_errorMessage = $"VIN не должен содержать символа '{incorrectChar}'";
+                    break;
+                }
+            }
+
             if (String.IsNullOrEmpty(VINEntry.Text))
             {
                 VINErrorLabel.Text = "Введите VIN";
                 return;
             }
-            else if (VINEntry.Text.Length < 10 || VINEntry.Text.Length > 17)
+            else if (!VINEntry.Text.Length.Equals(10) && !VINEntry.Text.Length.Equals(17))
             {
-                VINErrorLabel.Text = "VIN должен содержать от 10 до 17 символов";
+                VINErrorLabel.Text = "VIN должен содержать 10 или 17 символов";
+                return;
+            }
+            else if(isIncorrectVIN)
+            {
+                VINErrorLabel.Text = incorrectVIN_errorMessage;
                 return;
             }
             else adVM.VIN = VINEntry.Text;
