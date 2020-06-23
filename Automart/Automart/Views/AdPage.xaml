@@ -66,7 +66,7 @@
                                 <Button x:Name="KomplektnostSLTapButton" TextColor="White" ImageSource="downArrowWh.png" WidthRequest="54" HeightRequest="50" Clicked="KomplektnostTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="KomplektnostSL" IsVisible="False" Padding="15, 10">
-                                <Button x:Name="KomplektnostSaveButton" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Button x:Name="KomplektnostSave1Button" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                                 <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                                     <StackLayout>
                                         <StackLayout Orientation="Horizontal">
@@ -148,6 +148,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>
+                                <Button x:Name="KomplektnostSave2Button" TextColor="Black" Text="Сохранить" Clicked="KomplektnostSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
