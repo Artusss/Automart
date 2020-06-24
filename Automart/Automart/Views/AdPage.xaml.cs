@@ -1094,9 +1094,10 @@ namespace Automart.Views
         }
         public async void MakePhotoAsync(Image image)
         {
+            await DisplayAlert("", "Просьба держать камеру горизонтально", "OK");
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await DisplayAlert("", "No Camera", "OK");
+                await DisplayAlert("", "Камера отсутствует", "OK");
                 return;
             }
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
@@ -1123,9 +1124,10 @@ namespace Automart.Views
 
         public async void PickPhotoAsync(Image image)
         {
+            await DisplayAlert("", "Просьба выбирать горизонтальные изображения", "OK");
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("", "Photos Not Supported", "OK");
+                await DisplayAlert("", "Выбор фото не поддерживается", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
@@ -1256,7 +1258,7 @@ namespace Automart.Views
             var ImageTmp = new Image()
             {
                 WidthRequest = 100,
-                HeightRequest = 250
+                HeightRequest = 220
             };
             MakePhotoAsync(ImageTmp);
             imageFrame.Content = ImageTmp;
@@ -1275,7 +1277,7 @@ namespace Automart.Views
             var ImageTmp = new Image()
             {
                 WidthRequest = 100,
-                HeightRequest = 250
+                HeightRequest = 220
             };
             PickPhotoAsync(ImageTmp);
             imageFrame.Content = ImageTmp;

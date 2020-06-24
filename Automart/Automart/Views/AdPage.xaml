@@ -650,7 +650,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_FRONT_LEFTLabel" TextColor="Black" Padding="0" Margin="0" Text="Фронтальная часть и левый борт" FontSize="Small" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_FRONT_LEFTimg" Margin="0" WidthRequest="100" HeightRequest="250" Source="empty_CAR_FRONT_LEFT_pencil.png" />
+                                                            <Image x:Name="CAR_FRONT_LEFTimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_FRONT_LEFT_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal"
                                                          Padding="0" Margin="0">
@@ -663,7 +663,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_FRONTLabel" Padding="0" Margin="0" TextColor="Black" Text="Фронтальная часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_FRONTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_FRONT_pencil.png" />
+                                                            <Image x:Name="CAR_FRONTimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_FRONT_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0">
                                                             <Button x:Name="Make_CAR_FRONT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_FRONT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -675,7 +675,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_REARLabel" Padding="0" Margin="0" TextColor="Black" Text="Задняя часть" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_REARimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_pencil.png" />
+                                                            <Image x:Name="CAR_REARimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_REAR_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_REAR" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -687,7 +687,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_REAR_RIGHTLabel" Padding="0" Margin="0" TextColor="Black" Text="Задняя часть и правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_REAR_RIGHTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_RIGHT_pencil.png" />
+                                                            <Image x:Name="CAR_REAR_RIGHTimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_REAR_RIGHT_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_REAR_RIGHT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -699,7 +699,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_LEFTLabel" Padding="0" Margin="0" TextColor="Black" Text="Левый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_LEFTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_LEFT_pencil.png" />
+                                                            <Image x:Name="CAR_LEFTimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_LEFT_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_LEFT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_LEFT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -711,7 +711,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_RIGHTLabel" Padding="0" Margin="0" TextColor="Black" Text="Правый борт" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_RIGHTimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_RIGHT_pencil.png" />
+                                                            <Image x:Name="CAR_RIGHTimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_RIGHT_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_RIGHT" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_RIGHT_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -723,7 +723,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_DASHBOARDLabel" Padding="0" Margin="0" TextColor="Black" Text="Панель приборов" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_DASHBOARDimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_DASHBOARD_pencil.png" />
+                                                            <Image x:Name="CAR_DASHBOARDimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_DASHBOARD_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_DASHBOARD" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_DASHBOARD_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -735,7 +735,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_INTERIORLabel" Padding="0" Margin="0" TextColor="Black" Text="Передние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_INTERIORimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_INTERIOR_pencil.png" />
+                                                            <Image x:Name="CAR_INTERIORimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_INTERIOR_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_INTERIOR" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_INTERIOR_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -747,7 +747,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_REAR_SEATSLabel" Padding="0" Margin="0" TextColor="Black" Text="Задние сидения" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_REAR_SEATSimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_REAR_SEATS_pencil.png" />
+                                                            <Image x:Name="CAR_REAR_SEATSimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_REAR_SEATS_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_REAR_SEATS" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_REAR_SEATS_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -759,7 +759,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_BAGGAGELabel" Padding="0" Margin="0" TextColor="Black" Text="Багажник" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_BAGGAGEimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_BAGGAGE_pencil.png" />
+                                                            <Image x:Name="CAR_BAGGAGEimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_BAGGAGE_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_BAGGAGE" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_BAGGAGE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -771,7 +771,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="CAR_ENGINELabel" Padding="0" Margin="0" TextColor="Black" Text="Подкапотное пространство" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="CAR_ENGINEimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_CAR_ENGINE_pencil.png" />
+                                                            <Image x:Name="CAR_ENGINEimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_CAR_ENGINE_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_CAR_ENGINE" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_CAR_ENGINE_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
@@ -783,7 +783,7 @@
                                                     <StackLayout Orientation = "Vertical" >
                                                         <Label x:Name="RIGHT_WHEELLabel" Padding="0" Margin="0" TextColor="Black" Text="Передний правый колесный диск" FontSize="Small"  HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
                                                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Margin="0" Padding="0">
-                                                            <Image x:Name="RIGHT_WHEELimg" Margin="0" WidthRequest="150" HeightRequest="250" Source="empty_RIGHT_WHEEL_pencil.png" />
+                                                            <Image x:Name="RIGHT_WHEELimg" Margin="0" WidthRequest="100" HeightRequest="220" Source="empty_RIGHT_WHEEL_pencil.png" />
                                                         </Frame>
                                                         <StackLayout Orientation = "Horizontal" Padding="0" Margin="0" >
                                                             <Button x:Name="Make_RIGHT_WHEEL" BackgroundColor="#5cb85c" TextColor="White" Text="Сделать" Clicked="Make_RIGHT_WHEEL_Clicked" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
