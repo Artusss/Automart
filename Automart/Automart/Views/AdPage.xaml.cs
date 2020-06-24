@@ -1046,7 +1046,7 @@ namespace Automart.Views
             PhotoComponents.Add(MainViewPhotosSL);
             PhotoButtons.Add(MainViewPhotosSLTapButton);
 
-            changeSLState(MainViewPhotosSL, MainViewPhotosSLTapButton, true);
+            changeSLState(MainViewPhotosSL, MainViewPhotosSLTapButton);
         }
 
         void ExtraViewPhotosTapButton_Clicked(object sender, EventArgs e)
@@ -1057,7 +1057,7 @@ namespace Automart.Views
             PhotoComponents.Add(ExtraViewPhotosSL);
             PhotoButtons.Add(ExtraViewPhotosSLTapButton);
 
-            changeSLState(ExtraViewPhotosSL, ExtraViewPhotosSLTapButton, true);
+            changeSLState(ExtraViewPhotosSL, ExtraViewPhotosSLTapButton);
         }
 
         void StatesTapButton_Clicked(object sender, EventArgs e)

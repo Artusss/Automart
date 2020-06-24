@@ -376,7 +376,8 @@
                                             <StackLayout Orientation="Vertical">
                                                 <Label x:Name="ClimatLabel" TextColor="Black" Text="Климат" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                                 <input:RadioButtonGroupView x:Name="ClimatRB" Padding="10">
-                                                    <input:RadioButton Text="Кондиционер" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                    <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                    <input:RadioButton Text="Кондиционер" TextColor="Black" TextFontSize="14" />
                                                     <input:RadioButton Text="Климат-контроль 1-зонный" TextColor="Black" TextFontSize="14" />
                                                     <input:RadioButton Text="Климат-контроль 2-зонный" TextColor="Black" TextFontSize="14" />
                                                     <input:RadioButton Text="Климат-контроль 3-зонный и выше" TextColor="Black" TextFontSize="14" />
@@ -582,7 +583,8 @@
                                             <StackLayout Orientation="Vertical">
                                                 <Label x:Name="LukeLabel" TextColor="Black" Text="Люк" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                                 <input:RadioButtonGroupView x:Name="LukeRB" Padding="10">
-                                                    <input:RadioButton Text="Механический" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                    <input:RadioButton Text="Отсутствует" IsChecked="True" TextColor="Black" TextFontSize="14" />
+                                                    <input:RadioButton Text="Механический" TextColor="Black" TextFontSize="14" />
                                                     <input:RadioButton Text="Электрический" TextColor="Black" TextFontSize="14" />
                                                     <input:RadioButton Text="Панорамная крыша" TextColor="Black" TextFontSize="14" />
                                                 </input:RadioButtonGroupView>
