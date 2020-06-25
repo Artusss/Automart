@@ -70,7 +70,10 @@
                         <Frame CornerRadius="10" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10, 5">
                             <StackLayout>
                                 <StackLayout Orientation="Horizontal" Padding="15, 0">
-                                    <Label x:Name="VolumeLabel" Text="Объем, л" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label x:Name="VolumeLabel_1" Text="Объем, см" FontSize="Medium" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                        <Label x:Name="VolumeLabel_2" Text="3" FontSize="Small" Margin="0, 7" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"/>
+                                    </StackLayout>
                                     <Entry x:Name="VolumeEntry" Keyboard="Numeric" Text="" HorizontalOptions="EndAndExpand" VerticalOptions="Center" WidthRequest="180">
                                         <Entry.Behaviors>
                                             <behavior:EntryLengthValidator MaxLength="8" MinLength="1"/>

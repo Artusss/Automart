@@ -268,7 +268,7 @@ namespace Automart.ViewModels
         {
             get
             {
-                return string.Format("{0}, {1}, {2}, {3} л., {4} л.с.", this.KPP, this.Kuzov, this.DvigType, this.Volume, this.Power);
+                return string.Format("{0}, {1}, {2}, {3} см3, {4} л.с.", this.KPP, this.Kuzov, this.DvigType, this.Volume, this.Power);
             }
         }
 

@@ -341,15 +341,17 @@ namespace Automart.Views
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.StartAndExpand
             };
+            
             var VolumeLabel = new Label
             {
                 TextColor = Color.Black,
-                Text = "Объем, л :",
+                Text = "Объем, см3:",
                 FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
                 FontAttributes = FontAttributes.Bold,
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.EndAndExpand
             };
+
             var VolumeEntry = new Label
             {
                 TextColor = Color.Black,
