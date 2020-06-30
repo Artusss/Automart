@@ -1286,31 +1286,29 @@ namespace Automart.Views
             ExtraCarPhotosSL.Children.Add(imageFrame);
         }
 
-        public async void PickFileAsync(StackLayout stackLayout)
+        public async void PickFileAsync(Label docLabel)
         {
             FileData fileData = await CrossFilePicker.Current.PickFile();
             if (fileData == null)
                 return; // user canceled file picking
-            var Icon = new Image
-            {
-                Source = "document.png"
-            };
-            var Name = new Label{
-                TextColor = Color.Black,
-                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Button)),
-                Text = fileData.FileName,
-                VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.StartAndExpand
-            };
-            var Content = new Label{
-                Text = Encoding.UTF8.GetString(fileData.DataArray),
-                IsVisible = false,
-            };
-            stackLayout.Children.Add(Icon);
-            stackLayout.Children.Add(Name);
-            stackLayout.Children.Add(Content);
+            await DisplayAlert("", "Документ успешно добавлен", "OK");
+            docLabel.Text = fileData.FileName;
         }
-        void DocumentsSaveButton_Clicked(object sender, EventArgs e)
+
+        void Pat1DocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(Pat1);
+            Pat1_store.IsVisible = false;
+            Pat1_delete.IsVisible = true;
+        }
+
+        void Pat1DocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            Pat1.Text = "Шаблон";
+            Pat1_delete.IsVisible = false;
+            Pat1_store.IsVisible = true;
+        }
+        /*void DocumentsSaveButton_Clicked(object sender, EventArgs e)
         {
             var StackLayoutTmp = new StackLayout
             {
@@ -1320,6 +1318,8 @@ namespace Automart.Views
             PickFileAsync(StackLayoutTmp);
             PickedDocumentsSL.Children.Add(StackLayoutTmp);
         }
+        <Button x:Name="DocumentsSave1Button" TextColor="Black" Text="Выбрать" Clicked="DocumentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
+         */
 
         async void ToState_ItemSelected(object sender, SelectionChangedEventArgs e)
         { 

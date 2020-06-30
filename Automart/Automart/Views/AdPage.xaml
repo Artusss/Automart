@@ -838,10 +838,17 @@
                                 <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrowWh.png" WidthRequest="54" HeightRequest="50" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="DocumentsSL" IsVisible="False">
-                                <Button x:Name="DocumentsSave1Button" TextColor="Black" Text="Выбрать" Clicked="DocumentsSaveButton_Clicked" HorizontalOptions="End" VerticalOptions="Center"/>
-                                <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
-                                    <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical"></StackLayout>
-                                </Frame>
+
+                                <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical">
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="Pat1" TextColor="Black" FontSize="Medium" Text="Шаблон" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="Pat1_store" ImageSource="delete.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="Pat1DocumentStore_Clicked" />
+                                            <Button x:Name="Pat1_delete" ImageSource="delete.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="Pat1DocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
