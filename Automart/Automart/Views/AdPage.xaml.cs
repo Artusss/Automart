@@ -1295,18 +1295,122 @@ namespace Automart.Views
             docLabel.Text = fileData.FileName;
         }
 
-        void Pat1DocumentStore_Clicked(object sender, EventArgs e)
+        void PTS_frontSideDocumentStore_Clicked(object sender, EventArgs e)
         {
-            PickFileAsync(Pat1);
-            Pat1_store.IsVisible = false;
-            Pat1_delete.IsVisible = true;
+            PickFileAsync(PTS_frontSide);
+            PTS_frontSide_store.IsVisible = false;
+            PTS_frontSide_delete.IsVisible = true;
         }
 
-        void Pat1DocumentDelete_Clicked(object sender, EventArgs e)
+        void PTS_frontSideDocumentDelete_Clicked(object sender, EventArgs e)
         {
-            Pat1.Text = "Шаблон";
-            Pat1_delete.IsVisible = false;
-            Pat1_store.IsVisible = true;
+            PTS_frontSide.Text = "ПТС Лицевая сторона";
+            PTS_frontSide_delete.IsVisible = false;
+            PTS_frontSide_store.IsVisible = true;
+        }
+        void PTS_backSideDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(PTS_backSide);
+            PTS_backSide_store.IsVisible = false;
+            PTS_backSide_delete.IsVisible = true;
+        }
+
+        void PTS_backSideDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            PTS_backSide.Text = "ПТС Оборотная сторона";
+            PTS_backSide_delete.IsVisible = false;
+            PTS_backSide_store.IsVisible = true;
+        }
+        void STS_frontSideDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(STS_frontSide);
+            STS_frontSide_store.IsVisible = false;
+            STS_frontSide_delete.IsVisible = true;
+        }
+
+        void STS_frontSideDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            STS_frontSide.Text = "СТС Лицевая сторона";
+            STS_frontSide_delete.IsVisible = false;
+            STS_frontSide_store.IsVisible = true;
+        }
+        void STS_backSideDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(STS_backSide);
+            STS_backSide_store.IsVisible = false;
+            STS_backSide_delete.IsVisible = true;
+        }
+
+        void STS_backSideDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            STS_backSide.Text = "СТС Оборотная сторона";
+            STS_backSide_delete.IsVisible = false;
+            STS_backSide_store.IsVisible = true;
+        }
+        void VIN_tableDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(VIN_table);
+            VIN_table_store.IsVisible = false;
+            VIN_table_delete.IsVisible = true;
+        }
+
+        void VIN_tableDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            VIN_table.Text = "Кузовная табличка с VIN *";
+            VIN_table_delete.IsVisible = false;
+            VIN_table_store.IsVisible = true;
+        }
+        void ServiceBookDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(ServiceBook);
+            ServiceBook_store.IsVisible = false;
+            ServiceBook_delete.IsVisible = true;
+        }
+
+        void ServiceBookDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            ServiceBook.Text = "Сервисная книжка";
+            ServiceBook_delete.IsVisible = false;
+            ServiceBook_store.IsVisible = true;
+        }
+        void LKP_zamerDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(LKP_zamer);
+            LKP_zamer_store.IsVisible = false;
+            LKP_zamer_delete.IsVisible = true;
+        }
+
+        void LKP_zamerDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            LKP_zamer.Text = "Бланк замера ЛКП";
+            LKP_zamer_delete.IsVisible = false;
+            LKP_zamer_store.IsVisible = true;
+        }
+        void CompletedWorkOrderDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(CompletedWorkOrder);
+            CompletedWorkOrder_store.IsVisible = false;
+            CompletedWorkOrder_delete.IsVisible = true;
+        }
+
+        void CompletedWorkOrderDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            CompletedWorkOrder.Text = "Заказ-наряд на проделанные работы";
+            CompletedWorkOrder_delete.IsVisible = false;
+            CompletedWorkOrder_store.IsVisible = true;
+        }
+        void AnyDocsDocumentStore_Clicked(object sender, EventArgs e)
+        {
+            PickFileAsync(AnyDocs);
+            AnyDocs_store.IsVisible = false;
+            AnyDocs_delete.IsVisible = true;
+        }
+
+        void AnyDocsDocumentDelete_Clicked(object sender, EventArgs e)
+        {
+            AnyDocs.Text = "Иные документы";
+            AnyDocs_delete.IsVisible = false;
+            AnyDocs_store.IsVisible = true;
         }
         /*void DocumentsSaveButton_Clicked(object sender, EventArgs e)
         {

@@ -838,14 +838,77 @@
                                 <Button x:Name="DocumentsSLTapButton" TextColor="Black" ImageSource="downArrowWh.png" WidthRequest="54" HeightRequest="50" Clicked="DocumentsTapButton_Clicked" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#428bca"/>
                             </StackLayout>
                             <StackLayout x:Name="DocumentsSL" IsVisible="False">
-
                                 <StackLayout x:Name="PickedDocumentsSL" Orientation="Vertical">
                                     <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
                                         <StackLayout Orientation="Horizontal">
                                             <Image Source="document.png" />
-                                            <Label x:Name="Pat1" TextColor="Black" FontSize="Medium" Text="Шаблон" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-                                            <Button x:Name="Pat1_store" ImageSource="delete.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="Pat1DocumentStore_Clicked" />
-                                            <Button x:Name="Pat1_delete" ImageSource="delete.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="Pat1DocumentDelete_Clicked" />
+                                            <Label x:Name="PTS_frontSide" TextColor="Black" FontSize="Medium" Text="ПТС Лицевая сторона" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="PTS_frontSide_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="PTS_frontSideDocumentStore_Clicked" />
+                                            <Button x:Name="PTS_frontSide_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="PTS_frontSideDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="PTS_backSide" TextColor="Black" FontSize="Medium" Text="ПТС Оборотная сторона" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="PTS_backSide_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="PTS_backSideDocumentStore_Clicked" />
+                                            <Button x:Name="PTS_backSide_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="PTS_backSideDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="STS_frontSide" TextColor="Black" FontSize="Medium" Text="СТС Лицевая сторона" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="STS_frontSide_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="STS_frontSideDocumentStore_Clicked" />
+                                            <Button x:Name="STS_frontSide_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="STS_frontSideDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="STS_backSide" TextColor="Black" FontSize="Medium" Text="СТС Оборотная сторона" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="STS_backSide_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="STS_backSideDocumentStore_Clicked" />
+                                            <Button x:Name="STS_backSide_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="STS_backSideDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="VIN_table" TextColor="Black" FontSize="Medium" Text="Кузовная табличка с VIN *" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="VIN_table_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="VIN_tableDocumentStore_Clicked" />
+                                            <Button x:Name="VIN_table_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="VIN_tableDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="ServiceBook" TextColor="Black" FontSize="Medium" Text="Сервисная книжка" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="ServiceBook_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="ServiceBookDocumentStore_Clicked" />
+                                            <Button x:Name="ServiceBook_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="ServiceBookDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="LKP_zamer" TextColor="Black" FontSize="Medium" Text="Бланк замера ЛКП" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="LKP_zamer_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="LKP_zamerDocumentStore_Clicked" />
+                                            <Button x:Name="LKP_zamer_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="LKP_zamerDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="CompletedWorkOrder" TextColor="Black" FontSize="Medium" Text="Заказ-наряд на проделанные работы" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="CompletedWorkOrder_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="CompletedWorkOrderDocumentStore_Clicked" />
+                                            <Button x:Name="CompletedWorkOrder_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="CompletedWorkOrderDocumentDelete_Clicked" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame CornerRadius="5" BackgroundColor="#f5f5f5" BorderColor="#e1e1e1" Padding="10">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="document.png" />
+                                            <Label x:Name="AnyDocs" TextColor="Black" FontSize="Medium" Text="Иные документы" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                                            <Button x:Name="AnyDocs_store" ImageSource="wplus.png" BackgroundColor="#428bca" Padding="10" HeightRequest="40" WidthRequest="40" TextColor="White" Clicked="AnyDocsDocumentStore_Clicked" />
+                                            <Button x:Name="AnyDocs_delete" ImageSource="wtrash.png" IsVisible="false" Padding="10" BackgroundColor="#a94442" TextColor="White" HeightRequest="40" WidthRequest="40" Clicked="AnyDocsDocumentDelete_Clicked" />
                                         </StackLayout>
                                     </Frame>
                                 </StackLayout>

@@ -10772,7 +10772,10 @@ namespace Automart.Droid
 			public const int wplus = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int xamarin_logo = 2131165336;
+			public const int wtrash = 2131165336;
+			
+			// aapt resource value: 0x7F070099
+			public const int xamarin_logo = 2131165337;
 			
 			static Drawable()
 			{

@@ -4609,7 +4609,8 @@ public final class R {
     public static final int uparrow=0x7f070095;
     public static final int uparrowwh=0x7f070096;
     public static final int wplus=0x7f070097;
-    public static final int xamarin_logo=0x7f070098;
+    public static final int wtrash=0x7f070098;
+    public static final int xamarin_logo=0x7f070099;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

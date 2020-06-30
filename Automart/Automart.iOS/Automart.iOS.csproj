@@ -242,5 +242,6 @@
     <BundleResource Include="Resources\next.png" />
     <BundleResource Include="Resources\delete.png" />
     <BundleResource Include="Resources\send.png" />
+    <BundleResource Include="Resources\wtrash.png" />
   </ItemGroup>
 </Project>

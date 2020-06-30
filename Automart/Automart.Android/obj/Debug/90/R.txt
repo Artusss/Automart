@@ -1012,7 +1012,8 @@ int drawable trash 0x7f070094
 int drawable uparrow 0x7f070095
 int drawable uparrowwh 0x7f070096
 int drawable wplus 0x7f070097
-int drawable xamarin_logo 0x7f070098
+int drawable wtrash 0x7f070098
+int drawable xamarin_logo 0x7f070099
 int id ALT 0x7f080000
 int id CTRL 0x7f080001
 int id FUNCTION 0x7f080002

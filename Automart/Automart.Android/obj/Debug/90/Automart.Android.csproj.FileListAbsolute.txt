@@ -556,3 +556,4 @@ C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\d
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\trash.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\delete.png
 C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\send.png
+C:\Users\User\source\repos\Automart\Automart\Automart.Android\obj\Debug\90\res\drawable\wtrash.png
